@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Italiana&family=Julius+Sans+One&display=swap");
 
-body {
-  min-height: 100dvh;
-}
-
 .navbar-brand {
   width: 100px;
   height: 100px;
@@ -25,10 +21,6 @@ body {
   font-family: "Italiana", sans-serif;
   font-weight: 400;
   font-style: normal;
-}
-
-#container-fluid1 {
-  justify-content: space-around;
 }
 
 #item {
