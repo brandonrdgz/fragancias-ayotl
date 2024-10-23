@@ -1,9 +1,43 @@
-.navbar-brand{
-    width: 100px;
-    height: 100px;
+@import url("https://fonts.googleapis.com/css2?family=Italiana&family=Julius+Sans+One&display=swap");
+
+body {
+  min-height: 100dvh;
 }
 
-#logo{
-    width: 100px;
-    height: 100px;
+.navbar-brand {
+  width: 100px;
+  height: 100px;
+}
+
+#logo {
+  width: 100px;
+  height: 100px;
+  transition: all 0.3s linear;
+}
+
+.parrafros {
+  font-family: "Julius Sans One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.titulosYSubtitulos {
+  font-family: "Italiana", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#container-fluid1 {
+  justify-content: space-around;
+}
+
+#item {
+  transition: all 0.3s linear;
+}
+
+#item:hover {
+  transform: scale(1.1);
+}
+#logo:hover {
+  transform: scale(1.1);
 }
