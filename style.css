@@ -39,6 +39,7 @@
   right: 1px;
   border: none;
   color: #888;
+  z-index: 5;
 }
 
 #item {
@@ -52,7 +53,7 @@
   transform: scale(1.1);
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 600px) {
   #demoToggler02 {
     display: none;
     position: fixed;
