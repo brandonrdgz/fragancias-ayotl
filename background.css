@@ -1,0 +1,6 @@
+.hojas-bg{
+   background-image: url("./imgs/hoja1.png"), url("./imgs/hoja2.png"),url("./imgs/hoja3.png");
+   background-size: 20%, 20% ,20%;
+   background-repeat: no-repeat, no-repeat ,no-repeat;
+   background-position: bottom right, top left, top left;
+}
