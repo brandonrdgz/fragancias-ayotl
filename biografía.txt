@@ -1,6 +1,0 @@
-Hola. Me llamo Oscar y soy del sur de la Ciudad de México. 
-Me apasiona la naturaleza, el senderismo y la comida mexicana. 
-Estudié Ecología en la UNAM, sin embargo, la vida me condujo al mundo de la programación. 
-Aprendiendo tecnología me di cuenta de lo relevante que es aprender cosas que te facilitan la vida. 
-Eso me motivo a comenzar un Bootcamp en Generation México donde me estoy formando profesionalmente como Desarrollador Java Full Stack.
-Actualmente estoy desarollando partes de un proyecto titulado "Ayotl" que es una e-commerce dedicada a la venta de perfumes y fragancias sustentables. 
