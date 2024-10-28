@@ -6,12 +6,14 @@
   box-sizing: border-box;
 }
 
-body {
+html body {
   height: 100vh;
-  background-image: url(./img-icons/background1.png);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-origin: padding-box;
+  background-color: #f8f1f4;
+  padding-top: 80px;
+}
+
+#navbar {
+  background-color: #f8f1f4 !important;
 }
 
 .navbar-brand {
