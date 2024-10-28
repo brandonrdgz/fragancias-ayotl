@@ -1,0 +1,30 @@
+
+
+.team-section {
+    padding: 50px 0;
+    background-color: #f8f9fa;
+  }
+  .team-card {
+    border: none;
+    transition: transform 0.3s;
+  }
+  .team-card:hover {
+    transform: scale(1.05);
+  }
+  .team-img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  .team-info {
+    text-align: center;
+  }
+  .team-info h5 {
+    font-weight: bold;
+  }
+  .team-info p {
+    font-size: 0.9rem;
+    color: #6c757d;
+  }
