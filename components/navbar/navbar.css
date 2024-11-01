@@ -1,10 +1,4 @@
-html,
-body {
-  background-color: #f8f1f4;
-  padding-top: 80px;
-}
-
-#navbar {
+.navbar {
   background-color: #f8f1f4 !important;
 }
 
@@ -77,22 +71,3 @@ body {
 /*     text-align: center; */
 /*   } */
 /* } */
-
-.hidden {
-  opacity: 0;
-  filter: blur(5px);
-  transform: translateX(-100%);
-  transition: all 1s;
-}
-
-.show {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateX(0);
-}
-
-@media (prefers-reduced-motion) {
-  .hidden {
-    transition: none;
-  }
-}
