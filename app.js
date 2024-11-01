@@ -51,7 +51,6 @@ async function cargarPagina(pagina) {
 
     // Actualiza el historial
     window.history.pushState({ pagina }, "", `#${pagina}`);
-
     // Carga el CSS y JS específicos de la página
     cargarEstilos("estilos-pagina", `./pages/${pagina}/${pagina}.css`);
     cargarScript("script-pagina", `./pages/${pagina}/${pagina}.js`);
@@ -60,6 +59,18 @@ async function cargarPagina(pagina) {
       "<p>Error al cargar la página.</p>";
     console.error("Error al cargar la página:", error);
   }
+}
+
+function esperar(segundos) {
+  return new Promise(resolve => {
+      setTimeout(resolve, segundos * 1000);
+  });
+}
+
+// Inicializa la página principal
+function iniciarEnrutador() {
+  const paginaInicial = window.location.hash.substring(1) || "inicio";
+  cargarPagina(paginaInicial);
 }
 
 // Evento delegado para manejar clics en los elementos con data-link
@@ -71,12 +82,6 @@ document.addEventListener("click", (event) => {
     cargarPagina(pagina);
   }
 });
-
-// Inicializa la página principal
-function iniciarEnrutador() {
-  const paginaInicial = window.location.hash.substring(1) || "inicio";
-  cargarPagina(paginaInicial);
-}
 
 // Maneja el historial para navegación hacia atrás y adelante
 window.addEventListener("popstate", (e) => {
