@@ -1,6 +1,6 @@
 const bodyContainer = document.querySelector("body");
 
-const cardElement = `
+const navbar = `
     <header>
       <nav
         class="navbar navbar-expand-sm bg-body-tertiary fixed-top shadow p-3 mb-5 bg-body-tertiary rounded"
@@ -109,4 +109,4 @@ const cardElement = `
     </header>
 `;
 
-bodyContainer.insertAdjacentHTML .insertAdjacentHTML("afterbegin", );
+bodyContainer.insertAdjacentHTML("afterbegin", navbar);
