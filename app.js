@@ -52,6 +52,10 @@ async function cargarPagina(pagina) {
     // Actualiza el historial
     window.history.pushState({ pagina }, "", `#${pagina}`);
     // Carga el CSS y JS específicos de la página
+
+    console.log("Iniciando esperando")
+    await esperar(3);
+    console.log("Terminando esperando")
     cargarEstilos("estilos-pagina", `./pages/${pagina}/${pagina}.css`);
     cargarScript("script-pagina", `./pages/${pagina}/${pagina}.js`);
   } catch (error) {
