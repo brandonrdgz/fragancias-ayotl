@@ -1,3 +1,20 @@
+<<<<<<< HEAD
+@import url("https://fonts.googleapis.com/css2?family=Italiana&family=Julius+Sans+One&display=swap");
+=======
+<<<<<<< HEAD
+>>>>>>> 8d2d4f7 (reestructuracion de documentos, para aplicar estilo SPA y tarea 6)
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+<<<<<<< HEAD
+=======
+=======
 @import url("https://fonts.googleapis.com/css2?family=Italiana&family=Julius+Sans+One&display=swap");
 
 *,
@@ -8,6 +25,7 @@
   box-sizing: border-box;
 }
 
+>>>>>>> 8d2d4f7 (reestructuracion de documentos, para aplicar estilo SPA y tarea 6)
 html,
 body {
   height: auto;
@@ -46,3 +64,7 @@ body {
     background-size: 25%, 30%, 30%, 30%;
   }
 }
+<<<<<<< HEAD
+=======
+>>>>>>> 8f4ce8f (reestructuracion de documentos, para aplicar estilo SPA y tarea 6)
+>>>>>>> 8d2d4f7 (reestructuracion de documentos, para aplicar estilo SPA y tarea 6)
