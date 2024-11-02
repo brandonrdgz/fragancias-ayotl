@@ -1,0 +1,36 @@
+#opciones{
+    justify-content: space-evenly;
+    display: flex;
+}
+#principal{
+    height:400px; 
+    width:100%; 
+    display:flex;
+}
+#bloque_1{
+    background-color:#FED3C6; 
+    height:400px; 
+    width:25%;
+}
+#bloque_2{
+    background-color:#C6DCFE; 
+    height:400px; 
+    width:40%;
+}
+#bloque_3{
+    background-color:#FED3C6; 
+    height:400px; 
+    width:35%;
+}
+
+#a{
+    background-color:#FEC6D4;
+    height:200px; 
+    width:100%;
+}
+#b{
+    background-color:#FCFEC6;
+    height:200px; 
+    width:100%;
+}
+
