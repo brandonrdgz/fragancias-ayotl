@@ -1,3 +1,5 @@
+[
+
 {
     "producto": {
       "id": "001",
@@ -28,6 +30,256 @@
       "en_oferta": false,
       "fecha_lanzamiento": "2024-10-01"
     }
-  }
+  },
+
   
+    {
+      "producto": {
+        "id": "002",
+        "nombre": "Eau de Parfum Citrus Burst",
+        "marca": "Esencias de Verano",
+        "categoria": "Perfumes",
+        "descripcion": "Un perfume vibrante y cítrico, perfecto para el verano. Mezcla notas de limón, naranja y un toque de menta.",
+        "precio": 1150,
+        "moneda": "MXN",
+        "cantidad_disponible": 180,
+        "valoraciones": {
+          "promedio": 4.7,
+          "total_valoraciones": 95
+        },
+        "caracteristicas": {
+          "concentracion": "Eau de Parfum",
+          "duracion": "Hasta 6 horas",
+          "tipo_piel": "Todo tipo de piel",
+          "tamaño": "50 ml"
+        },
+        "ingredientes": [
+          "Agua",
+          "Alcohol",
+          "Aceite esencial de limón",
+          "Aceite esencial de naranja",
+          "Extracto de menta"
+        ],
+        "en_oferta": true,
+        "fecha_lanzamiento": "2024-10-05"
+      }
+    },
+    {
+      "producto": {
+        "id": "003",
+        "nombre": "Eau de Parfum Spicy Oud",
+        "marca": "Esencias de Verano",
+        "categoria": "Perfumes",
+        "descripcion": "Un perfume intenso y exótico, ideal para ocasiones especiales. Combina notas de oud, especias y ámbar.",
+        "precio": 1500,
+        "moneda": "MXN",
+        "cantidad_disponible": 100,
+        "valoraciones": {
+          "promedio": 4.8,
+          "total_valoraciones": 80
+        },
+        "caracteristicas": {
+          "concentracion": "Eau de Parfum",
+          "duracion": "Hasta 10 horas",
+          "tipo_piel": "Todo tipo de piel",
+          "tamaño": "50 ml"
+        },
+        "ingredientes": [
+          "Agua",
+          "Alcohol",
+          "Aceite esencial de oud",
+          "Extracto de especias",
+          "Ámbar"
+        ],
+        "en_oferta": false,
+        "fecha_lanzamiento": "2024-10-10"
+      }
+    },
+    {
+      "producto": {
+        "id": "004",
+        "nombre": "Eau de Parfum Woodsy Harmony",
+        "marca": "Esencias de Verano",
+        "categoria": "Perfumes",
+        "descripcion": "Un perfume cálido y terroso, ideal para el otoño. Combina notas de sándalo, cedro y vetiver.",
+        "precio": 1300,
+        "moneda": "MXN",
+        "cantidad_disponible": 150,
+        "valoraciones": {
+          "promedio": 4.6,
+          "total_valoraciones": 70
+        },
+        "caracteristicas": {
+          "concentracion": "Eau de Parfum",
+          "duracion": "Hasta 7 horas",
+          "tipo_piel": "Todo tipo de piel",
+          "tamaño": "50 ml"
+        },
+        "ingredientes": [
+          "Agua",
+          "Alcohol",
+          "Aceite esencial de sándalo",
+          "Aceite esencial de cedro",
+          "Extracto de vetiver"
+        ],
+        "en_oferta": true,
+        "fecha_lanzamiento": "2024-10-15"
+      }
+    },
+    {
+      "producto": {
+        "id": "005",
+        "nombre": "Eau de Parfum Berry Delight",
+        "marca": "Esencias de Verano",
+        "categoria": "Perfumes",
+        "descripcion": "Un perfume dulce y afrutado, ideal para la primavera. Mezcla notas de frutos rojos, flor de cerezo y un toque de almendra.",
+        "precio": 1250,
+        "moneda": "MXN",
+        "cantidad_disponible": 220,
+        "valoraciones": {
+          "promedio": 4.4,
+          "total_valoraciones": 110
+        },
+        "caracteristicas": {
+          "concentracion": "Eau de Parfum",
+          "duracion": "Hasta 5 horas",
+          "tipo_piel": "Todo tipo de piel",
+          "tamaño": "50 ml"
+        },
+        "ingredientes": [
+          "Agua",
+          "Alcohol",
+          "Aceite esencial de frutos rojos",
+          "Extracto de flor de cerezo",
+          "Almendra"
+        ],
+        "en_oferta": false,
+        "fecha_lanzamiento": "2024-10-20"
+      }
+    },
+    {
+      "producto": {
+        "id": "006",
+        "nombre": "Eau de Parfum Exotic Garden",
+        "marca": "Esencias de Verano",
+        "categoria": "Perfumes",
+        "descripcion": "Un perfume envolvente y tropical, ideal para escapar de la rutina. Combina notas de coco, piña y flor de tiara.",
+        "precio": 1350,
+        "moneda": "MXN",
+        "cantidad_disponible": 130,
+        "valoraciones": {
+          "promedio": 4.7,
+          "total_valoraciones": 90
+        },
+        "caracteristicas": {
+          "concentracion": "Eau de Parfum",
+          "duracion": "Hasta 9 horas",
+          "tipo_piel": "Todo tipo de piel",
+          "tamaño": "50 ml"
+        },
+        "ingredientes": [
+          "Agua",
+          "Alcohol",
+          "Aceite esencial de coco",
+          "Aceite esencial de piña",
+          "Extracto de flor de tiara"
+        ],
+        "en_oferta": true,
+        "fecha_lanzamiento": "2024-10-25"
+      }
+    },
+    {
+      "producto": {
+        "id": "007",
+        "nombre": "Eau de Parfum Midnight Rose",
+        "marca": "Esencias de Verano",
+        "categoria": "Perfumes",
+        "descripcion": "Un perfume seductor y misterioso, ideal para la noche. Combina notas de rosa negra, patchouli y un toque de musk.",
+        "precio": 1400,
+        "moneda": "MXN",
+        "cantidad_disponible": 90,
+        "valoraciones": {
+          "promedio": 4.9,
+          "total_valoraciones": 60
+        },
+        "caracteristicas": {
+          "concentracion": "Eau de Parfum",
+          "duracion": "Hasta 8 horas",
+          "tipo_piel": "Todo tipo de piel",
+          "tamaño": "50 ml"
+        },
+        "ingredientes": [
+          "Agua",
+          "Alcohol",
+          "Aceite esencial de rosa negra",
+          "Aceite esencial de patchouli",
+          "Musk"
+        ],
+        "en_oferta": false,
+        "fecha_lanzamiento": "2024-10-30"
+      }
+    },
+    {
+      "producto": {
+        "id": "008",
+        "nombre": "Eau de Parfum Fresh Mint",
+        "marca": "Esencias de Verano",
+        "categoria": "Perfumes",
+        "descripcion": "Un perfume refrescante y ligero, ideal para climas cálidos. Combina notas de menta, eucalipto y limón.",
+        "precio": 1100,
+        "moneda": "MXN",
+        "cantidad_disponible": 200,
+        "valoraciones": {
+          "promedio": 4.3,
+          "total_valoraciones": 115
+        },
+        "caracteristicas": {
+          "concentracion": "Eau de Parfum",
+          "duracion": "Hasta 5 horas",
+          "tipo_piel": "Todo tipo de piel",
+          "tamaño": "50 ml"
+        },
+        "ingredientes": [
+          "Agua",
+          "Alcohol",
+          "Aceite esencial de menta",
+          "Aceite esencial de eucalipto",
+          "Extracto de limón"
+        ],
+        "en_oferta": true,
+        "fecha_lanzamiento": "2024-11-01"
+      }
+    },
+    {
+      "producto": {
+        "id": "009",
+        "nombre": "Eau de Parfum Sweet Vanilla",
+        "marca": "Esencias de Verano",
+        "categoria": "Perfumes",
+        "descripcion": "Un perfume dulce y envolvente, ideal para los amantes de la vainilla. Combina notas de vainilla, caramelo y un toque de flor de azahar.",
+        "precio": 1250,
+        "moneda": "MXN",
+        "cantidad_disponible": 160,
+        "valoraciones": {
+          "promedio": 4.5,
+          "total_valoraciones": 100
+        },
+        "caracteristicas": {
+          "concentracion": "Eau de Parfum",
+          "duracion": "Hasta 7 horas",
+          "tipo_piel": "Todo tipo de piel",
+          "tamaño": "50 ml"
+        },
+        "ingredientes": [
+          "Agua",
+          "Alcohol",
+          "Extracto de vainilla",
+          "Caramelo",
+          "Extracto de flor de azahar"
+        ],
+        "en_oferta": false,
+        "fecha_lanzamiento": "2024-11-05"
+      }
+    }
+  ]
   
