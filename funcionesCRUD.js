@@ -53,55 +53,93 @@ function addProducto(productList, product) {
       return productList
    } else {
       // Agregar el producto a la lista de productos
-      productList.push(product) 
+      productList.push(product)
       return productList;
    }
 }
 
-function removeProduct(productList, productId) {
+function getProducto(productList, productId) {
+   // Buscar el índice del producto con el id especificado
+   const index = productList.findIndex(p => p.id === productId);
 
+   if (index !== -1) {
+      // console.log(`Producto con id ${productId} obtenido correctamente.`);
+      return productList.splice(index, 1)[0];
+   }
+
+   // En caso de no existir  
+   return undefined;
+}
+
+function removeProduct(productList, productId) {
+   // Buscar el índice del producto con el id especificado
+   const index = productList.findIndex(p => p.id === productId);
+
+   if (index !== -1) {
+      // Eliminar el producto si existe
+      const removedProduct = productList.splice(index, 1);
+      // console.log(`Producto con id ${productId} eliminado correctamente.`);
+   } else {
+      // console.log(`El producto con id ${productId} no se encontró en la lista.`);
+   }
+
+   // Retornar la lista actualizada
+   return productList;
 }
 
 
-objectoProducto = 
+objectoProducto =
 {
-    "id": "011",
-    "nombre": "Eau de Parfum Floral Essence",
-    "marca": "Esencias de Verano",
-    "categoria": "Perfumes",
-    "descripcion": "Un perfume fresco y floral, ideal para el uso diario. Combina notas de jazmín, rosa y un toque de vainilla.",
-    "precio": 2200,
-    "moneda": "MXN",
-    "cantidad_disponible": 200,
-    "valoraciones": {
+   "id": "011",
+   "nombre": "Eau de Parfum Floral Essence",
+   "marca": "Esencias de Verano",
+   "categoria": "Perfumes",
+   "descripcion": "Un perfume fresco y floral, ideal para el uso diario. Combina notas de jazmín, rosa y un toque de vainilla.",
+   "precio": 2200,
+   "moneda": "MXN",
+   "cantidad_disponible": 200,
+   "valoraciones": {
       "promedio": 4.5,
       "total_valoraciones": 120
-    },
-    "caracteristicas": {
+   },
+   "caracteristicas": {
       "concentracion": "Eau de Parfum",
       "duracion": "Hasta 8 horas",
       "tipo_piel": "Todo tipo de piel",
       "tamaño": "50 ml"
-    },
-    "ingredientes": [
+   },
+   "ingredientes": [
       "Agua",
       "Alcohol",
       "Aceite esencial de jazmín",
       "Aceite esencial de rosa",
       "Extracto de vainilla"
-    ],
-    "en_oferta": false,
-    "fecha_lanzamiento": "2024-10-01"
+   ],
+   "en_oferta": false,
+   "fecha_lanzamiento": "2024-10-01"
 }
 
 
-obtenerProductos("../../data/objectos.json").then(productos => {
+obtenerProductos("./data/objectos.json").then(productos => {
    if (productos) {
-     console.log("Lista de productos:", productos);
-     console.log("producto 1:", productos[1]);
-     console.log("Vamos a añadir un producto");
-     nuevaLista = addProducto(productos, objectoProducto);
-     console.log(nuevaLista);
+      console.log("Lista de productos:", productos);
+      console.log("producto 1:", productos[1]);
+
+      console.log("Vamos a añadir un producto");
+      nuevaLista = addProducto(productos, objectoProducto);
+      console.log(nuevaLista);
+
+      console.log("Vamos a obtener el producto con el id 002");
+      id='002'
+      producto = getProducto(productos, id);
+      console.log(producto.id);
+      console.log(producto.nombre);
+      console.log(producto);
+
+      console.log("Vamos a remover un producto con el id 004");
+      id='004'
+      nuevaLista = removeProduct(productos, id);
+      console.log(nuevaLista)
    }
- });
+});
 
