@@ -1,0 +1,30 @@
+//Estilos .css para el formulario de usuarios.
+
+h2{
+    background-color: #1d3857;
+}
+
+.hojas-bg{
+    background-image: url("../imgs/hoja1.png"), url("../imgs/hoja5.png"), url("../imgs/hoja2.png"), url("../imgs/hoja6.png");
+    background-size: 11%, 11%, 20% ,20% ;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat ;
+    background-position: bottom right, bottom left, top left, top right ;
+ 
+    @media (max-width: 768px) {
+       background-size: 25%, 30%, 30%, 30%;   
+    }
+ }
+
+  /* Aplica estilos si el campo requerido está vacío al intentar enviarlo */
+input:invalid {
+    border-color: red;
+    background-color: #ffe6e6;
+
+.Mostrar1{
+    background-color: blue;
+}
+/* Aplica estilos a los campos válidos */
+input:valid {
+    border-color: green;
+    background-color: #e6ffe6;
+  }
