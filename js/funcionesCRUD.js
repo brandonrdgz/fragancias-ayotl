@@ -37,9 +37,6 @@ async function obtenerProductos(URL) {
          fecha_lanzamiento: producto.fecha_lanzamiento
       }));
 
-      // Mostrar la lista de productos en consola
-      console.log(productos);
-
       // Retornar la lista de productos para poder usarla en otras partes del código
       return productos;
    } catch (error) {
@@ -48,8 +45,63 @@ async function obtenerProductos(URL) {
 }
 
 
+function addProducto(productList, product) {
+   // Verificar si el producto ya existe en la lista (comparando el id)
+   const productoExistente = productList.some(p => p.id === product.id);
+
+   if (productoExistente) {
+      return productList
+   } else {
+      // Agregar el producto a la lista de productos
+      productList.push(product) 
+      return productList;
+   }
+}
+
+function removeProduct(productList, productId) {
+
+}
+
+
+objectoProducto = 
+{
+    "id": "011",
+    "nombre": "Eau de Parfum Floral Essence",
+    "marca": "Esencias de Verano",
+    "categoria": "Perfumes",
+    "descripcion": "Un perfume fresco y floral, ideal para el uso diario. Combina notas de jazmín, rosa y un toque de vainilla.",
+    "precio": 2200,
+    "moneda": "MXN",
+    "cantidad_disponible": 200,
+    "valoraciones": {
+      "promedio": 4.5,
+      "total_valoraciones": 120
+    },
+    "caracteristicas": {
+      "concentracion": "Eau de Parfum",
+      "duracion": "Hasta 8 horas",
+      "tipo_piel": "Todo tipo de piel",
+      "tamaño": "50 ml"
+    },
+    "ingredientes": [
+      "Agua",
+      "Alcohol",
+      "Aceite esencial de jazmín",
+      "Aceite esencial de rosa",
+      "Extracto de vainilla"
+    ],
+    "en_oferta": false,
+    "fecha_lanzamiento": "2024-10-01"
+}
+
+
 obtenerProductos("../../data/objectos.json").then(productos => {
    if (productos) {
+     console.log("Lista de productos:", productos);
      console.log("producto 1:", productos[1]);
+     console.log("Vamos a añadir un producto");
+     nuevaLista = addProducto(productos, objectoProducto);
+     console.log(nuevaLista);
    }
  });
+
