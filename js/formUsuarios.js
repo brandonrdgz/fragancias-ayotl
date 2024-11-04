@@ -8,6 +8,15 @@ function showAlert(message, type = 'danger') {
         </div>`;
     }
 
+    function togglePasswordVisibility(fieldId) {
+        const field = document.getElementById(fieldId);
+        if (field.type === "password") {
+            field.type = "text";
+        } else {
+            field.type = "password";
+        }
+    }
+
     function validateForm() {
         const nombreCompleto = document.getElementById('nombreCompleto').value.trim();
         const telefono = document.getElementById('telefono').value.trim();
@@ -35,6 +44,11 @@ function showAlert(message, type = 'danger') {
             return;
         }
 
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&._#])[A-Za-z\d@$!%*?&._#]{8,}$/;
+        if (!passwordRegex.test(password)) {
+            showAlert('La contraseña debe tener al menos 8 caracteres, incluyendo 1 letra mayúscula, 1 letra minúscula, 1 número y 1 símbolo.');
+            return;
+        }
         
         if (password !== confirmPassword) {
             showAlert('Las contraseñas no coinciden.');

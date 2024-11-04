@@ -26,13 +26,19 @@
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="email" required>
             </div>
-            <div class="mb-3">
+            <div class="mb-3 position-relative">
                 <label for="password" class="form-label">Contraseña</label>
                 <input type="password" class="form-control" id="password" required>
+                <button type="button" class="btn btn-outline-secondary btn-sm position-absolute top-50 end-0 translate-middle-y me-2" onclick="togglePasswordVisibility('password')">
+                    Mostrar
+                </button>
             </div>
-            <div class="mb-3">
+            <div class="mb-3 position-relative">
                 <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
                 <input type="password" class="form-control" id="confirmPassword" required>
+                <button type="button" class="btn btn-outline-secondary btn-sm position-absolute top-50 end-0 translate-middle-y me-2" onclick="togglePasswordVisibility('confirmPassword')">
+                    Mostrar
+                </button>
             </div>
             <button type="button" class="btn btn-primary" onclick="validateForm()">Registrarse</button>
         </form>
