@@ -1,25 +1,37 @@
 // Función para cargar CSS específico de una página
 function cargarEstilos(id, url) {
   // Si ya existe, no lo cargues de nuevo
-  if (document.getElementById(id)) return;
+  if (document.getElementById(id)) return Promise.resolve();
 
-  const link = document.createElement("link");
-  link.id = id;
-  link.rel = "stylesheet";
-  link.href = url;
-  document.head.appendChild(link);
+  return new Promise((resolve, reject) => {
+      const link = document.createElement("link");
+      link.id = id;
+      link.rel = "stylesheet";
+      link.href = url;
+
+      link.onload = () => resolve();  // Confirma que el CSS ha cargado
+      link.onerror = () => reject(`Error al cargar CSS en ${url}`);
+      
+      document.head.appendChild(link);
+  });
 }
 
 // Función para cargar JS específico de una página
 function cargarScript(id, url) {
   // Si ya existe, no lo cargues de nuevo
-  if (document.getElementById(id)) return;
+  if (document.getElementById(id)) return Promise.resolve();
 
-  const script = document.createElement("script");
-  script.defer = true;
-  script.id = id;
-  script.src = url;
-  document.head.appendChild(script);
+  return new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.defer = true;
+      script.id = id;
+      script.src = url;
+
+      script.onload = () => resolve();  // Confirma que el JS ha cargado
+      script.onerror = () => reject(`Error al cargar JS en ${url}`);
+
+      document.head.appendChild(script);
+  });
 }
 
 // Función para limpiar CSS y JS específicos al cambiar de página
@@ -34,37 +46,38 @@ function limpiarRecursosPagina() {
 // Función para cargar contenido principal, CSS y JS de cada página
 async function cargarPagina(pagina) {
   try {
-    // Limpia recursos de la página anterior
-    limpiarRecursosPagina();
+      // Limpia recursos de la página anterior
+      limpiarRecursosPagina();
 
-    // Carga el contenido HTML de la página
-    const respuesta = await fetch(`./pages/${pagina}/${pagina}.html`);
-    if (!respuesta.ok) {
-      document.getElementById("main-content").innerHTML =
-        "<p>Página no encontrada.</p>";
-      return;
-    }
+      // Carga el contenido HTML de la página
+      const respuesta = await fetch(`./pages/${pagina}/${pagina}.html`);
+      if (!respuesta.ok) {
+          document.getElementById("main-content").innerHTML =
+              "<p>Página no encontrada.</p>";
+          return;
+      }
 
-    // Inserta el contenido de la página en el contenedor principal
-    const contenido = await respuesta.text();
-    document.getElementById("main-content").innerHTML = contenido;
+      // Inserta el contenido de la página en el contenedor principal
+      const contenido = await respuesta.text();
+      document.getElementById("main-content").innerHTML = contenido;
 
-    // Actualiza el historial
-    window.history.pushState({ pagina }, "", `#${pagina}`);
-    // Carga el CSS y JS específicos de la página
+      // Actualiza el historial
+      window.history.pushState({ pagina }, "", `#${pagina}`);
 
-    console.log("Iniciando esperando")
-    await esperar(3);
-    console.log("Terminando esperando")
-    cargarEstilos("estilos-pagina", `./pages/${pagina}/${pagina}.css`);
-    cargarScript("script-pagina", `./pages/${pagina}/${pagina}.js`);
+      // Carga el CSS y JS específicos de la página con await
+      console.log("Cargando recursos...");
+      await cargarEstilos("estilos-pagina", `./pages/${pagina}/${pagina}.css`);
+      await cargarScript("script-pagina", `./pages/${pagina}/${pagina}.js`);
+      console.log("Recursos cargados correctamente");
+      
   } catch (error) {
-    document.getElementById("main-content").innerHTML =
-      "<p>Error al cargar la página.</p>";
-    console.error("Error al cargar la página:", error);
+      document.getElementById("main-content").innerHTML =
+          "<p>Error al cargar la página.</p>";
+      console.error("Error al cargar la página:", error);
   }
 }
 
+// Función de espera, si necesitas un retraso manual
 function esperar(segundos) {
   return new Promise(resolve => {
       setTimeout(resolve, segundos * 1000);
@@ -81,9 +94,9 @@ function iniciarEnrutador() {
 document.addEventListener("click", (event) => {
   const link = event.target.closest("[data-link]");
   if (link) {
-    event.preventDefault();
-    const pagina = link.getAttribute("data-link");
-    cargarPagina(pagina);
+      event.preventDefault();
+      const pagina = link.getAttribute("data-link");
+      cargarPagina(pagina);
   }
 });
 
