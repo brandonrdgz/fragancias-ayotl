@@ -2,7 +2,7 @@
    "productos": [
      {
        "id": "001",
-       "nombre": "Eau de Parfum Floral Essence",
+       "nombre": "Perfume para dama Yoloxócotl",
        "marca": "Esencias de Verano",
        "categoria": "Perfumes",
        "descripcion": "Un perfume fresco y floral, ideal para el uso diario. Combina notas de jazmín, rosa y un toque de vainilla.",
@@ -14,7 +14,7 @@
          "total_valoraciones": 120
        },
        "caracteristicas": {
-         "concentracion": "Eau de Parfum",
+         "concentracion": "Floral",
          "duracion": "Hasta 8 horas",
          "tipo_piel": "Todo tipo de piel",
          "tamaño": "50 ml"
