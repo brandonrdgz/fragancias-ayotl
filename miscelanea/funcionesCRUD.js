@@ -142,4 +142,3 @@ obtenerProductos("./data/objectos.json").then(productos => {
       console.log(nuevaLista)
    }
 });
-

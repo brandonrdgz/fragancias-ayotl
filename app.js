@@ -17,6 +17,7 @@ function cargarScript(id, url) {
   if (document.getElementById(id)) return;
 
   const script = document.createElement("script");
+  script.type = "module";
   script.defer = true;
   script.id = id;
   script.src = url;
@@ -88,7 +89,4 @@ window.addEventListener("popstate", (e) => {
 // Ejecuta el enrutador cuando el DOM esté listo
 document.addEventListener("DOMContentLoaded", iniciarEnrutador);
 
-
 const bodyContainer = document.querySelector("body");
-
-
