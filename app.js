@@ -18,7 +18,7 @@ function cargarScript(id, url) {
 
   const script = document.createElement("script");
   script.type = "module";
-  script.defer = true;
+  // script.defer = true;
   script.id = id;
   script.src = url;
   document.head.appendChild(script);
@@ -64,6 +64,12 @@ async function cargarPagina(pagina) {
   }
 }
 
+// Inicializa la página principal
+function iniciarEnrutador() {
+  const paginaInicial = window.location.hash.substring(1) || "inicio";
+  cargarPagina(paginaInicial);
+}
+
 // Evento delegado para manejar clics en los elementos con data-link
 document.addEventListener("click", (event) => {
   const link = event.target.closest("[data-link]");
@@ -74,15 +80,9 @@ document.addEventListener("click", (event) => {
   }
 });
 
-// Inicializa la página principal
-function iniciarEnrutador() {
-  const paginaInicial = window.location.hash.substring(1) || "inicio";
-  cargarPagina(paginaInicial);
-}
-
 // Maneja el historial para navegación hacia atrás y adelante
 window.addEventListener("popstate", (e) => {
-  const pagina = e.state ? e.state.pagina : "inicio";
+  const pagina = e.state.pagina || "inicio";
   cargarPagina(pagina);
 });
 
