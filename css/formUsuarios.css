@@ -1,3 +1,4 @@
+
 body {
     display: flex;
     justify-content: center;
@@ -28,6 +29,9 @@ body {
 }
 .btn-primary:hover {
     background-color: #0056b3;
+}
+.input-group.invalid .form-control, .form-control.invalid {
+    border-color: #dc3545;
 }
 .toggle-password {
     cursor: pointer;
