@@ -1,3 +1,4 @@
+
 // Función para cargar CSS específico de una página
 function cargarEstilos(id, url) {
   // Si ya existe, no lo cargues de nuevo
@@ -86,3 +87,8 @@ window.addEventListener("popstate", (e) => {
 
 // Ejecuta el enrutador cuando el DOM esté listo
 document.addEventListener("DOMContentLoaded", iniciarEnrutador);
+
+
+const bodyContainer = document.querySelector("body");
+
+
