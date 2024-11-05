@@ -1,32 +1,34 @@
 {
-  "producto": {
-    "id": "001",
-    "nombre": "Eau de Parfum Floral Essence",
-    "marca": "Esencias de Verano",
-    "img" : "",
-    "categoria": "Perfumes",
-    "descripcion": "Un perfume fresco y floral, ideal para el uso diario. Combina notas de jazmín, rosa y un toque de vainilla.",
-    "precio": 1200,
-    "moneda": "MXN",
-    "cantidad_disponible": 200,
-    "valoraciones": {
-      "promedio": 4.5,
-      "total_valoraciones": 120
-    },
-    "caracteristicas": {
-      "concentracion": "Eau de Parfum",
-      "duracion": "Hasta 8 horas",
-      "tipo_piel": "Todo tipo de piel",
-      "tamaño": "50 ml"
-    },
-    "ingredientes": [
-      "Agua",
-      "Alcohol",
-      "Aceite esencial de jazmín",
-      "Aceite esencial de rosa",
-      "Extracto de vainilla"
-    ],
-    "en_oferta": false,
-    "fecha_lanzamiento": "2024-10-01"
-  }
-}  
+  "producto": [
+    {
+      "id": "001",
+      "nombre": "Perfume para dama Yoloxócotl",
+      "marca": "Esencias de Verano",
+      "img": "imagen2frutal.jpeg",
+      "categoria": "Perfumes",
+      "descripcion": "Un perfume fresco y floral, ideal para el uso diario. Combina notas de jazmín, rosa y un toque de vainilla.",
+      "precio": 700,
+      "moneda": "MXN",
+      "cantidad_disponible": 200,
+      "valoraciones": {
+        "promedio": 4.5,
+        "total_valoraciones": 120
+      },
+      "caracteristicas": {
+        "concentracion": "Eau de Parfum",
+        "duracion": "Hasta 8 horas",
+        "tipo_piel": "Todo tipo de piel",
+        "tamaño": "50 ml"
+      },
+      "ingredientes": [
+        "Agua",
+        "Alcohol",
+        "Aceite esencial de jazmín",
+        "Aceite esencial de rosa",
+        "Extracto de vainilla"
+      ],
+      "en_oferta": false,
+      "fecha_lanzamiento": "2024-10-01"
+    }
+  ]
+}
