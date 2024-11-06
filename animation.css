@@ -1,0 +1,74 @@
+/* Contenedor principal */
+.hojas-contenedor {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   overflow: hidden;
+   pointer-events: none;
+ }
+ 
+ /* Estilos de las hojas */
+ .hoja {
+   position: absolute;
+   top: -10%;
+   width: 15px;
+   height: 15px;
+   background-color: #8B5A2B;
+   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+   opacity: 0.8;
+   animation: caer 5s linear infinite, flotar 3s ease-in-out infinite;
+ }
+ 
+ /* Animación para hacer que las hojas caigan */
+ @keyframes caer {
+   0% {
+     transform: translateY(-10%) rotate(0deg);
+   }
+   100% {
+     transform: translateY(110vh) rotate(360deg);
+   }
+ }
+ 
+ /* Animación para movimiento de lado a lado */
+ @keyframes flotar {
+   0%, 100% {
+     transform: translateX(0px);
+   }
+   50% {
+     transform: translateX(20px);
+   }
+ }
+ 
+ /* Ajustes de animación y posición */
+ .hoja:nth-child(1) {
+   left: 10%;
+   animation-duration: 6s;
+   animation-delay: 0s;
+ }
+ 
+ .hoja:nth-child(2) {
+   left: 30%;
+   animation-duration: 7s;
+   animation-delay: 1s;
+ }
+ 
+ .hoja:nth-child(3) {
+   left: 50%;
+   animation-duration: 5s;
+   animation-delay: 2s;
+ }
+ 
+ .hoja:nth-child(4) {
+   left: 70%;
+   animation-duration: 6s;
+   animation-delay: 3s;
+ }
+ 
+ .hoja:nth-child(5) {
+   left: 90%;
+   animation-duration: 8s;
+   animation-delay: 4s;
+ }
+ 
