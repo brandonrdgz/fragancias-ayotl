@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Italiana&family=Julius+Sans+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.font-parrafros {
+  font-family: "Julius Sans One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+}
+
+.font-titulos {
+  font-family: "Italiana", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ing-body {
+  width: 490px;
+  border-radius: 10px;
+}
+
+.ing-body :where(.font-titulos, li, li i, .details) {
+  display: flex;
+  align-items: center;
+}
+
+.ing-body .font-titulos h5 {
+  margin-left: 5px;
+}
+
+.font-parrafros p {
+  font-size: 14px;
+}
+
+.font-parrafros ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 7px;
+  border: 1px solid #a6a6a6;
+  margin: 12px 0;
+  border-radius: 10px;
+}
+
+.font-parrafros ul li {
+  list-style: none;
+  margin: 4px 3px;
+  border-radius: 5px;
+  padding: 5px 8px 5px 10px;
+  border: 1px solid #e3d1e1;
+  background: #f2f2f2;
+  font-size: 12px;
+}
+
+.font-parrafros ul li i {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  color: #808080;
+  font-size: 12px;
+  margin-left: 8px;
+  border-radius: 50%;
+  background: #dfdfdf;
+  justify-content: center;
+}
+
+.font-parrafros ul input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 5px;
+}
+
+.ing-body .details {
+  justify-content: space-between;
+}
+
+.details button {
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 9px 15px;
+  border-radius: 5px;
+  background: #5372f0;
+}

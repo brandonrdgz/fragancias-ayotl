@@ -1,0 +1,101 @@
+<main id="main-content">
+  <form
+    class="row g-3 needs-validation w-50 p-3 mx-auto my-auto border baorder-opacity-25 rounded-5 shadow p-3 mb-5 bg-body-tertiary rounded"
+    id="itemForm" novalidate>
+    <div class="row-col-md-2">
+      <h5 for="validationCustom01" class="form-label font-titulos">
+        Nombre del producto
+      </h5>
+      <input type="text" class="form-control font-parrafros" id="validationCustom01 nombreProducto" required />
+      <div class="valid-feedback">Se ve bien!</div>
+    </div>
+    <div class="row-col-md-4">
+      <h5 for="validationCustom02" class="form-label font-titulos">
+        Marca
+      </h5>
+      <input type="text" class="form-control font-parrafros" id="validationCustom02 marca" required />
+      <div class="valid-feedback">Se ve bien!</div>
+    </div>
+    <div class="row-col-md-2">
+      <h5 for="validationCustom03" class="form-label font-titulos">
+        Precio
+      </h5>
+      <div class="input-group">
+        <span class="input-group-text font-parrafros">$</span>
+        <input type="text" class="form-control font-parrafros" id="validationCustom03 precio" required />
+        <select class="font-parrafros" id="inputGroupSelect02 divisa">
+          <option selected>MXN</option>
+          <option value="1">USD</option>
+          <option value="2">EUR</option>
+          <option value="3">CAD</option>
+          <option value="4">BRL</option>
+          <option value="5">GBP</option>
+        </select>
+      </div>
+    </div>
+    <div class="invalid-feedback">Agrega el precio del producto.</div>
+    <div class="row-col-md-3">
+      <h5 for="validationCustom04" class="form-label font-titulos">
+        Categoria
+      </h5>
+      <select class="form-select font-parrafros" id="validationCustom04 categoria" required>
+        <option selected disabled value="">Elige...</option>
+        <option>Mujer</option>
+        <option>Hombre</option>
+        <option>Niños</option>
+        <option>Unisex</option>
+      </select>
+      <div class="invalid-feedback">Selecciona una categoria</div>
+    </div>
+    <div class="row-col ing-body">
+      <div class="font-titulos">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-tags-fill"
+          viewBox="0 0 16 16">
+          <path
+            d="M2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586zm3.5 4a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
+          <path
+            d="M1.293 7.793A1 1 0 0 1 1 7.086V2a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l.043-.043z" />
+        </svg>
+        <h5>Ingredientes</h5>
+      </div>
+      <div class="font-parrafros">
+        <p>Presiona 'espacio' para ingresar el ingrediente</p>
+        <div class="tag-box">
+          <ul>
+            <input type="text" class="input-tag ingredientes" />
+          </ul>
+        </div>
+      </div>
+      <div class="details font-titulos">
+        <button>Quitar todos</button>
+      </div>
+    </div>
+    <div class="row-col-md-3">
+      <h5 for="validationCustom05" class="form-label font-titulos">
+        Fecha de Lanzamiento
+      </h5>
+      <input type="text" class="form-control font-parrafros" id="validationCustom05 fechaLanzamiento"
+        placeholder="dd/mm/aaaa" pattern="^([0-2][0-9]|3[0-1])/(0[1-9]|1[0-2])/([0-9]{4})$" required />
+      <div class="invalid-feedback">Indica una fecha de lanzamiento</div>
+    </div>
+    <div class="row-col-md-3">
+      <h5 for="validationCustom05" class="form-label font-titulos">
+        Imagen
+      </h5>
+      <input type="text" class="form-control font-parrafros" id="validationCustom05 imagen" required />
+      <div class="invalid-feedback">Indica una imagen</div>
+    </div>
+
+    <div class="form-floating">
+      <textarea class="form-control font-parrafros" placeholder="Leave a comment here"
+        id="floatingTextarea2 descripcion" style="height: 100px"></textarea>
+      <label for="floatingTextarea2" class="font-titulos">Descripcion</label>
+    </div>
+
+    <div class="col-12">
+      <button class="btn btn-primary font-titulos" type="submit">
+        Subir Producto
+      </button>
+    </div>
+  </form>
+</main>
