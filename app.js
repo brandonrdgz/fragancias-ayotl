@@ -93,6 +93,9 @@ function iniciarEnrutador() {
   
   let flagModule = true;
   switch (paginaInicial) {
+    case "inicio":
+      flagModule = false;
+      break;
     case "contactenos":
       flagModule = false;
       break;
@@ -112,12 +115,12 @@ document.addEventListener("click", (event) => {
     let pagina = link.getAttribute("data-link");
     let x = pagina.split(' ');
 
-    console.log(pagina);
+    // console.log(pagina);
     pagina = x[0];
 
     let flagModule = !( x.length === 2 && x[1] === "noModule" ); 
 
-    console.log(flagModule);
+    // console.log(flagModule);
 
     cargarPagina(pagina, flagModule);
   }
