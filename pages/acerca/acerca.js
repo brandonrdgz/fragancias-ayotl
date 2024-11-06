@@ -1,3 +1,5 @@
+if (window.acercaObserver) return;
+
 const hiddenElements = document.querySelectorAll(".hidden");
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {

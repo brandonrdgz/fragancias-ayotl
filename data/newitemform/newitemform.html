@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ayotl</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+      integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="newitemform.css" />
+    <script defer src="newitemform.js"></script>
+  </head>
+  <body class="hojas-bg">
+    <main id="main-content">
+      <form
+        class="row g-3 needs-validation w-50 p-3 mx-auto my-auto border baorder-opacity-25 rounded-5 shadow p-3 mb-5 bg-body-tertiary rounded"
+        id="itemForm"
+        novalidate
+      >
+        <div class="row-col-md-2">
+          <h5 for="validationCustom01" class="form-label titulosYSubtitulos">
+            Nombre del producto
+          </h5>
+          <input
+            type="text"
+            class="form-control parrafos"
+            id="validationCustom01 nombreProducto"
+            required
+          />
+          <div class="valid-feedback">Se ve bien!</div>
+        </div>
+        <div class="row-col-md-4">
+          <h5 for="validationCustom02" class="form-label titulosYSubtitulos">
+            Marca
+          </h5>
+          <input
+            type="text"
+            class="form-control parrafos"
+            id="validationCustom02 marca"
+            required
+          />
+          <div class="valid-feedback">Se ve bien!</div>
+        </div>
+        <div class="row-col-md-2">
+          <h5 for="validationCustom03" class="form-label titulosYSubtitulos">
+            Precio
+          </h5>
+          <div class="input-group">
+            <span class="input-group-text parrafos">$</span>
+            <input
+              type="text"
+              class="form-control parrafos"
+              id="validationCustom03 precio"
+              required
+            />
+            <select class="parrafos" id="inputGroupSelect02 divisa">
+              <option selected>MXN</option>
+              <option value="1">USD</option>
+              <option value="2">EUR</option>
+              <option value="3">CAD</option>
+              <option value="4">BRL</option>
+              <option value="5">GBP</option>
+            </select>
+          </div>
+        </div>
+        <div class="invalid-feedback">Agrega el precio del producto.</div>
+        <div class="row-col-md-3">
+          <h5 for="validationCustom04" class="form-label titulosYSubtitulos">
+            Categoria
+          </h5>
+          <select
+            class="form-select parrafos"
+            id="validationCustom04 categoria"
+            required
+          >
+            <option selected disabled value="">Elige...</option>
+            <option>Mujer</option>
+            <option>Hombre</option>
+            <option>Niños</option>
+            <option>Unisex</option>
+          </select>
+          <div class="invalid-feedback">Selecciona una categoria</div>
+        </div>
+        <div class="row-col ing-body">
+          <div class="titulosYSubtitulos">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              fill="currentColor"
+              class="bi bi-tags-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586zm3.5 4a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"
+              />
+              <path
+                d="M1.293 7.793A1 1 0 0 1 1 7.086V2a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l.043-.043z"
+              />
+            </svg>
+            <h5>Ingredientes</h5>
+          </div>
+          <div class="parrafos">
+            <p>Presiona 'espacio' para ingresar el ingrediente</p>
+            <div class="tag-box">
+              <ul>
+                <input type="text" class="input-tag ingredientes" />
+              </ul>
+            </div>
+          </div>
+          <div class="details titulosYSubtitulos">
+            <button>Quitar todos</button>
+          </div>
+        </div>
+        <div class="row-col-md-3">
+          <h5 for="validationCustom05" class="form-label titulosYSubtitulos">
+            Fecha de Lanzamiento
+          </h5>
+          <input
+            type="text"
+            class="form-control parrafos"
+            id="validationCustom05 fechaLanzamiento"
+            placeholder="dd/mm/aaaa"
+            pattern="^([0-2][0-9]|3[0-1])/(0[1-9]|1[0-2])/([0-9]{4})$"
+            required
+          />
+          <div class="invalid-feedback">Indica una fecha de lanzamiento</div>
+        </div>
+        <div class="row-col-md-3">
+          <h5 for="validationCustom05" class="form-label titulosYSubtitulos">
+            Imagen
+          </h5>
+          <input
+            type="text"
+            class="form-control parrafos"
+            id="validationCustom05 imagen"
+            required
+          />
+          <div class="invalid-feedback">Indica una imagen</div>
+        </div>
+
+        <div class="form-floating">
+          <textarea
+            class="form-control parrafos"
+            placeholder="Leave a comment here"
+            id="floatingTextarea2 descripcion"
+            style="height: 100px"
+          ></textarea>
+          <label for="floatingTextarea2" class="titulosYSubtitulos"
+            >Descripcion</label
+          >
+        </div>
+
+        <div class="col-12">
+          <button class="btn btn-primary titulosYSubtitulos" type="submit">
+            Subir Producto
+          </button>
+        </div>
+      </form>
+    </main>
+
+    <!-- Footer -->
+    <div id="footbar" class="container">
+      <footer
+        class="justify-content-between align-items-center py-3 mt-4 border-top border-danger d-flex flex-md-row flex-column-reverse"
+      >
+        <p class="col-md-4 mb-0 text-body-secondary">© 2024 Ayotl</p>
+
+        <a
+          data-link="inicio"
+          class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+        >
+          <img class="logo-size" src="../../assets/imgs/logo.svg" alt="" />
+        </a>
+
+        <ul class="nav col-md-4 justify-content-center">
+          <!-- <li class="nav-item"> -->
+          <!--   <a -->
+          <!--     href="#" -->
+          <!--     class="link-dark px-2 link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" -->
+          <!--     >Inicio</a -->
+          <!--   > -->
+          <!-- </li> -->
+          <li class="nav-item">
+            <a
+              href="#"
+              class="link-dark px-2 link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+              >Perfumes</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="#"
+              class="link-dark px-2 link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+              >Promociones</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              data-link="contactenos"
+              class="link-dark px-2 link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+              >FAQs</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              data-link="acerca"
+              class="link-dark px-2 link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+              >Nosotros</a
+            >
+          </li>
+        </ul>
+      </footer>
+    </div>
+  </body>
+</html>
