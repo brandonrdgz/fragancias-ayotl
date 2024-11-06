@@ -1,0 +1,15 @@
+.ayotl-size
+{
+   font-size: calc(1.475rem + 10vw) !important;
+   text-decoration: underline;
+    text-decoration-color: #CF3841; /* Cambia el color del subrayado */
+    text-decoration-thickness: .4vw; /* Grosor del subrayado */
+    text-underline-offset: calc(0.9rem + 1.2vw) !important; /* Distancia de la línea */
+    max-height: calc(2.95rem + 13.6vw) !important;
+}
+
+.ayotl-sub-size
+{
+   font-size: calc(0.76rem + 2vw) !important;
+
+}

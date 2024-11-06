@@ -18,13 +18,13 @@ body {
   padding-top: 80px;
 }
 
-.parrafos {
+.font-parrafros {
   font-family: "Julius Sans One", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
-.titulosYSubtitulos {
+.font-titulos {
   font-family: "Italiana", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -44,5 +44,42 @@ body {
 
   @media (max-width: 768px) {
     background-size: 25%, 30%, 30%, 30%;
+  }
+}
+
+
+.leave {
+  width: 5vh;
+  height: 4.3vh;
+  border-radius: 0 50% 50% 50%;
+  position: absolute;
+  opacity: 0.7;
+  animation: fall infinite linear;
+}
+
+.leave::before {
+  width: 0.3em;
+  height: 1em;
+  top: 1.3em;
+  left: 1.5em;
+  transform: rotate(-50deg);
+  background: inherit;
+  content: '';
+  position: absolute;
+}
+
+/* Animaciones de diferentes hojas */
+@keyframes fall {
+  0% {
+    transform: translateY(-5vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(calc(51.15rem + 0.02vw)) rotate(180deg);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  :root {
+    font-size: 10px;
   }
 }
