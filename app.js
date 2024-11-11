@@ -1,4 +1,3 @@
-
 // Función para cargar CSS específico de una página
 function cargarEstilos(id, url) {
   // Si ya existe, no lo cargues de nuevo
@@ -25,17 +24,17 @@ function cargarScript(id, url) {
 
 async function cargarYEjecutarFuncion(url) {
   try {
-      // Cargar el módulo dinámicamente
-      const modulo = await import(url);
+    // Cargar el módulo dinámicamente
+    const modulo = await import(url);
 
-      // Llamar a una función específica dentro del módulo
-      if (modulo.logic_main) {
-          modulo.logic_main();
-      } else {
-          console.error('La función especificada no existe en el módulo');
-      }
+    // Llamar a una función específica dentro del módulo
+    if (modulo.logic_main) {
+      modulo.logic_main();
+    } else {
+      console.error("La función especificada no existe en el módulo");
+    }
   } catch (error) {
-      console.error('Error al cargar el módulo:', error);
+    console.error("Error al cargar el módulo:", error);
   }
 }
 
@@ -71,15 +70,11 @@ async function cargarPagina(pagina, module = true) {
 
     // Carga el CSS y JS específicos de la página
     cargarEstilos("estilos-pagina", `./pages/${pagina}/${pagina}.css`);
-    if(module)
-    {
+    if (module) {
       await cargarYEjecutarFuncion(`./pages/${pagina}/${pagina}.js`);
-    }
-    else
-    {
+    } else {
       cargarScript("script-pagina", `./pages/${pagina}/${pagina}.js`);
     }
-
   } catch (error) {
     document.getElementById("main-content").innerHTML =
       "<p>Error al cargar la página.</p>";
@@ -90,7 +85,7 @@ async function cargarPagina(pagina, module = true) {
 // Inicializa la página principal
 function iniciarEnrutador() {
   const paginaInicial = window.location.hash.substring(1) || "inicio";
-  
+
   let flagModule = true;
   switch (paginaInicial) {
     case "inicio":
@@ -99,7 +94,7 @@ function iniciarEnrutador() {
     case "contactenos":
       flagModule = false;
       break;
-  
+
     default:
       flagModule = true;
       break;
@@ -113,12 +108,12 @@ document.addEventListener("click", (event) => {
   if (link) {
     event.preventDefault();
     let pagina = link.getAttribute("data-link");
-    let x = pagina.split(' ');
+    let x = pagina.split(" ");
 
     // console.log(pagina);
     pagina = x[0];
 
-    let flagModule = !( x.length === 2 && x[1] === "noModule" ); 
+    let flagModule = !(x.length === 2 && x[1] === "noModule");
 
     // console.log(flagModule);
 
