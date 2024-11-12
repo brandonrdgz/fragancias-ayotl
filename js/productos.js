@@ -20,7 +20,6 @@ carouselNavItems.forEach((item, index) => {
     item.addEventListener('click', () => showItem(index));
 });
 
-// Category button click animation
 const categoryButtons = document.querySelectorAll('.category-button');
 categoryButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -31,7 +30,6 @@ categoryButtons.forEach(button => {
     });
 });
 
-// Product card click animation
 const productCards = document.querySelectorAll('.product-card');
 productCards.forEach(card => {
     card.addEventListener('click', () => {
@@ -42,7 +40,6 @@ productCards.forEach(card => {
     });
 });
 
-// Blog card click animation
 const blogCards = document.querySelectorAll('.blog-card');
 blogCards.forEach(card => {
     card.addEventListener('click', () => {
