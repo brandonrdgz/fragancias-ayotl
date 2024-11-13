@@ -1,5 +1,5 @@
-import traerNavbar from './components/navbar/navbar.js'
-import traerFooter from './components/footer/footer.js'
+import traerNavbar from './components/traerNavbar.js'
+import traerFooter from './components/traerFooter.js'
 
 // Función para cargar CSS específico de una página
 function cargarEstilos(id, url) {
@@ -167,7 +167,20 @@ async function mainLogic() {
   window.addEventListener("popstate", (e) => handlePopstate(e, rutasNoModule));
 }
 
-export const bodyContainer = document.querySelector("body");
+
+
+
+
+
+
+
+
+
+
+
+
+
+const bodyContainer = document.querySelector("body");
 
 mainLogic().then();
 
