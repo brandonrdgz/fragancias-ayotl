@@ -1,3 +1,6 @@
+import traerNavbar from './components/traerNavbar.js'
+import traerFooter from './components/traerFooter.js'
+
 // Función para cargar CSS específico de una página
 function cargarEstilos(id, url) {
   // Si ya existe, no lo cargues de nuevo
@@ -48,7 +51,7 @@ function limpiarRecursosPagina() {
 }
 
 // Función para cargar contenido principal, CSS y JS de cada página
-async function cargarPagina(pagina, module = true) {
+async function cargarPagina(pagina, isModule = true) {
   try {
     // Limpia recursos de la página anterior
     limpiarRecursosPagina();
@@ -70,7 +73,7 @@ async function cargarPagina(pagina, module = true) {
 
     // Carga el CSS y JS específicos de la página
     cargarEstilos("estilos-pagina", `./pages/${pagina}/${pagina}.css`);
-    if (module) {
+    if (isModule) {
       await cargarYEjecutarFuncion(`./pages/${pagina}/${pagina}.js`);
     } else {
       cargarScript("script-pagina", `./pages/${pagina}/${pagina}.js`);
@@ -82,52 +85,96 @@ async function cargarPagina(pagina, module = true) {
   }
 }
 
-// Inicializa la página principal
-function iniciarEnrutador() {
-  const paginaInicial = window.location.hash.substring(1) || "inicio";
 
-  let flagModule = true;
-  switch (paginaInicial) {
-    case "inicio":
-      flagModule = false;
-      break;
-    case "contactenos":
-      flagModule = false;
-      break;
 
-    default:
-      flagModule = true;
-      break;
+
+
+
+function handleClicksToAnchorElements (event) {
+  const link = event.target.closest("[data-link]");
+  if (!link) {
+    // throw new Error("No existe atributo data-link en a seleccionado");
+    return;
   }
-  cargarPagina(paginaInicial, flagModule);
+  event.preventDefault();
+  
+  let pagina = link.getAttribute("data-link");
+
+  let x = pagina.split(" ");
+  
+  pagina = x[0];
+  
+  let flagNoModule = !(x.length === 2 && x[1] === "noModule");
+  cargarPagina(pagina, flagNoModule);
 }
 
-// Evento delegado para manejar clics en los elementos con data-link
-document.addEventListener("click", (event) => {
-  const link = event.target.closest("[data-link]");
-  if (link) {
-    event.preventDefault();
-    let pagina = link.getAttribute("data-link");
-    let x = pagina.split(" ");
+function getFlagIsModule(pagina, rutas) {
+  return (rutas.filter(current => current === pagina + " noModule").length === 1 )
+  ? false
+  : true;
 
-    // console.log(pagina);
-    pagina = x[0];
+}
 
-    let flagModule = !(x.length === 2 && x[1] === "noModule");
+// Inicializa la página principal
+function iniciarEnrutador(rutas = []) {
+  const paginaInicial = window.location.hash.substring(1) || "inicio";
 
-    // console.log(flagModule);
+  let flagIsModule = getFlagIsModule(paginaInicial, rutas);
 
-    cargarPagina(pagina, flagModule);
-  }
-});
+  cargarPagina(paginaInicial, flagIsModule);
+}
 
-// Maneja el historial para navegación hacia atrás y adelante
-window.addEventListener("popstate", (e) => {
+function getNoModuleRoutes() {
+  return Array.from(document.querySelectorAll('footer a[data-link$=" noModule"]'))
+    .map(link => link.getAttribute('data-link'));
+}
+
+function handlePopstate(e, rutas) {
   const pagina = e.state ? e.state.pagina : "inicio";
-  cargarPagina(pagina);
-});
+  
+  let flagIsModule = getFlagIsModule(pagina, rutas);
 
-// Ejecuta el enrutador cuando el DOM esté listo
-document.addEventListener("DOMContentLoaded", iniciarEnrutador);
+  cargarPagina(pagina, flagIsModule);
+}
 
-export const bodyContainer = document.querySelector("body");
+async function mainLogic() {
+  // Paso 1 : Cargar la información proveniente del html footer
+  let navbar = await traerNavbar("./components/navbar/navbar.html");
+  let footer = await traerFooter("./components/footer/footer.html");
+
+
+  if (!navbar && !footer) {
+    throw new Error("No se pudo cargar el Navbar ni el Footer");
+  }
+
+  bodyContainer.insertAdjacentHTML("afterbegin", navbar);
+  bodyContainer.insertAdjacentHTML("beforeend", footer);
+
+  let rutasNoModule = getNoModuleRoutes();
+  // console.log(rutas);
+  // Paso 2 : Utilizar dicha información para crear las rutas con modulos o sin modulos
+  iniciarEnrutador(rutasNoModule);
+
+  // Paso 3 : 
+    // Evento delegado para manejar clics en los elementos con data-link
+  document.addEventListener("click", handleClicksToAnchorElements);
+
+  // Maneja el historial para navegación hacia atrás y adelante
+  window.addEventListener("popstate", (e) => handlePopstate(e, rutasNoModule));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+const bodyContainer = document.querySelector("body");
+
+mainLogic().then();

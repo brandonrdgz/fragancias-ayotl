@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box; 
+}
+*:before,
+*:after {
+  content: ''; 
+  position:absolute;
+}
+:root{
+  --bg:rgb(231,227,226);
+  --leave_3:rgb(157, 171, 134);
+/*    font-size:30px; */
+}
+body{
+  background:var(--bg);
+  overflow: hidden;
+}
+.container {
+   width: 20em;
+   height: 28em; 
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   text-align: center;
+   color: var(--text);
+   font-family: 'Dancing Script', cursive;
+ }
+ 
+ .leave {
+   width: 5vh;
+   height: 4.3vh;
+   border-radius: 0 50% 50% 50%;
+   position: absolute;
+   opacity: 0.7;
+   animation: fall infinite linear;
+ }
+ 
+ .leave::before {
+   width: 0.3em;
+   height: 1em;
+   top: 1.3em;
+   left: 1.5em;
+   transform: rotate(-50deg);
+   background: inherit;
+   content: '';
+   position: absolute;
+ }
+ 
+ /* Animaciones de diferentes hojas */
+ @keyframes fall {
+   0% {
+     transform: translateY(-5vh) rotate(0deg);
+   }
+   100% {
+     transform: translateY(110vh) rotate(180deg);
+   }
+ }
+ 
+ @media only screen and (max-width: 600px) {
+   :root {
+     font-size: 10px;
+   }
+ }
