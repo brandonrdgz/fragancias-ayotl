@@ -108,10 +108,6 @@ function handleClicksToAnchorElements (event) {
   cargarPagina(pagina, flagNoModule);
 }
 
-
-
-
-
 function getFlagIsModule(pagina, rutas) {
   return (rutas.filter(current => current === pagina + " noModule").length === 1 )
   ? false
@@ -179,9 +175,6 @@ async function mainLogic() {
 
 
 
-
 const bodyContainer = document.querySelector("body");
 
 mainLogic().then();
-
-// document.addEventListener("DOMContentLoaded", async () => await mainLogic());
