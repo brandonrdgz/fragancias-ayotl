@@ -117,7 +117,7 @@ function getFlagIsModule(pagina, rutas) {
 
 // Inicializa la página principal
 function iniciarEnrutador(rutas = []) {
-  const paginaInicial = window.location.hash.substring(1) || "inicio";
+  const paginaInicial = window.location.hash.substring(1) || "inicio noModule";
 
   let flagIsModule = getFlagIsModule(paginaInicial, rutas);
 
@@ -130,7 +130,7 @@ function getNoModuleRoutes() {
 }
 
 function handlePopstate(e, rutas) {
-  const pagina = e.state ? e.state.pagina : "inicio";
+  const pagina = e.state ? e.state.pagina : "inicio noModule";
   
   let flagIsModule = getFlagIsModule(pagina, rutas);
 
@@ -151,7 +151,7 @@ async function mainLogic() {
   bodyContainer.insertAdjacentHTML("beforeend", footer);
 
   let rutasNoModule = getNoModuleRoutes();
-  // console.log(rutas);
+  console.log(rutasNoModule);
   // Paso 2 : Utilizar dicha información para crear las rutas con modulos o sin modulos
   iniciarEnrutador(rutasNoModule);
 
