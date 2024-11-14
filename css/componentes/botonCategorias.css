@@ -70,3 +70,17 @@ body {
 .category-button.oriental:hover { background-color: #FF4500; }
 .category-button.fresh:hover { background-color: #00CED1; }
 .category-button.spicy:hover { background-color: #FF6347; }
+
+
+@media (max-width: 767px) {
+    .category-button::before {
+        top: 0;
+    }
+    
+    .category-button.floral { background-color: #FF69B4; }
+    .category-button.citrus { background-color: #FFD700; }
+    .category-button.woody { background-color: #8B4513; }
+    .category-button.oriental { background-color: #FF4500; }
+    .category-button.fresh { background-color: #00CED1; }
+    .category-button.spicy { background-color: #FF6347; }
+}

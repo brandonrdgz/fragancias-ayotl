@@ -73,6 +73,12 @@ body {
     color: #777;
 }
 
+@media (max-width: 768px) {
+    .product-card, .blog-card {
+        width: calc(50% - 30px);
+    }
+}
+
 @media (max-width: 480px) {
     .product-card, .blog-card {
         width: 100%;
