@@ -1,0 +1,37 @@
+.scrolling-card-body {
+    max-height: 400px;
+    overflow-y: auto;
+    }
+    .card-img-custom {
+    width: 30%; 
+    height: 20%; 
+    object-fit: cover; /* Cubre el espacio sin distorsionar la imagen */
+    }
+    
+      /* Estilos personalizados para el botón */
+      .custom-btn {
+        background-color: #4CAF50; /* Color de fondo personalizado */
+        color: rgb(238, 235, 235); /* Color del texto */
+        border: none; /* Sin borde */
+        border-radius: 20px; /* Bordes redondeados */
+        padding: 10px 20px; /* Espaciado interno */
+        font-size: 16px; /* Tamaño de la fuente */
+        font-weight: bold; /* Fuente en negrita */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+        transition: all 0.3s ease; /* Transición para el efecto hover */
+    }
+    
+    /* Efecto hover */
+    .custom-btn:hover {
+        background-color: #45a049; /* Color de fondo al pasar el cursor */
+        box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
+        transform: translateY(-2px); /* Eleva el botón ligeramente */
+    }
+    
+    /* Efecto cuando se hace clic */
+    .custom-btn:active {
+        background-color: #3e8e41; /* Color más oscuro al hacer clic */
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Reduce la sombra */
+        transform: translateY(2px); /* Baja el botón ligeramente */
+    }
+        
