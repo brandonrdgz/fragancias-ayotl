@@ -117,20 +117,19 @@ function getFlagIsModule(pagina, rutas) {
 
 // Inicializa la página principal
 function iniciarEnrutador(rutas = []) {
-  const paginaInicial = window.location.hash.substring(1) || "inicio noModule";
-
+  const paginaInicial = window.location.hash.substring(1) || "inicio";
   let flagIsModule = getFlagIsModule(paginaInicial, rutas);
-
   cargarPagina(paginaInicial, flagIsModule);
 }
 
 function getNoModuleRoutes() {
-  return Array.from(document.querySelectorAll('footer a[data-link$=" noModule"]'))
-    .map(link => link.getAttribute('data-link'));
+  return [... new Set(Array.from(document.querySelectorAll('footer a[data-link$=" noModule"]'))
+    .map(link => link.getAttribute('data-link'))
+  )];
 }
 
 function handlePopstate(e, rutas) {
-  const pagina = e.state ? e.state.pagina : "inicio noModule";
+  const pagina = e.state ? e.state.pagina : "inicio";
   
   let flagIsModule = getFlagIsModule(pagina, rutas);
 
