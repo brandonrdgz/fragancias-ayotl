@@ -1,0 +1,162 @@
+html,
+body {
+  background-color: #f8f1f4;
+  padding-top: 80px;
+}
+
+#navbar {
+  background-color: #f8f1f4 !important;
+}
+
+.navbar-brand {
+  width: 100px;
+  height: 100px;
+}
+
+#logo {
+  width: 100px;
+  height: 100px;
+  transition: all 0.3s linear;
+}
+
+#search-container {
+  position: relative;
+  width: auto;
+}
+
+#search-input {
+  width: auto;
+  padding: 6px 40px 6px 12px;
+  border-radius: 50px;
+}
+
+#search-button {
+  position: absolute;
+  right: 1px;
+  border: none;
+  color: #888;
+  z-index: 5;
+}
+
+#item {
+  transition: all 0.3s linear;
+}
+
+#item:hover {
+  transform: scale(1.1);
+}
+#logo:hover {
+  transform: scale(1.1);
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+@media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
+}
+
+#opciones{
+  justify-content: space-evenly;
+  display: flex;
+}
+#principal{
+  background-color:#339fdd; 
+  height:820px; 
+  width:100%; 
+  display:flex;
+}
+#bloque_1{
+  background-color:#FED3C6; 
+  height:800px; 
+  width:30%;
+  overflow:scroll;
+}
+#a{
+  background-color:#FEC6D4;
+  height:350px; 
+  width:100%;
+}
+#b{
+  background-color:#FCFEC6;
+  height:350px; 
+  width:100%;
+}
+#c{
+  background-color:#e2ab13;
+  height:350px; 
+  width:100%;
+}
+#bloque_2{
+  background-color:#C6DCFE; 
+  height:780px; 
+  width:70%;
+  margin: 10px;
+}
+#d{
+  background-color:#e2ab13;
+  height:480px; 
+  width:100%;
+  display:flex;
+}
+#producto{
+  height:480px; 
+  width:50%;
+}
+
+#etiqueta{
+  background-color:#43e213;
+  height:480px; 
+  width:50%;
+}
+#recomendaciones{
+  background-color:#d33b0c;
+  height:310px; 
+  width:100%;
+}
+.card-img-top{
+  height:480px; 
+  width:50%;
+  text-align:center;
+}
+.card-title{
+  font-family: "Italiana";
+}
+#opciones {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#opciones .btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  cursor: pointer; 
+}
+
+.btn-primary { background-color: #007bff; }
+.btn-danger { background-color: #dc3545; }
+.btn-warning { background-color: #ffc107; color: black; }
+.btn-info { background-color: #28a745; }
+
+#opciones .btn:hover {
+  transform: scale(1.1); 
+  filter: brightness(1.2); 
+}
