@@ -73,59 +73,58 @@ body {
   display: flex;
 }
 #principal{
-  background-color:#339fdd; 
   height:820px; 
   width:100%; 
   display:flex;
 }
 #bloque_1{
-  background-color:#FED3C6; 
   height:800px; 
   width:30%;
+  border: 2px solid green;
   overflow:scroll;
 }
 #a{
-  background-color:#FEC6D4;
+  padding: 5%;
   height:350px; 
   width:100%;
 }
 #b{
-  background-color:#FCFEC6;
+  padding: 5%;
   height:350px; 
   width:100%;
 }
 #c{
-  background-color:#e2ab13;
+  padding: 5%;
   height:350px; 
   width:100%;
 }
 #bloque_2{
-  background-color:#C6DCFE; 
   height:780px; 
   width:70%;
   margin: 10px;
 }
 #d{
-  background-color:#e2ab13;
   height:480px; 
   width:100%;
   display:flex;
 }
 #producto{
   height:480px; 
-  width:50%;
+  width:60%;
 }
 
 #etiqueta{
-  background-color:#43e213;
   height:480px; 
-  width:50%;
+  width:40%;
 }
 #recomendaciones{
-  background-color:#d33b0c;
-  height:310px; 
+  height:280px; 
   width:100%;
+  display:flex;
+  padding: 10%;
+  justify-content: space-evenly;
 }
+
 .card-img-top{
   height:480px; 
   width:50%;
