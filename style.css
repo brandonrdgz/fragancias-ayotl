@@ -15,7 +15,8 @@ body {
   -webkit-font-smoothing: antialiased; /* Mejora el renderizado de fuentes */
   scroll-behavior: smooth; /* Navegación suave en anclas */
   background-color: #f8f1f4;
-  padding-top: 80px;
+  /* padding-top: 80px; */
+  margin-top: 65px;
 }
 
 .font-parrafros {
