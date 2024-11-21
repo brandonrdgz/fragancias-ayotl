@@ -1,73 +1,73 @@
-
-
-
 /* General card container styling */
 .producto-perfume {
-   width: 100%;
-   max-width: 320px;
-   margin: 15px auto;
-   border: 1px solid #e0e0e0;
-   border-radius: 8px;
-   overflow: hidden;
-   background-color: #ffffff;
-   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-   transition: transform 0.3s, box-shadow 0.3s;
- }
- 
- .producto-perfume:hover {
-   transform: translateY(-5px);
-   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
- }
- 
- /* Anchor to ensure clickable area */
- .producto-perfume a {
-   text-decoration: none;
-   color: inherit;
-   display: block;
- }
- 
- /* Image styling */
- .producto-perfume img {
-   width: 100%;
-   height: auto;
-   border-bottom: 1px solid #e0e0e0;
- }
- 
- /* Title and price container */
- .producto-perfume h5 {
-   font-size: 1.2rem;
-   color: #333333;
-   margin: 10px 15px 5px;
-   font-weight: bold;
- }
- 
- .producto-perfume p {
-   font-size: 1rem;
-   color: #757575;
-   margin: 0 15px 15px;
- }
- 
- /* Brand styling */
- .producto-perfume span {
-   display: inline-block;
-   background-color: #f4f4f4;
-   color: #555555;
-   font-size: 0.9rem;
-   padding: 5px 10px;
-   margin: 10px 15px;
-   border-radius: 15px;
-   text-transform: uppercase;
- }
- 
- /* Responsive design */
- @media (min-width: 480px) {
-   .producto-perfume {
-     max-width: 400px;
-   }
- }
- 
- @media (min-width: 768px) {
-   .producto-perfume {
-     max-width: 300px;
-   }
- }
+  width: 100%;
+  /* min-height: 470px; */
+  max-width: 320px;
+  margin: 15px auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.producto-perfume:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Anchor to ensure clickable area */
+.producto-perfume a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Image styling */
+.producto-perfume img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Title and price container */
+.producto-perfume h5 {
+  align-content: space-evenly;
+  min-height: 63px;
+  font-size: 1.2rem;
+  color: #333333;
+  margin: 10px 15px 5px;
+  /* font-weight: bold; */
+}
+
+.producto-perfume p {
+  font-size: 1rem;
+  color: #757575;
+  margin: 0 15px 15px;
+}
+
+/* Brand styling */
+.producto-perfume span {
+  display: inline-block;
+  background-color: #f4f4f4;
+  color: #555555;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  margin: 10px 15px;
+  border-radius: 15px;
+  text-transform: uppercase;
+}
+
+/* Responsive design */
+@media (min-width: 480px) {
+  .producto-perfume {
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 768px) {
+  .producto-perfume {
+    max-width: 300px;
+  }
+}

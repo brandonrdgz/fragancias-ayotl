@@ -1,3 +1,4 @@
+import sanitize from "../../utils/sanitize.js"
 // export default function ProductCard({ src = "", alt = "", title = "", price = "", marca = "" } = {})
 // {
 // function sanitize(str) {
@@ -29,14 +30,6 @@
 // }
 
 export default function ProductCard({ src = "", alt = "", title = "", price = "", marca = "" } = {}) {
-  function sanitize(str) {
-    return String(str)
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#39;");
-  }
   src = sanitize(src);
   alt = sanitize(alt);
   title = sanitize(title);
