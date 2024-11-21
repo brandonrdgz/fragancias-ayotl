@@ -1,5 +1,5 @@
-import traerNavbar from './components/traerNavbar.js'
-import traerFooter from './components/traerFooter.js'
+import traerNavbar from './utils/traerNavbar.js'
+import traerFooter from './utils/traerFooter.js'
 
 // Función para cargar CSS específico de una página
 function cargarEstilos(id, url) {
@@ -150,7 +150,6 @@ async function mainLogic() {
   bodyContainer.insertAdjacentHTML("beforeend", footer);
 
   let rutasNoModule = getNoModuleRoutes();
-  console.log(rutasNoModule);
   // Paso 2 : Utilizar dicha información para crear las rutas con modulos o sin modulos
   iniciarEnrutador(rutasNoModule);
 

@@ -8,4 +8,3 @@ productCards.forEach(card => {
         }, 200);
     });
 });
-
