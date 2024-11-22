@@ -85,11 +85,6 @@ async function cargarPagina(pagina, isModule = true) {
   }
 }
 
-
-
-
-
-
 function handleClicksToAnchorElements (event) {
   const link = event.target.closest("[data-link]");
   if (!link) {

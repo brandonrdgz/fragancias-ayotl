@@ -2,6 +2,11 @@ import {obtenerProductos} from "../../js/crudJSON.js"
 import ProductCard from "../../components/productCard/productCard.js"
 import Carrousel from "../../components/carrousel/carrousel.js"
 
+export function script_a_cargar()
+{
+
+}
+
 export function logic_main()
 {  
    const IMG_FOLDER = "./assets/imgs/perfumes/";

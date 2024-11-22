@@ -7,7 +7,6 @@ export default function Carrousel({ images = [] } = {}) {
    `<div class="carousel-item" style="background-image: url('${val}')"></div>`
    : "", 
    `<div class="carousel-item active" style="background-image: url('${images[0]}')"></div>`);
-   console.log(imagesPart);
    return `
 <div class="carousel">
 ${imagesPart}
