@@ -1,3 +1,175 @@
-.logo-size {
-  width: 147px;
+footer * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer {
+  color: #fff;
+  background: #121315;
+}
+
+footer p {
+  color: #ccc;
+  max-width: 400px;
+  font-size: 14.4px;
+  line-height: 23px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer h4 {
+  margin-bottom: 5px;
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.footer {
+  position: relative;
+  background-size: cover;
+}
+
+.footer::before {
+  content: "";
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.footer .container {
+  position: relative;
+}
+
+.footer .footer-top .container,
+.footer .col2,
+.footer .footer-bottom .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.footer .footer-bottom .container {
+  padding: 16px 32px;
+  align-items: center;
+}
+
+.footer .menu li {
+  margin-right: 15px;
+  display: inline-block;
+}
+
+.footer .menu li a {
+  display: block;
+  position: relative;
+  padding: 1px 0;
+}
+
+.footer .menu li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  opacity: 0;
+  transition:
+    opacity 300ms,
+    transform 300ms;
+}
+
+.footer .menu li a::after {
+  opacity: 1;
+  transform: scale(0);
+  transform-origin: center;
+}
+
+.footer .menu li a:hover::after,
+.footer .menu li a:focus::after {
+  transform: scale(1);
+}
+
+.brand {
+  display: block;
+}
+
+.brand img {
+  height: 150px;
+  width: 150px;
+  filter: invert(100%) sepia(6%) saturate(22%) hue-rotate(155deg)
+    brightness(105%) contrast(100%);
+  transition: all 0.3s linear;
+}
+
+.media-icons {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.media-icons li,
+.service-icons li {
+  display: inline-block;
+  margin: 8px 8px 8px 0;
+}
+
+.media-icons a {
+  font-size: 17.6px;
+  width: 32px;
+  height: 32px;
+  border: 1px #fff solid;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.media-icons a:hover {
+  background: #fff;
+  color: #111;
+}
+
+.service-icons a {
+  font-size: 25.6px;
+}
+
+.service-icons a:hover {
+  color: #dbdbdb;
+}
+
+.brand img:hover {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  border-top: 1px #dbdbdb solid;
+}
+
+@media screen and (max-width: 900px) {
+  .footer .footer-top .container,
+  .footer .footer-bottom .container {
+    flex-direction: column;
+  }
+  .footer .col2 {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
 }

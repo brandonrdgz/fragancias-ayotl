@@ -54,7 +54,7 @@
 
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item" id="item">
-            <a class="nav-link active" aria-current="page" href="#">
+            <a class="nav-link active" aria-current="page" href="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
@@ -71,7 +71,7 @@
             </a>
           </li>
           <li class="nav-item" id="item">
-            <a class="nav-link active" aria-current="page" href="#">
+            <a class="nav-link active" aria-current="page" id="cart-icon">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
@@ -91,7 +91,7 @@
             </a>
           </li>
           <li class="nav-item" id="item">
-            <a class="nav-link active" aria-current="page" href="#">
+            <a class="nav-link active" aria-current="page" data-link="login">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
@@ -111,4 +111,16 @@
       </div>
     </div>
   </nav>
+  <div class="cart">
+    <h2 class="cart-title">Tu Carrito</h2>
+    <div class="cart-content"></div>
+    <div class="total">
+      <div class="total-title">Total</div>
+      <div class="total-price"></div>
+    </div>
+    <button type="button" class="btn-buy" data-link="carrito" ="">
+      Comprar Ahora
+    </button>
+    <i class="bi bi-x" id="close-cart"></i>
+  </div>
 </header>

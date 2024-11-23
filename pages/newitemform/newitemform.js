@@ -46,8 +46,10 @@ function addTag(e) {
 function validateTags() {
   if (tags.length > 0) {
     input.setCustomValidity(""); // Marca el campo como válido
+    return true;
   } else {
     input.setCustomValidity("Por favor, añade al menos una etiqueta."); // Mensaje de error personalizado
+    return false;
   }
 }
 
@@ -58,30 +60,27 @@ input.addEventListener("keyup", addTag);
   "use strict";
 
   // Seleccionar todos los formularios con la clase 'needs-validation'
-  const forms = document.querySelectorAll(".needs-validation");
+  const form = document.querySelector(".needs-validation");
+  form.addEventListener(
+    "submit",
+    (event) => {
+      // Validar si el formulario es válido
+      // validateTags(); // Asegurar que el campo de etiquetas esté validado
 
-  // Validar cada formulario al intentar enviarlo
-  Array.prototype.slice.call(forms).forEach(function (form) {
-    form.addEventListener(
-      "submit",
-      function (event) {
-        // Validar si el formulario es válido
-        validateTags(); // Asegurar que el campo de etiquetas esté validado
-
-        if (!form.checkValidity()) {
-          event.preventDefault();
-          event.stopPropagation();
-        } else {
-          // Si el formulario es válido, convertirlo a JSON
-          event.preventDefault();
-          const json = formToJSON(form);
-          console.log(json);
-        }
-        form.classList.add("was-validated");
-      },
-      false,
-    );
-  });
+      if (!form.checkValidity() && validateTags()) {
+        event.preventDefault();
+        event.stopPropagation();
+      } else {
+        // Si el formulario es válido, convertirlo a JSON
+        event.preventDefault();
+        event.stopPropagation();
+        const json = formToJSON(form);
+        console.log(json);
+      }
+      form.classList.add("was-validated");
+    },
+    false,
+  );
 })();
 
 // Convertir formulario a JSON
@@ -89,7 +88,7 @@ function formToJSON(form) {
   const formData = new FormData(form);
   const jsonObject = {};
   formData.forEach((value, key) => {
-    if (key === "archivoProducto" && value instanceof File) {
+    if (key === "imagenProducto" && value instanceof File) {
       jsonObject[key] = value.name;
     } else {
       jsonObject[key] = value;

@@ -1,4 +1,4 @@
-export function logic_main() {
+export function init() {
   const hiddenElements = document.querySelectorAll(".hidden");
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {

@@ -8,14 +8,43 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  margin-block: 150px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #e99bac;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #cc7689;
+}
+
 html,
 body {
-  height: auto;
+  height: 100%;
+  margin: 0;
+  position: relative;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased; /* Mejora el renderizado de fuentes */
   scroll-behavior: smooth; /* Navegación suave en anclas */
   background-color: #f8f1f4;
-  padding-top: 80px;
+  overflow: overlay;
+}
+
+main {
+  margin-top: 110px;
+  min-height: calc(100vh - 510px);
+  padding: 20px;
+  scrollbar-gutter: stable;
 }
 
 .font-parrafros {
@@ -28,21 +57,4 @@ body {
   font-family: "Italiana", sans-serif;
   font-weight: 400;
   font-style: normal;
-}
-
-.hojas-bg {
-  background-image: url("./assets/imgs/hoja1.png"),
-    url("./assets/imgs/hoja5.png"), url("./assets/imgs/hoja2.png"),
-    url("./assets/imgs/hoja6.png");
-  background-size: 11%, 11%, 20%, 20%;
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-  background-position:
-    bottom right,
-    bottom left,
-    top left,
-    top right;
-
-  @media (max-width: 768px) {
-    background-size: 25%, 30%, 30%, 30%;
-  }
 }

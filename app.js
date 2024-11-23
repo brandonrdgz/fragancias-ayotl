@@ -1,7 +1,6 @@
 // Función para cargar CSS específico de una página
 function cargarEstilos(id, url) {
-  // Si ya existe, no lo cargues de nuevo
-  if (document.getElementById(id)) return;
+  if (document.getElementById(id)) return; // Si ya existe, no lo cargues de nuevo
 
   const link = document.createElement("link");
   link.id = id;
@@ -10,10 +9,9 @@ function cargarEstilos(id, url) {
   document.head.appendChild(link);
 }
 
-// Función para cargar JS específico de una página
+// Función para cargar JS específico de una página como script estándar
 function cargarScript(id, url) {
-  // Si ya existe, no lo cargues de nuevo
-  if (document.getElementById(id)) return;
+  if (document.getElementById(id)) return; // Si ya existe, no lo cargues de nuevo
 
   const script = document.createElement("script");
   script.defer = true;
@@ -22,62 +20,70 @@ function cargarScript(id, url) {
   document.head.appendChild(script);
 }
 
+// Función para cargar un módulo dinámicamente y ejecutar su contenido si es necesario
 async function cargarYEjecutarFuncion(url) {
   try {
-    // Cargar el módulo dinámicamente
-    const modulo = await import(url);
+    console.log(`Cargando módulo desde URL: ${url}`);
 
-    // Llamar a una función específica dentro del módulo
-    if (modulo.logic_main) {
-      modulo.logic_main();
+    const modulo = await import(url); // Cargar el módulo dinámicamente
+
+    if (modulo.default) {
+      console.log("Ejecutando exportación predeterminada del módulo.");
+      modulo.default(); // Ejecutar la función predeterminada si existe
+    } else if (modulo.init) {
+      console.log("Ejecutando función 'init' del módulo.");
+      modulo.init(); // Ejecutar una función específica opcional como 'init'
     } else {
-      console.error("La función especificada no existe en el módulo");
+      console.log(
+        "El módulo no tiene funciones específicas para ejecutar. Solo cargado.",
+      );
     }
   } catch (error) {
-    console.error("Error al cargar el módulo:", error);
+    console.error("Error al cargar o ejecutar el módulo:", error);
   }
 }
 
 // Función para limpiar CSS y JS específicos al cambiar de página
 function limpiarRecursosPagina() {
-  // Elimina el CSS y JS de la página anterior si existen
   const css = document.getElementById("estilos-pagina");
   const js = document.getElementById("script-pagina");
   if (css) css.remove();
   if (js) js.remove();
 }
 
-// Función para cargar contenido principal, CSS y JS de cada página
+// Función para cargar el contenido principal, CSS y JS de cada página
 async function cargarPagina(pagina, module = true) {
   try {
-    // Limpia recursos de la página anterior
-    limpiarRecursosPagina();
+    limpiarRecursosPagina(); // Limpia recursos de la página anterior
 
-    // Carga el contenido HTML de la página
     const respuesta = await fetch(`./pages/${pagina}/${pagina}.html`);
     if (!respuesta.ok) {
       document.getElementById("main-content").innerHTML =
         "<p>Página no encontrada.</p>";
+      window.scrollTo(0, 0); // Desplaza al inicio incluso en caso de error
       return;
     }
 
-    // Inserta el contenido de la página en el contenedor principal
     const contenido = await respuesta.text();
     document.getElementById("main-content").innerHTML = contenido;
 
     // Actualiza el historial
     window.history.pushState({ pagina }, "", `#${pagina}`);
 
-    // Carga el CSS y JS específicos de la página
+    // Asegúrate de cargar estilos y scripts
     cargarEstilos("estilos-pagina", `./pages/${pagina}/${pagina}.css`);
     if (module) {
       await cargarYEjecutarFuncion(`./pages/${pagina}/${pagina}.js`);
     } else {
       cargarScript("script-pagina", `./pages/${pagina}/${pagina}.js`);
     }
+
+    // Forzar scroll al inicio
+    window.scrollTo(0, 0);
   } catch (error) {
     document.getElementById("main-content").innerHTML =
       "<p>Error al cargar la página.</p>";
+    window.scrollTo(0, 0); // En caso de error también fuerza el scroll
     console.error("Error al cargar la página:", error);
   }
 }
@@ -89,45 +95,48 @@ function iniciarEnrutador() {
   let flagModule = true;
   switch (paginaInicial) {
     case "inicio":
-      flagModule = false;
-      break;
     case "contactenos":
-      flagModule = false;
+      flagModule = false; // Estas páginas no usan módulos
       break;
 
     default:
-      flagModule = true;
+      flagModule = true; // Otras páginas sí usan módulos
       break;
   }
   cargarPagina(paginaInicial, flagModule);
 }
 
-// Evento delegado para manejar clics en los elementos con data-link
+// Maneja clics en elementos con data-link para navegación
 document.addEventListener("click", (event) => {
   const link = event.target.closest("[data-link]");
-  if (link) {
-    event.preventDefault();
-    let pagina = link.getAttribute("data-link");
-    let x = pagina.split(" ");
+  if (!link) return;
 
-    // console.log(pagina);
-    pagina = x[0];
+  event.preventDefault();
 
-    let flagModule = !(x.length === 2 && x[1] === "noModule");
-
-    // console.log(flagModule);
-
-    cargarPagina(pagina, flagModule);
+  const dataLink = link.getAttribute("data-link");
+  if (!dataLink) {
+    console.error("El atributo data-link está vacío o no válido.");
+    return;
   }
+
+  const [pagina, opcion] = dataLink.split(" ");
+  const flagModule = !(opcion === "noModule");
+
+  cargarPagina(pagina, flagModule);
 });
 
 // Maneja el historial para navegación hacia atrás y adelante
 window.addEventListener("popstate", (e) => {
-  const pagina = e.state ? e.state.pagina : "inicio";
-  cargarPagina(pagina);
+  const pagina = e.state?.pagina || "inicio";
+  cargarPagina(pagina)
+    .then(() => {
+      window.scrollTo(0, 0); // Forzar el scroll al inicio
+    })
+    .catch((error) => console.error(error));
 });
 
 // Ejecuta el enrutador cuando el DOM esté listo
 document.addEventListener("DOMContentLoaded", iniciarEnrutador);
 
+// Exportación opcional para usar en otros scripts
 export const bodyContainer = document.querySelector("body");
