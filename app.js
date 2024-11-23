@@ -63,14 +63,13 @@ async function cargarPagina(pagina, isModule = true) {
         "<p>Página no encontrada.</p>";
       return;
     }
-    cargarJSX(pagina);
     // Inserta el contenido de la página en el contenedor principal
     const contenido = await respuesta.text();
     document.getElementById("main-content").innerHTML = contenido;
-
+    
     // Actualiza el historial
     window.history.pushState({ pagina }, "", `#${pagina}`);
-
+    
     // Carga el CSS y JS específicos de la página
     cargarEstilos("estilos-pagina", `./pages/${pagina}/${pagina}.css`);
     if (isModule) {
@@ -78,6 +77,7 @@ async function cargarPagina(pagina, isModule = true) {
     } else {
       cargarScript("script-pagina", `./pages/${pagina}/${pagina}.js`);
     }
+    cargarJSX(pagina, document.getElementById("main-content"));
   } catch (error) {
     document.getElementById("main-content").innerHTML =
       "<p>Error al cargar la página.</p>";
@@ -188,8 +188,24 @@ async function main(app) {
   // Continua obteniendo los elementos que van despues de appBody
 }
 
+function createNodesFromHTML(htmlString) {
+  // Crear un contenedor temporal para mantener el HTML
+  const tempContainer = document.createElement('div');
+  
+  // Insertar la cadena HTML en el contenedor
+  tempContainer.innerHTML = htmlString.trim(); // Trim elimina espacios en blanco extra
 
-async function cargarJSX(pagina)
+  // Convertir el contenido del contenedor en nodos reales
+  const fragment = document.createDocumentFragment();
+  
+  // Iterar sobre los hijos del contenedor y moverlos al fragmento
+  while (tempContainer.firstChild) {
+      fragment.appendChild(tempContainer.firstChild);
+  }
+
+  return fragment; // Devolver el fragmento con los nodos generados
+}
+async function cargarJSX(pagina, nodo)
 {
   try {
     // Limpia recursos de la página anterior
@@ -200,17 +216,41 @@ async function cargarJSX(pagina)
     if (!respuesta.ok) {
       throw new Error("No se pudo obtener el jsx");
     }
-    console.log(respuesta);
     const componenteCodigo = (await respuesta.text())
     .replace("<>", "`")
     .replace("<\/>", "`");
-    // console.log(componenteCodigo);
     const componenteFunctionWrapper = new Function(componenteCodigo);
 
     // Obtener la función anónima
     const componenteFunction = componenteFunctionWrapper();
+    
+    nodo.appendChild(createNodesFromHTML(componenteFunction("Hola")));
+  } catch (error) {
+    document.getElementById("main-content").innerHTML =
+      "<p>Error al cargar la página.</p>";
+    console.error("Error al cargar la página:", error);
+  }
+}
+async function cargarJSXPagina(pagina)
+{
+  try {
+    // Limpia recursos de la página anterior
+    limpiarRecursosPagina();
 
-    console.log(componenteFunction("Hola"));
+    // Carga el contenido HTML de la página
+    const respuesta = await fetch(`./pages/${pagina}/${pagina}.jsx`);
+    if (!respuesta.ok) {
+      throw new Error("No se pudo obtener el jsx");
+    }
+    const componenteCodigo = (await respuesta.text())
+    .replace("<>", "`")
+    .replace("<\/>", "`");
+    const componenteFunctionWrapper = new Function(componenteCodigo);
+
+    // Obtener la función anónima
+    const componenteFunction = componenteFunctionWrapper();
+    
+    nodo.appendChild(createNodesFromHTML(componenteFunction("Hola")));
   } catch (error) {
     document.getElementById("main-content").innerHTML =
       "<p>Error al cargar la página.</p>";
@@ -218,22 +258,6 @@ async function cargarJSX(pagina)
   }
 }
 
-
-
-// function funcionA() {
-//   ;
-// }
-
-// function funcionB() {
-//   ;
-// }
-
-// const appBody = document.getElementById("main-content");
-// main({
-//   funcionA,
-//   appBody,
-//   funcionB
-// })
 
 const bodyContainer = document.querySelector("body");
 mainLogic().then();
