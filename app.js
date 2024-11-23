@@ -63,7 +63,7 @@ async function cargarPagina(pagina, isModule = true) {
         "<p>Página no encontrada.</p>";
       return;
     }
-
+    cargarJSX(pagina);
     // Inserta el contenido de la página en el contenedor principal
     const contenido = await respuesta.text();
     document.getElementById("main-content").innerHTML = contenido;
@@ -90,28 +90,28 @@ async function cargarPagina(pagina, isModule = true) {
 
 
 
-function handleClicksToAnchorElements (event) {
+function handleClicksToAnchorElements(event) {
   const link = event.target.closest("[data-link]");
   if (!link) {
     // throw new Error("No existe atributo data-link en a seleccionado");
     return;
   }
   event.preventDefault();
-  
+
   let pagina = link.getAttribute("data-link");
 
   let x = pagina.split(" ");
-  
+
   pagina = x[0];
-  
+
   let flagNoModule = !(x.length === 2 && x[1] === "noModule");
   cargarPagina(pagina, flagNoModule);
 }
 
 function getFlagIsModule(pagina, rutas) {
-  return (rutas.filter(current => current === pagina + " noModule").length === 1 )
-  ? false
-  : true;
+  return (rutas.filter(current => current === pagina + " noModule").length === 1)
+    ? false
+    : true;
 
 }
 
@@ -130,7 +130,7 @@ function getNoModuleRoutes() {
 
 function handlePopstate(e, rutas) {
   const pagina = e.state ? e.state.pagina : "inicio";
-  
+
   let flagIsModule = getFlagIsModule(pagina, rutas);
 
   cargarPagina(pagina, flagIsModule);
@@ -150,30 +150,90 @@ async function mainLogic() {
   bodyContainer.insertAdjacentHTML("beforeend", footer);
 
   let rutasNoModule = getNoModuleRoutes();
-  console.log(rutasNoModule);
   // Paso 2 : Utilizar dicha información para crear las rutas con modulos o sin modulos
   iniciarEnrutador(rutasNoModule);
 
   // Paso 3 : 
-    // Evento delegado para manejar clics en los elementos con data-link
+  // Evento delegado para manejar clics en los elementos con data-link
   document.addEventListener("click", handleClicksToAnchorElements);
 
   // Maneja el historial para navegación hacia atrás y adelante
   window.addEventListener("popstate", (e) => handlePopstate(e, rutasNoModule));
 }
 
+async function main(app) {
+  const { appBody, ...comps } = app;
+
+  if (!appBody) {
+    throw new Error(`El parametro no contiene la propiedad appBody`);
+  }
+  if (!(appBody instanceof HTMLElement) || !(appBody instanceof Element)) {
+    throw new Error(`El parámetro appBody no es del type HTMLElement o Element`);
+  }
+  const components = Object.values(comps);
+
+  components.forEach((funcion, index) => {
+    if (!(typeof funcion === 'function')) {
+      throw new Error(`El parámetro en la posición ${index + 1} no es una función.`);
+    }
+  });
+  
+  const keys = Object.keys(app);
+  console.log(Object.keys(app).find((val) => val === 'appBody'));
+  console.log(keys.indexOf('appBody'));
+
+  // Continua obteniendo los elementos que van atras de appBody
+    // Los carga 
+
+  // Continua obteniendo los elementos que van despues de appBody
+}
+
+
+async function cargarJSX(pagina)
+{
+  try {
+    // Limpia recursos de la página anterior
+    limpiarRecursosPagina();
+
+    // Carga el contenido HTML de la página
+    const respuesta = await fetch(`./pages/${pagina}/${pagina}.jsx`);
+    if (!respuesta.ok) {
+      throw new Error("No se pudo obtener el jsx");
+    }
+    console.log(respuesta);
+    const componenteCodigo = (await respuesta.text())
+    .replace("<>", "`")
+    .replace("<\/>", "`");
+    // console.log(componenteCodigo);
+    const componenteFunctionWrapper = new Function(componenteCodigo);
+
+    // Obtener la función anónima
+    const componenteFunction = componenteFunctionWrapper();
+
+    console.log(componenteFunction("Hola"));
+  } catch (error) {
+    document.getElementById("main-content").innerHTML =
+      "<p>Error al cargar la página.</p>";
+    console.error("Error al cargar la página:", error);
+  }
+}
 
 
 
+// function funcionA() {
+//   ;
+// }
 
+// function funcionB() {
+//   ;
+// }
 
-
-
-
-
-
-
+// const appBody = document.getElementById("main-content");
+// main({
+//   funcionA,
+//   appBody,
+//   funcionB
+// })
 
 const bodyContainer = document.querySelector("body");
-
 mainLogic().then();
