@@ -470,3 +470,98 @@
       }
     }
   ]
+  [
+    {
+      "producto": {
+        "id": "016",
+        "nombre": "Set Navideño Ayotl: Fragancia Floral",
+        "marca": "Ayotl",
+        "categoria": "Perfumes",
+        "descripcion": "Un set exclusivo para esta Navidad que incluye perfume, loción corporal y crema, con una fragancia floral encantadora.",
+        "precio": 1800,
+        "moneda": "MXN",
+        "cantidad_disponible": 75,
+        "valoraciones": {
+          "promedio": 4.9,
+          "total_valoraciones": 120
+        },
+        "caracteristicas": {
+          "contenido": "Perfume, loción corporal, crema",
+          "duracion": "Hasta 8 horas",
+          "tipo_piel": "Todo tipo de piel",
+          "tamaño": "50 ml cada uno"
+        },
+        "ingredientes": [
+          "Agua",
+          "Alcohol",
+          "Aceite esencial de flor de nochebuena",
+          "Extracto de jazmín",
+          "Vainilla"
+        ],
+        "en_oferta": true,
+        "fecha_lanzamiento": "2024-12-01"
+      }
+    },
+    {
+      "producto": {
+        "id": "017",
+        "nombre": "Set Día de Reyes Ayotl: Edición Limitada",
+        "marca": "Ayotl",
+        "categoria": "Perfumes",
+        "descripcion": "Una colección de lujo para el Día de Reyes, con perfume, loción y crema en una fragancia dulce y afrutada.",
+        "precio": 2000,
+        "moneda": "MXN",
+        "cantidad_disponible": 60,
+        "valoraciones": {
+          "promedio": 4.8,
+          "total_valoraciones": 95
+        },
+        "caracteristicas": {
+          "contenido": "Perfume, loción, crema",
+          "duracion": "Hasta 9 horas",
+          "tipo_piel": "Todo tipo de piel",
+          "tamaño": "50 ml cada uno"
+        },
+        "ingredientes": [
+          "Agua",
+          "Alcohol",
+          "Aceite esencial de frutas del bosque",
+          "Extracto de flor de cerezo",
+          "Toque de almendra"
+        ],
+        "en_oferta": true,
+        "fecha_lanzamiento": "2024-01-06"
+      }
+    },
+    {
+      "producto": {
+        "id": "018",
+        "nombre": "Set Navideño Ayotl para Hombres",
+        "marca": "Ayotl",
+        "categoria": "Perfumes",
+        "descripcion": "Un set exclusivo para hombres que combina fragancias amaderadas y especiadas, perfecto para la temporada navideña.",
+        "precio": 2100,
+        "moneda": "MXN",
+        "cantidad_disponible": 50,
+        "valoraciones": {
+          "promedio": 4.7,
+          "total_valoraciones": 85
+        },
+        "caracteristicas": {
+          "contenido": "Perfume, crema de afeitar, loción",
+          "duracion": "Hasta 10 horas",
+          "tipo_piel": "Todo tipo de piel",
+          "tamaño": "50 ml cada uno"
+        },
+        "ingredientes": [
+          "Agua",
+          "Alcohol",
+          "Aceite esencial de madera de cedro",
+          "Extracto de especias cálidas",
+          "Cuero"
+        ],
+        "en_oferta": false,
+        "fecha_lanzamiento": "2024-12-15"
+      }
+    }
+  ]
