@@ -282,4 +282,191 @@
       }
     }
   ]
-  
+  [
+    {
+      "producto": {
+        "id": "010",
+        "nombre": "Eau de Parfum Rose Elegance",
+        "marca": "Ayotl",
+        "categoria": "Perfumes",
+        "descripcion": "Un perfume delicado y romántico con notas de rosa, sándalo y un toque de vainilla.",
+        "precio": 1200,
+        "moneda": "MXN",
+        "cantidad_disponible": 150,
+        "valoraciones": {
+          "promedio": 4.7,
+          "total_valoraciones": 110
+        },
+        "caracteristicas": {
+          "concentracion": "Eau de Parfum",
+          "duracion": "Hasta 7 horas",
+          "tipo_piel": "Todo tipo de piel",
+          "tamaño": "50 ml"
+        },
+        "ingredientes": [
+          "Agua",
+          "Alcohol",
+          "Aceite esencial de rosa",
+          "Extracto de sándalo",
+          "Vainilla"
+        ],
+        "en_oferta": true,
+        "fecha_lanzamiento": "2024-11-10"
+      }
+    },
+    {
+      "producto": {
+        "id": "011",
+        "nombre": "Eau de Parfum Noir Intense",
+        "marca": "Ayotl",
+        "categoria": "Perfumes",
+        "descripcion": "Un perfume intenso y sofisticado para hombres con notas de cuero, madera y un toque especiado.",
+        "precio": 1350,
+        "moneda": "MXN",
+        "cantidad_disponible": 100,
+        "valoraciones": {
+          "promedio": 4.8,
+          "total_valoraciones": 85
+        },
+        "caracteristicas": {
+          "concentracion": "Eau de Parfum",
+          "duracion": "Hasta 9 horas",
+          "tipo_piel": "Todo tipo de piel",
+          "tamaño": "50 ml"
+        },
+        "ingredientes": [
+          "Agua",
+          "Alcohol",
+          "Extracto de cuero",
+          "Madera de cedro",
+          "Especias"
+        ],
+        "en_oferta": false,
+        "fecha_lanzamiento": "2024-11-15"
+      }
+    },
+    {
+      "producto": {
+        "id": "012",
+        "nombre": "Eau de Parfum Amber Wood",
+        "marca": "Ayotl",
+        "categoria": "Perfumes",
+        "descripcion": "Un perfume cálido y elegante con notas de ámbar, madera de oud y vainilla.",
+        "precio": 1400,
+        "moneda": "MXN",
+        "cantidad_disponible": 90,
+        "valoraciones": {
+          "promedio": 4.9,
+          "total_valoraciones": 75
+        },
+        "caracteristicas": {
+          "concentracion": "Eau de Parfum",
+          "duracion": "Hasta 10 horas",
+          "tipo_piel": "Todo tipo de piel",
+          "tamaño": "50 ml"
+        },
+        "ingredientes": [
+          "Agua",
+          "Alcohol",
+          "Extracto de ámbar",
+          "Madera de oud",
+          "Vainilla"
+        ],
+        "en_oferta": false,
+        "fecha_lanzamiento": "2024-11-20"
+      }
+    },
+    {
+      "producto": {
+        "id": "013",
+        "nombre": "Eau de Parfum Green Essence",
+        "marca": "Ayotl",
+        "categoria": "Perfumes",
+        "descripcion": "Un perfume fresco y moderno para hombres con notas de bergamota, vetiver y almizcle.",
+        "precio": 1250,
+        "moneda": "MXN",
+        "cantidad_disponible": 120,
+        "valoraciones": {
+          "promedio": 4.6,
+          "total_valoraciones": 95
+        },
+        "caracteristicas": {
+          "concentracion": "Eau de Parfum",
+          "duracion": "Hasta 8 horas",
+          "tipo_piel": "Todo tipo de piel",
+          "tamaño": "50 ml"
+        },
+        "ingredientes": [
+          "Agua",
+          "Alcohol",
+          "Aceite esencial de bergamota",
+          "Extracto de vetiver",
+          "Almizcle"
+        ],
+        "en_oferta": true,
+        "fecha_lanzamiento": "2024-11-25"
+      }
+    },
+    {
+      "producto": {
+        "id": "014",
+        "nombre": "Eau de Parfum Ocean Blue",
+        "marca": "Ayotl",
+        "categoria": "Perfumes",
+        "descripcion": "Un perfume marino y relajante con notas de sal marina, madera de deriva y lavanda.",
+        "precio": 1300,
+        "moneda": "MXN",
+        "cantidad_disponible": 110,
+        "valoraciones": {
+          "promedio": 4.5,
+          "total_valoraciones": 100
+        },
+        "caracteristicas": {
+          "concentracion": "Eau de Parfum",
+          "duracion": "Hasta 6 horas",
+          "tipo_piel": "Todo tipo de piel",
+          "tamaño": "50 ml"
+        },
+        "ingredientes": [
+          "Agua",
+          "Alcohol",
+          "Sal marina",
+          "Madera de deriva",
+          "Lavanda"
+        ],
+        "en_oferta": false,
+        "fecha_lanzamiento": "2024-12-01"
+      }
+    },
+    {
+      "producto": {
+        "id": "015",
+        "nombre": "Eau de Parfum Bold Ebony",
+        "marca": "Ayotl",
+        "categoria": "Perfumes",
+        "descripcion": "Un perfume profundo y elegante, perfecto para ocasiones formales. Combina notas de ébano, ámbar y cuero.",
+        "precio": 1450,
+        "moneda": "MXN",
+        "cantidad_disponible": 85,
+        "valoraciones": {
+          "promedio": 4.8,
+          "total_valoraciones": 90
+        },
+        "caracteristicas": {
+          "concentracion": "Eau de Parfum",
+          "duracion": "Hasta 10 horas",
+          "tipo_piel": "Todo tipo de piel",
+          "tamaño": "50 ml"
+        },
+        "ingredientes": [
+          "Agua",
+          "Alcohol",
+          "Extracto de ébano",
+          "Ámbar",
+          "Cuero"
+        ],
+        "en_oferta": false,
+        "fecha_lanzamiento": "2024-12-05"
+      }
+    }
+  ]
