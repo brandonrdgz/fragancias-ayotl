@@ -1,7 +1,7 @@
 
-import { cargarComponentesLayout } from "./cargarComponentesLayout.js";
+import { loadFunctionComponents } from "../components/loadFunctionsComponents.js";
 import { addComponentsToApp } from "./addComponentsToApp.js";
-
+import { iniciarEnrutador } from "../router/iniciarEnrutador.js";
 
 export async function main(app) {
   const { APP, ...comps } = app;
@@ -21,6 +21,8 @@ export async function main(app) {
     }
   });
 
+  // await iniciarEnrutador(APP);
+
   const params = Object.values(app);
   const indexAPP = params.indexOf(APP);
 
@@ -30,8 +32,8 @@ export async function main(app) {
 
   // Cargar componentes antes y después de APP
   const loadAndAddComponents = async (paramSubset) => {
-    const { componentesFuncion, parametrosParaLosComponentes } = await cargarComponentesLayout(paramSubset);
-    addComponentsToApp(APP, componentesFuncion, parametrosParaLosComponentes);
+    const { functionComponents, paramsForFunctions } = await loadFunctionComponents(paramSubset);
+    // addComponentsToApp(APP, functionComponents, paramsForFunctions);
   };
 
   await loadAndAddComponents(params.slice(0, indexAPP));

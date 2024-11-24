@@ -1,5 +1,5 @@
-export function footerElement() {
-   let TITLE = "";
-   let SVG = "";
-   return TITLE, SVG;
+export async function footerElement() {
+   let svgHoja  = await import ("../svgHoja/svgHoja.js");
+   return [svgHoja];
+   return;
 }

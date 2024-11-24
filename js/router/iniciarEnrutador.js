@@ -1,7 +1,14 @@
 import { cargarPagina } from "./cargarPagina.js";
 
-export function iniciarEnrutador() {
+export async function iniciarEnrutador(APP) {
+  if (!APP || !(APP instanceof Element)) {
+    throw new Error(
+      !APP
+        ? `El parámetro no contiene la propiedad APP`
+        : `El parámetro APP no es del tipo Element`
+    );
+  }
   const paginaInicial = window.location.hash.substring(1) || "inicio";
-  cargarPagina(paginaInicial);
+  await cargarPagina(paginaInicial, APP);
 }
 

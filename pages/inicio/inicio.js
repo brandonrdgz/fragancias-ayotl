@@ -1,5 +1,5 @@
 
 export async function inicio() {
-  let svgHoja  = await import ("../../components/svgHoja.js");
-  return svgHoja;
+  let svgHoja  = await import ("/components/svgHoja/svgHoja.js");
+  return [svgHoja];
 }

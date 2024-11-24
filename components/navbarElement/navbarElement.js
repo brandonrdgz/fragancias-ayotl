@@ -1,7 +1,7 @@
 
-export function navbarElement ()
+export async function navbarElement ()
 {
-   let TITLE = "";
-   let SVG = "";
-   return {TITLE, SVG};
+   let footerElement  = await import ("../footerElement/footerElement.js");
+   return [footerElement];
+   return ;
 }

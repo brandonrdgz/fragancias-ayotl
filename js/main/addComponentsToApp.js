@@ -1,12 +1,12 @@
 import { createNodesFromHTML } from "../html/createNodesFromHTML.js";
 
-export function addComponentsToApp(APP, componentesFuncion = [], parametrosParaLosComponentes = [])
+export function addComponentsToApp(APP, functionComponents = [], parametrosParaLosComponentes = [])
 {
   if(APP == false && !(APP instanceof Element))
     throw new Error("Parametro APP no puede ser falsy");
     
-    for (let i = 0; i < componentesFuncion.length; i++) {
-    let htmlString= componentesFuncion[i](parametrosParaLosComponentes[i])
+    for (let i = 0; i < functionComponents.length; i++) {
+    let htmlString= functionComponents[i](parametrosParaLosComponentes[i])
     APP.appendChild(createNodesFromHTML(htmlString));
   }
 }
