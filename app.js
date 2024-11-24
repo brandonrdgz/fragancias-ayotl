@@ -1,6 +1,8 @@
 import traerNavbar from './components/traerNavbar.js'
 import traerFooter from './components/traerFooter.js'
-
+import {navbar} from './components/navbar/navbar.js'
+import {footer} from './components/footer/footer.js'
+import {main } from './js/main/main.js'
 // Función para cargar CSS específico de una página
 function cargarEstilos(id, url) {
   // Si ya existe, no lo cargues de nuevo
@@ -77,7 +79,6 @@ async function cargarPagina(pagina, isModule = true) {
     } else {
       cargarScript("script-pagina", `./pages/${pagina}/${pagina}.js`);
     }
-    cargarJSX(pagina, document.getElementById("main-content"));
   } catch (error) {
     document.getElementById("main-content").innerHTML =
       "<p>Error al cargar la página.</p>";
@@ -137,17 +138,6 @@ function handlePopstate(e, rutas) {
 }
 
 async function mainLogic() {
-  // Paso 1 : Cargar la información proveniente del html footer
-  let navbar = await traerNavbar("./components/navbar/navbar.html");
-  let footer = await traerFooter("./components/footer/footer.html");
-
-
-  if (!navbar && !footer) {
-    throw new Error("No se pudo cargar el Navbar ni el Footer");
-  }
-
-  bodyContainer.insertAdjacentHTML("afterbegin", navbar);
-  bodyContainer.insertAdjacentHTML("beforeend", footer);
 
   let rutasNoModule = getNoModuleRoutes();
   // Paso 2 : Utilizar dicha información para crear las rutas con modulos o sin modulos
@@ -161,103 +151,14 @@ async function mainLogic() {
   window.addEventListener("popstate", (e) => handlePopstate(e, rutasNoModule));
 }
 
-async function main(app) {
-  const { appBody, ...comps } = app;
 
-  if (!appBody) {
-    throw new Error(`El parametro no contiene la propiedad appBody`);
+const APP = document.getElementById("main-content");
+
+
+main(
+  {
+    navbar,
+    APP,
+    footer,
   }
-  if (!(appBody instanceof HTMLElement) || !(appBody instanceof Element)) {
-    throw new Error(`El parámetro appBody no es del type HTMLElement o Element`);
-  }
-  const components = Object.values(comps);
-
-  components.forEach((funcion, index) => {
-    if (!(typeof funcion === 'function')) {
-      throw new Error(`El parámetro en la posición ${index + 1} no es una función.`);
-    }
-  });
-  
-  const keys = Object.keys(app);
-  console.log(Object.keys(app).find((val) => val === 'appBody'));
-  console.log(keys.indexOf('appBody'));
-
-  // Continua obteniendo los elementos que van atras de appBody
-    // Los carga 
-
-  // Continua obteniendo los elementos que van despues de appBody
-}
-
-function createNodesFromHTML(htmlString) {
-  // Crear un contenedor temporal para mantener el HTML
-  const tempContainer = document.createElement('div');
-  
-  // Insertar la cadena HTML en el contenedor
-  tempContainer.innerHTML = htmlString.trim(); // Trim elimina espacios en blanco extra
-
-  // Convertir el contenido del contenedor en nodos reales
-  const fragment = document.createDocumentFragment();
-  
-  // Iterar sobre los hijos del contenedor y moverlos al fragmento
-  while (tempContainer.firstChild) {
-      fragment.appendChild(tempContainer.firstChild);
-  }
-
-  return fragment; // Devolver el fragmento con los nodos generados
-}
-async function cargarJSX(pagina, nodo)
-{
-  try {
-    // Limpia recursos de la página anterior
-    limpiarRecursosPagina();
-
-    // Carga el contenido HTML de la página
-    const respuesta = await fetch(`./pages/${pagina}/${pagina}.jsx`);
-    if (!respuesta.ok) {
-      throw new Error("No se pudo obtener el jsx");
-    }
-    const componenteCodigo = (await respuesta.text())
-    .replace("<>", "`")
-    .replace("<\/>", "`");
-    const componenteFunctionWrapper = new Function(componenteCodigo);
-
-    // Obtener la función anónima
-    const componenteFunction = componenteFunctionWrapper();
-    
-    nodo.appendChild(createNodesFromHTML(componenteFunction("Hola")));
-  } catch (error) {
-    document.getElementById("main-content").innerHTML =
-      "<p>Error al cargar la página.</p>";
-    console.error("Error al cargar la página:", error);
-  }
-}
-async function cargarJSXPagina(pagina)
-{
-  try {
-    // Limpia recursos de la página anterior
-    limpiarRecursosPagina();
-
-    // Carga el contenido HTML de la página
-    const respuesta = await fetch(`./pages/${pagina}/${pagina}.jsx`);
-    if (!respuesta.ok) {
-      throw new Error("No se pudo obtener el jsx");
-    }
-    const componenteCodigo = (await respuesta.text())
-    .replace("<>", "`")
-    .replace("<\/>", "`");
-    const componenteFunctionWrapper = new Function(componenteCodigo);
-
-    // Obtener la función anónima
-    const componenteFunction = componenteFunctionWrapper();
-    
-    nodo.appendChild(createNodesFromHTML(componenteFunction("Hola")));
-  } catch (error) {
-    document.getElementById("main-content").innerHTML =
-      "<p>Error al cargar la página.</p>";
-    console.error("Error al cargar la página:", error);
-  }
-}
-
-
-const bodyContainer = document.querySelector("body");
-mainLogic().then();
+).then();

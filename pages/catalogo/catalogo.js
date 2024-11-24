@@ -1,5 +1,10 @@
 import {obtenerProductos} from "../../js/crudJSON.js"
 
+export function catalogo({})
+{
+   return 
+}
+
 export function logic_main()
 {
    const IMG_FOLDER = "./assets/imgs/perfumes/";
