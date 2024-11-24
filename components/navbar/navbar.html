@@ -71,7 +71,11 @@
             </a>
           </li>
           <li class="nav-item" id="item">
-            <a class="nav-link active" aria-current="page" id="cart-icon">
+            <a
+              class="nav-link active cart-nav"
+              aria-current="page"
+              id="cart-icon"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
@@ -87,6 +91,7 @@
                   d="M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM12 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"
                 />
               </svg>
+              <span class="cartnav-quantity">0</span>
               <span class="d-sm-block d-sm-none ms-2">Carrito</span>
             </a>
           </li>
@@ -116,7 +121,7 @@
     <div class="cart-content"></div>
     <div class="total">
       <div class="total-title">Total</div>
-      <div class="total-price"></div>
+      <div class="total-price">$0</div>
     </div>
     <button type="button" class="btn-buy" data-link="carrito" ="">
       Comprar Ahora

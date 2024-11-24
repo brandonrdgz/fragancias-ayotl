@@ -14,7 +14,7 @@
 
 ::-webkit-scrollbar-track {
   background-color: transparent;
-  margin-block: 150px;
+  margin-block: 120px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -30,7 +30,7 @@
 
 html,
 body {
-  height: 100%;
+  height: 100vh;
   margin: 0;
   position: relative;
   line-height: 1.6;
@@ -42,8 +42,7 @@ body {
 
 main {
   margin-top: 110px;
-  min-height: calc(100vh - 510px);
-  padding: 20px;
+  height: auto;
   scrollbar-gutter: stable;
 }
 

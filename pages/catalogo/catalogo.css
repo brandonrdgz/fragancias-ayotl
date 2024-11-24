@@ -24,7 +24,6 @@ section {
 }
 
 .product-box:hover {
-  padding: 5px;
   border: 1px solid #06070e;
   box-shadow: 6px 9px 18px -3px rgba(0, 0, 0, 0.71);
   -webkit-box-shadow: 6px 9px 18px -3px rgba(0, 0, 0, 0.71);
