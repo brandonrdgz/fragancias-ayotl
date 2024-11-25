@@ -10,11 +10,10 @@ export async function cargarJSXComponente(componente)
     .replace("<>", "`")
     .replace("<\/>", "`");
     const componenteFunctionWrapper = new Function(componenteCodigo);
-
     // Regresar la función anónima (El componente funcion)
     return componenteFunctionWrapper();
     
   } catch (error) {
-    return () => ("<p>Error al cargar el componente</p>");
+    throw error;
   }
 }

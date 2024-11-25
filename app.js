@@ -1,5 +1,6 @@
 import {navbar} from './components/navbar/navbar.js'
 import {footer} from './components/footer/footer.js'
+// import {dada} from './components/dada/dada.js'
 import {main } from './js/main/main.js'
 // Función para cargar CSS específico de una página
 function cargarEstilos(id, url) {
@@ -156,6 +157,7 @@ const APP = document.getElementById("main-content");
 main(
   {
     navbar,
+    // dada,
     APP,
     footer,
   }

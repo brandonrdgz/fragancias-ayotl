@@ -21,7 +21,7 @@ export async function main(app) {
     }
   });
 
-  // await iniciarEnrutador(APP);
+  await iniciarEnrutador(APP);
 
   const params = Object.values(app);
   const indexAPP = params.indexOf(APP);
@@ -33,7 +33,7 @@ export async function main(app) {
   // Cargar componentes antes y después de APP
   const loadAndAddComponents = async (paramSubset) => {
     const { functionComponents, paramsForFunctions } = await loadFunctionComponents(paramSubset);
-    // addComponentsToApp(APP, functionComponents, paramsForFunctions);
+    addComponentsToApp(APP, functionComponents, paramsForFunctions);
   };
 
   await loadAndAddComponents(params.slice(0, indexAPP));

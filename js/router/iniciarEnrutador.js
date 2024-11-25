@@ -1,4 +1,4 @@
-import { cargarPagina } from "./cargarPagina.js";
+import { cargarPagina } from "../pages/cargarPagina.js";
 
 export async function iniciarEnrutador(APP) {
   if (!APP || !(APP instanceof Element)) {

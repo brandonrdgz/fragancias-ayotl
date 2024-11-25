@@ -1,26 +1,6 @@
 import { cargarJSXComponente } from "../jsx/cargarJSXComponente.js"
 import { getDependencieName } from "../module/getDependencieName.js";
 import { objectIsEmpty } from "../utils/objectIsEmpty().js";
-// export async function loadComponentsFromFunctionComponent(functionComponent) {
-//   if (typeof functionComponent !== 'function') throw new Error("Param functionComponent debe ser una función.");
-
-//   let functionComponentParams = {};
-//   let functionComponentCode = (await cargarJSXComponente(functionComponent.name));
-
-//   const componentDependenciesModules = await functionComponent();
-//   if(componentDependenciesModules){
-//     for (let i = 0; i < componentDependenciesModules.length; i++) {
-//       const { dependencyNames} = getDependenciesNames( componentDependenciesModules[i]);
-
-//       for (let j = 0; j < dependencyNames.length; j++) {
-//           functionComponentParams[dependencyNames[j]] = await cargarJSXComponente(dependencyNames[j]);
-//       }
-//     }
-//   }
-//   return { functionComponentCode, functionComponentParams };
-// }
-
-
 
 
 // ull@x
@@ -116,8 +96,8 @@ export async function loadComponentsFromFunctionComponent(functionComponent) {
   let funcCompParams = {};
   let funcCompName = functionComponent.name;
   let funcCompCode = await cargarJSXComponente(funcCompName);
-
   const dependencyModules = await functionComponent();
+  
   const visited = new Set();
   async function resolveDependencies(dependencyModules) {
     for (let dependency of dependencyModules) {
@@ -133,8 +113,10 @@ export async function loadComponentsFromFunctionComponent(functionComponent) {
       
       if (objectIsEmpty(functionComponentParams)) {
         funcCompParams[functionComponentName] = functionComponentCode;
+        funcCompParams['functionComponentName'] = functionComponentName;
       } else {
         funcCompParams[functionComponentName] = [functionComponentCode, functionComponentParams ];
+        funcCompParams['functionComponentName'] = functionComponentName;
       }
     }
   }

@@ -1,0 +1,7 @@
+return ({ compA }) => {
+  return (
+    <>
+      ${compA()}
+    </>
+  )
+}

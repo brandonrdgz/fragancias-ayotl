@@ -1,7 +1,9 @@
-import { loadPageDependencies } from "../pages/loadPageDependencies.js";
-import {cargarJSXPagina } from "../jsx/cargarJSXPagina.js";
+import { loadPageDependencies } from "./loadPageDependencies.js";
+import { addComponentsToApp } from "../main/addComponentsToApp.js";
 
+import { loadFunctionComponents } from "../components/loadFunctionsComponents.js";
 
+import { cargarJSXPagina } from "../jsx/cargarJSXPagina.js"
 export async function cargarPagina(pagina , APP) {
   if (!APP || !(APP instanceof Element)) {
     throw new Error(
@@ -13,16 +15,30 @@ export async function cargarPagina(pagina , APP) {
   
   try {
     
-    // const componentFunctionPagina = cargarJSXPagina(pagina);
+    const componentFunctionPagina = cargarJSXPagina(pagina);
     
     //Encontrar dependencias del jsx de pagina
     const paginaModulo = await import(`/pages/${pagina}/${pagina}.js`);
     
     const dependenciasPagina = await paginaModulo[pagina]();
+    // console.log(dependenciasPagina);
     const { functionComponents, paramsForFunctions } = await loadPageDependencies(dependenciasPagina);
+    // console.log(functionComponents, paramsForFunctions)
 
-    console.log(functionComponents);
-    console.log(paramsForFunctions);
+    addComponentsToApp(APP, functionComponents, paramsForFunctions);
+    // for (let i = 0; i < paramsForFunctions.length; i++) {
+    //   let funcion = functionComponents[i];
+    //   let parametro = paramsForFunctions[i];
+    
+    //   let cantidadDeArrays = countParamsArrays(parametro, 0);
+    //   let htmlString = "";
+    
+    //   htmlString = (cantidadDeArrays > 0) ?
+    //     executeDependencies(cantidadDeArrays, funcion, parametro)
+    //   :
+    //     funcion(parametro);
+    //   APP.appendChild(createNodesFromHTML(htmlString));
+    // }
 
 
 
