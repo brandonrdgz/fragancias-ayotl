@@ -26,7 +26,6 @@ export function init() {
       console.log("oma wea");
     }
   });
-
   // Manejar clic en las cards
   document.querySelector(".shop-content").addEventListener("click", (event) => {
     const productCard = event.target.closest(".product-box");

@@ -1,3 +1,13 @@
+.blur {
+  backdrop-filter: blur(50px);
+  background-color: #cc7689;
+  margin: 300px;
+  border-radius: 30px;
+  -webkit-box-shadow: 9px 10px 28px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 9px 10px 28px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 9px 10px 28px 0px rgba(0, 0, 0, 0.75);
+}
+
 .hidden {
   opacity: 0;
   filter: blur(5px);

@@ -41,12 +41,12 @@ body {
 }
 
 main {
-  margin-top: 110px;
+  margin-top: 150px;
   height: auto;
   scrollbar-gutter: stable;
 }
 
-.font-parrafros {
+.font-parrafos {
   font-family: "Julius Sans One", sans-serif;
   font-weight: 400;
   font-style: normal;
