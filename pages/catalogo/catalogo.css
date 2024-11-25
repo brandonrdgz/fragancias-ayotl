@@ -4,12 +4,16 @@ section {
 
 .section-title {
   text-align: center;
+  font-size: 3rem;
+  padding: 30px;
+  font-weight: 800;
 }
 
 .shop-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, auto));
   gap: 18px;
+  padding: 0 200px;
 }
 
 .product-box {
@@ -32,8 +36,8 @@ section {
 }
 
 .product-img {
-  width: 100%;
-  height: auto;
+  width: 257px;
+  height: 257px;
   margin-bottom: 0.5rem;
   border-radius: 10px;
 }

@@ -1,5 +1,4 @@
 import { obtenerProductos } from "../../js/crudJSON.js";
-import { loadPage } from "../../app.js";
 
 export function init() {
   const IMG_FOLDER = "./assets/imgs/perfumes/";
@@ -35,10 +34,4 @@ export function init() {
       navigateToPage(link, productId);
     }
   });
-
-  // Función para navegar dentro de la SPA
-  function navigateToPage(page, id) {
-    window.history.pushState({}, "", `${page}?id=${id}`);
-    loadPage(page, id); // Llamar a tu lógica para cargar la página
-  }
 }

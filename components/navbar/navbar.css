@@ -157,7 +157,7 @@ ul {
 
 .cart {
   position: fixed;
-  right: -100%;
+  right: -200%;
   width: 400px;
   margin-top: 1000px;
   padding: 20px;
