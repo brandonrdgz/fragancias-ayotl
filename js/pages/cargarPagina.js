@@ -24,7 +24,6 @@ export async function cargarPagina(pagina , APP) {
     const paginaModulo = await import(`/pages/${pagina}/${pagina}.js`);
     
     const dependenciasPagina = await paginaModulo[pagina];
-    console.log(dependenciasPagina);
     const { functionComponents, paramsForFunctions } = await loadFunctionComponents([dependenciasPagina]);
     // console.log(functionComponents, paramsForFunctions)
 
