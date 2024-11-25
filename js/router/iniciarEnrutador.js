@@ -8,7 +8,7 @@ export async function iniciarEnrutador(APP) {
         : `El parámetro APP no es del tipo Element`
     );
   }
-  const paginaInicial = window.location.hash.substring(1) || "inicio";
+  const paginaInicial = window.location.hash.substring(1) || "inicioPagina";
   await cargarPagina(paginaInicial, APP);
 }
 

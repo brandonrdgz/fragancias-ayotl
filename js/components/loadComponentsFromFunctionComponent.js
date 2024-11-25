@@ -1,4 +1,5 @@
 import { cargarJSXComponente } from "../jsx/cargarJSXComponente.js"
+import { cargarJSXPagina } from "../jsx/cargarJSXPagina.js";
 import { getDependencieName } from "../module/getDependencieName.js";
 import { objectIsEmpty } from "../utils/objectIsEmpty().js";
 
@@ -95,7 +96,12 @@ export async function loadComponentsFromFunctionComponent(functionComponent) {
 
   let funcCompParams = {};
   let funcCompName = functionComponent.name;
-  let funcCompCode = await cargarJSXComponente(funcCompName);
+  let funcCompCode = (functionComponent.name.endsWith("Pagina"))
+  ?
+  await cargarJSXPagina(funcCompName)
+  :
+  await cargarJSXComponente(funcCompName);
+
   const dependencyModules = await functionComponent();
   
   const visited = new Set();

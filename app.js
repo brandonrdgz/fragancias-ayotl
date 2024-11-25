@@ -3,28 +3,28 @@ import {footer} from './components/footer/footer.js'
 // import {dada} from './components/dada/dada.js'
 import {main } from './js/main/main.js'
 // Función para cargar CSS específico de una página
-function cargarEstilos(id, url) {
-  // Si ya existe, no lo cargues de nuevo
-  if (document.getElementById(id)) return;
+// function cargarEstilos(id, url) {
+//   // Si ya existe, no lo cargues de nuevo
+//   if (document.getElementById(id)) return;
 
-  const link = document.createElement("link");
-  link.id = id;
-  link.rel = "stylesheet";
-  link.href = url;
-  document.head.appendChild(link);
-}
+//   const link = document.createElement("link");
+//   link.id = id;
+//   link.rel = "stylesheet";
+//   link.href = url;
+//   document.head.appendChild(link);
+// }
 
-// Función para cargar JS específico de una página
-function cargarScript(id, url) {
-  // Si ya existe, no lo cargues de nuevo
-  if (document.getElementById(id)) return;
+// // Función para cargar JS específico de una página
+// function cargarScript(id, url) {
+//   // Si ya existe, no lo cargues de nuevo
+//   if (document.getElementById(id)) return;
 
-  const script = document.createElement("script");
-  script.defer = true;
-  script.id = id;
-  script.src = url;
-  document.head.appendChild(script);
-}
+//   const script = document.createElement("script");
+//   script.defer = true;
+//   script.id = id;
+//   script.src = url;
+//   document.head.appendChild(script);
+// }
 
 async function cargarYEjecutarFuncion(url) {
   try {

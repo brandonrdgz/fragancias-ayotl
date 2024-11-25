@@ -4,6 +4,9 @@ import { addComponentsToApp } from "../main/addComponentsToApp.js";
 import { loadFunctionComponents } from "../components/loadFunctionsComponents.js";
 
 import { cargarJSXPagina } from "../jsx/cargarJSXPagina.js"
+import { cargarEstilos } from "./cargarEstilos.js";
+import { cargarScript } from "./cargarScript.js";
+
 export async function cargarPagina(pagina , APP) {
   if (!APP || !(APP instanceof Element)) {
     throw new Error(
@@ -20,9 +23,9 @@ export async function cargarPagina(pagina , APP) {
     //Encontrar dependencias del jsx de pagina
     const paginaModulo = await import(`/pages/${pagina}/${pagina}.js`);
     
-    const dependenciasPagina = await paginaModulo[pagina]();
-    // console.log(dependenciasPagina);
-    const { functionComponents, paramsForFunctions } = await loadPageDependencies(dependenciasPagina);
+    const dependenciasPagina = await paginaModulo[pagina];
+    console.log(dependenciasPagina);
+    const { functionComponents, paramsForFunctions } = await loadFunctionComponents([dependenciasPagina]);
     // console.log(functionComponents, paramsForFunctions)
 
     addComponentsToApp(APP, functionComponents, paramsForFunctions);
@@ -53,7 +56,9 @@ export async function cargarPagina(pagina , APP) {
     // window.history.pushState({ pagina }, "", `#${pagina}`);
     
     // // Carga el CSS y JS específicos de la página
-    // cargarEstilos("estilos-pagina", `./pages/${pagina}/${pagina}.css`);
+    cargarEstilos("estilos-pagina", `./pages/${pagina}/${pagina}.css`);
+    // cargarScript("script-pagina", `./pages/${pagina}/${pagina}.js`);
+    
     // if (isModule) {
     //   await cargarYEjecutarFuncion(`./pages/${pagina}/${pagina}.js`);
     // } else {
