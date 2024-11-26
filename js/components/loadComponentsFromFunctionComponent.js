@@ -7,7 +7,7 @@ import { objectIsEmpty } from "../utils/objectIsEmpty.js";
 export async function loadComponentsFromFunctionComponent(functionComponent, isPage = false) {
   if (typeof functionComponent !== 'function') throw new Error("Param functionComponent debe ser una función.");
 
-  let funcCompParams = {};
+  let funcCompParams = { 'functionComponentName': [] };
   let funcCompName = functionComponent.name;
   let funcCompCode = (isPage)
   ?
@@ -28,13 +28,12 @@ export async function loadComponentsFromFunctionComponent(functionComponent, isP
       visited.add(dependencyName);
 
       const { functionComponentCode, functionComponentParams, functionComponentName } = await loadComponentsFromFunctionComponent(dependency[dependencyName]);
-      
-      if (objectIsEmpty(functionComponentParams)) {
+      if (functionComponentParams['functionComponentName'].length === 0) {
         funcCompParams[functionComponentName] = functionComponentCode;
-        funcCompParams['functionComponentName'] = functionComponentName;
+        funcCompParams['functionComponentName'].push(functionComponentName);
       } else {
         funcCompParams[functionComponentName] = [functionComponentCode, functionComponentParams ];
-        funcCompParams['functionComponentName'] = functionComponentName;
+        funcCompParams['functionComponentName'].push(functionComponentName);
       }
     }
   }

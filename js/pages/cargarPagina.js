@@ -24,7 +24,8 @@ export async function cargarPagina(pagina , APP) {
     
     const dependenciasPagina = await paginaModulo[pagina];
     const { functionComponents, paramsForFunctions } = await loadFunctionComponents([dependenciasPagina], true);
-
+    console.log(functionComponents);
+    console.log( paramsForFunctions);
     await addComponentsToApp(APP, functionComponents, paramsForFunctions, true);
 
     // Actualiza el historial

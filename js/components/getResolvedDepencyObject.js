@@ -1,32 +1,30 @@
+import { sumObjects } from "../utils/sumObjects.js"
 
-export async function executeDependencies(cantidadDeArrays, functionComponent, componentParam) {
-  function getFunctionParam(parametro) {
-    let arr = parametro[parametro['functionComponentName']];
+export async function getResolvedDepencyObject(cantidadDeArrays, componentParam) {
+  function getLastFunctionParam(parametro, paramName) {
+    let arr = parametro[paramName];
     return arr[1];
   }
-  let callBacksArrayCallFirst = [];
-  let callBacksArrayCallFirstNames = [];
-
-  // let parametro = componentParam;
-
+  let objectFinal = {};
   for (let indexAlfa = 0; indexAlfa < componentParam['functionComponentName'].length; indexAlfa++) {
     let callBacksArrayCallFirst = [];
     let callBacksArrayCallFirstNames = [];
 
-    const paramName = componentParam['functionComponentName'][indexAlfa];
-    const param = componentParam[paramName];
+    let paramName = componentParam['functionComponentName'][indexAlfa];
+    let param = componentParam;
 
     for (let index = cantidadDeArrays; index >= 0; index--) {
       for (let i = 0; i < index; i++) { //Index no cambiara mientras ocurre este bucle
-        param = getFunctionParam(param);
+        param = getLastFunctionParam(param, paramName);
+        paramName = param['functionComponentName'][0];
       }
-      callBacksArrayCallFirstNames.push(param[paramName]);
+      callBacksArrayCallFirstNames.push(param, paramName);
       param = (index < cantidadDeArrays) ?
         param[paramName][0]
         :
         param[paramName];
       callBacksArrayCallFirst.push(param);
-      param = componentParam[paramName];
+      param = componentParam;
     }
 
     const initialObject = { [callBacksArrayCallFirstNames[0]]: callBacksArrayCallFirst[0] };
@@ -36,7 +34,7 @@ export async function executeDependencies(cantidadDeArrays, functionComponent, c
       return { [name]: (...args) => callback(prevObject, args) };
     }, initialObject);
 
+    objectFinal = sumObjects(objectFinal, resultObject);
   }
-
-  return await functionComponent(resultObject);
+  return objectFinal;
 }

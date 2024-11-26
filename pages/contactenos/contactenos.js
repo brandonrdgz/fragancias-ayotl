@@ -1,6 +1,5 @@
 
 function validateForm() {
-    console.log("Hola mundo");
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const phone = document.getElementById('phone').value.trim();

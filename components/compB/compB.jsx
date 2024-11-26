@@ -1,7 +1,8 @@
-return ({ compC }) => {
+return ({ compC } , args) => {
+  const [txt] = args;
   return (
     <>
-      ${compC({TEXT: "oma wea2"})}
+      ${compC({TEXT: txt})}
     </>
   )
 }

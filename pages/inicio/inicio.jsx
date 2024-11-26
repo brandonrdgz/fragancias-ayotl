@@ -1,5 +1,4 @@
-return ({svgHoja}) => {
-
+return ({svgHoja , dada }) => {
 
   return (
     <>
@@ -15,7 +14,7 @@ return ({svgHoja}) => {
             AYOTL
           </p>
           <p class="text-center font-parrafros text-uppercase ayotl-sub-size">Fragancias y perfumes</p>
-
+          ${dada()}
         </div>
       </div>
     </>

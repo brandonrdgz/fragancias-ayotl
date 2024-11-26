@@ -1,7 +1,7 @@
 return ({ compB }) => {
   return (
     <>
-      ${compB()}
+      ${compB("Oma Wea 2")}
     </>
   )
 }
