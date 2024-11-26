@@ -27,18 +27,13 @@ export async function cargarPagina(pagina , APP) {
 
     await addComponentsToApp(APP, functionComponents, paramsForFunctions, true);
 
-    // // Actualiza el historial
+    // Actualiza el historial
     window.history.pushState({ pagina }, "", `#${pagina}`);
     
-    // // Carga el CSS y JS específicos de la página
+    // Carga el CSS y JS específicos de la página
     cargarEstilos("estilos-pagina", `./pages/${pagina}/${pagina}.css`);
     // cargarScript("script-pagina", `./pages/${pagina}/${pagina}.js`);
     
-    // if (isModule) {
-    //   await cargarYEjecutarFuncion(`./pages/${pagina}/${pagina}.js`);
-    // } else {
-      // cargarScript("script-pagina", `./pages/${pagina}/${pagina}.js`);
-    // }
   } catch (error) {
     throw error;
   }
