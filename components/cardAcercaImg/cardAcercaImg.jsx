@@ -1,4 +1,4 @@
-return (SRC) => {
+return ({IMG}) => {
   return (
     <>
       <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">

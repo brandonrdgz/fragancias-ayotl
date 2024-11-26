@@ -1,4 +1,4 @@
-return (TITLE,PRECIO,IMAGE) => {
+return ({TITLE,PRECIO,IMAGE}) => {
   return (
     <>
       <div class="col-md-4 mb-4">
@@ -21,7 +21,7 @@ return (TITLE,PRECIO,IMAGE) => {
       </div>
     </>
   );
-};
+}
 /* <div class="col-md-4 mb-4">
 <div class="card">
    <img src="${ IMG_FOLDER + element.img}" class="card-img-top" alt="${element.nombre}">

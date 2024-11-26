@@ -2,29 +2,7 @@ import { createNodesFromHTML } from "../html/createNodesFromHTML.js";
 import { countParamsArrays } from "../components/countParamsArrays.js";
 import { executeDependencies } from "../components/executeDependencies.js";
 
-export function addComponentsToApp(APP, functionComponents = [], componentsParams = []) {
-  // [
-  //   (TEXT) => TEXT,
-  //   ({compC}) => compC("dada"),
-  //   ({compB}) => compB(),
-  //   ({compA}) => compA(),
-  // ] 
-  //   const dada = ({compA}) => compA();
-  //   const compA = ({compB}) => compB();
-  //   const compB = ({compC}) => compC("dada");
-  //   const compC = (TEXT) => TEXT;
-  // let x = dada({ compA: () => compA({ compB: () => compB({ compC }) }) });
-  // console.log(x);
-
-  // const dada = ({ compA }) => compA;
-  // const compA = ({ compB }) => compB;
-  // const compB = ({ compC }) => compC("dada");
-  // const compC = (TEXT) => TEXT;
-
-  // let x = dada({ compA: compA({ compB: compB({ compC: compC }) }) });
-
-  // console.log(x); // Outputs: "dada"
-  // // return;
+export async function addComponentsToApp(APP, functionComponents = [], componentsParams = [], isPage = false, isBefore = false) {
   if (APP == false && !(APP instanceof Element))
     throw new Error("Parametro APP no puede ser falsy");
   for (let i = 0; i < functionComponents.length; i++) {
@@ -34,9 +12,20 @@ export function addComponentsToApp(APP, functionComponents = [], componentsParam
     let htmlString = "";
 
     htmlString = (cantidadDeArrays > 0) ?
-      executeDependencies(cantidadDeArrays, funcion, parametro)
-    :
-      funcion(parametro);
-    APP.appendChild(createNodesFromHTML(htmlString));
+      await executeDependencies(cantidadDeArrays, funcion, parametro)
+      :
+      await funcion(parametro);
+    
+    if(isPage)
+    {
+      const fragment = createNodesFromHTML(htmlString);
+      APP.replaceChildren(...fragment.childNodes);
+    }else if(isBefore)
+    {
+      APP.parentElement.insertBefore(createNodesFromHTML(htmlString), APP);
+    }else
+    {
+      APP.appendChild(createNodesFromHTML(htmlString));
+    }
   }
 }

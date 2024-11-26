@@ -1,5 +1,5 @@
 
-export function executeDependencies(cantidadDeArrays, functionComponent, componentParam) {
+export async function executeDependencies(cantidadDeArrays, functionComponent, componentParam) {
   function getLastFunctionParam(parametro) {
     let arr = parametro[parametro['functionComponentName']];
     return arr[1];
@@ -29,5 +29,5 @@ export function executeDependencies(cantidadDeArrays, functionComponent, compone
     return { [name]: () => callback(prevObject) };
   }, initialObject);
 
-  return functionComponent(resultObject);
+  return await functionComponent(resultObject);
 }

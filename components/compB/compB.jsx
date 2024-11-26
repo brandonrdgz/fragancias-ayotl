@@ -1,7 +1,7 @@
 return ({ compC }) => {
   return (
     <>
-      ${compC({TEXT: "oma wea"})}
+      ${compC({TEXT: "oma wea2"})}
     </>
   )
 }

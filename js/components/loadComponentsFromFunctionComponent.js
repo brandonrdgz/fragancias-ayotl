@@ -1,7 +1,7 @@
 import { cargarJSXComponente } from "../jsx/cargarJSXComponente.js"
 import { cargarJSXPagina } from "../jsx/cargarJSXPagina.js";
 import { getDependencieName } from "../module/getDependencieName.js";
-import { objectIsEmpty } from "../utils/objectIsEmpty().js";
+import { objectIsEmpty } from "../utils/objectIsEmpty.js";
 
 
 // ull@x
@@ -88,20 +88,16 @@ import { objectIsEmpty } from "../utils/objectIsEmpty().js";
 // };
 
 
-
-
-
-export async function loadComponentsFromFunctionComponent(functionComponent) {
+export async function loadComponentsFromFunctionComponent(functionComponent, isPage = false) {
   if (typeof functionComponent !== 'function') throw new Error("Param functionComponent debe ser una función.");
 
   let funcCompParams = {};
   let funcCompName = functionComponent.name;
-  let funcCompCode = (functionComponent.name.endsWith("Pagina"))
+  let funcCompCode = (isPage)
   ?
   await cargarJSXPagina(funcCompName)
   :
   await cargarJSXComponente(funcCompName);
-
   const dependencyModules = await functionComponent();
   
   const visited = new Set();

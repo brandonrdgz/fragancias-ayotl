@@ -1,4 +1,5 @@
-return ({ cardAcerca, cardAcercaIMG }) => {
+return async ({ cardAcerca, cardAcercaImg}) => {
+  let executeAfter = (await import ("/js/utils/executeAfter.js"))['executeAfter'];
 
   let taniaText = 
   `
@@ -50,19 +51,21 @@ del conocimiento de nuestra marca en la web ayudando en la
 estructuración de la página y ayudando a miembros del equipo en la
 estructuración de código.
 `
-const hiddenElements = document.querySelectorAll(".hidden");
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    } else {
-      entry.target.classList.remove("show");
-    }
-  });
-});
+const resolve = () => {
+  const hiddenElements = document.querySelectorAll(".hidden");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  }); 
+  hiddenElements.forEach((el) => observer.observe(el));
+}
 
-hiddenElements.forEach((el) => observer.observe(el));
-
+  executeAfter(resolve, 300);
 
   return (
     <>
@@ -76,7 +79,7 @@ hiddenElements.forEach((el) => observer.observe(el));
               class="col-12 col-md-6 d-flex justify-content-center align-items-center order-last order-md-first"
             >
               <img
-                src="../../assets/imgs/image_7.png"
+                src="/assets/imgs/image_7.png"
                 class="img-fluid hidden"
                 alt="perfume"
               />
@@ -101,7 +104,7 @@ hiddenElements.forEach((el) => observer.observe(el));
         <div class="container p-5 text-center hidden">
           <div class="d-flex align-items-center row">
             ${cardAcerca({ TITLE: "Nuestro Origen", TEXT: nuestroOrigen })}
-            ${cardAcercaIMG({ SRC: "../../assets/imgs/image_8.jpg" })}
+            ${cardAcercaImg({ IMG: "../../assets/imgs/image_8.png" })}
           </div>
         </div>
         <div class="container text-start hidden">
@@ -111,19 +114,19 @@ hiddenElements.forEach((el) => observer.observe(el));
         <div class="container p-5 text-center hidden">
           <div class="d-flex align-items-center row">
             ${cardAcerca({ TITLE: "Tania Falcón", TEXT: taniaText })}
-            ${cardAcercaIMG({ SRC: "../../assets/imgs/team-imgs/tania.jpg" })}
+            ${cardAcercaImg({ IMG: "../../assets/imgs/team-imgs/tania.jpg" })}
           </div>
         </div>
 
         <div class="container p-5 text-center hidden">
           <div class="d-flex align-items-center row">
-            ${cardAcercaIMG({ SRC: "../../assets/imgs/team-imgs/tere.jpg" })}
+            ${cardAcercaImg({ IMG: "../../assets/imgs/team-imgs/tere.jpg" })}
             ${cardAcerca({ TITLE: "Teresa Ortiz", TEXT: tereText })}
           </div>
         </div>
         <div class="container p-5 text-center hidden">
           <div class="d-flex align-items-center row">
-            ${cardAcercaIMG({ SRC: "../../assets/imgs/team-imgs/carlos.jpg" })}
+            ${cardAcercaImg({ IMG: "../../assets/imgs/team-imgs/carlos.jpg" })}
             ${cardAcerca({ TITLE: "Carlos Peña", TEXT: carlosText })}
           </div>
         </div>

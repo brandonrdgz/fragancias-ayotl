@@ -1,4 +1,4 @@
-return (TITLE, TEXT) => {
+return ({TITLE, TEXT}) => {
   return (
     <>
       <div class="col-12 col-md-6 text-start">
