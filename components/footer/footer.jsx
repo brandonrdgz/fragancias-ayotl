@@ -18,7 +18,6 @@ return ({footerElement}) => {
             ${footerElement({TITLE: "FAQs", LINK: "contactenos"})}
             ${footerElement({TITLE: "NewItemForm", LINK: "newitemform"})}
             ${footerElement({TITLE: "Nosotros", LINK: "acerca"})}
-            ${footerElement({TITLE: "Inicio2", LINK: "inicio2"})}
           </ul>
         </footer>
       </div>
