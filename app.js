@@ -1,3 +1,8 @@
+import { obtenerCarrito } from "./pages/carrito/carrito.js";
+import { cargarCarritoDesdeLocalStorage } from "./pages/carrito/carrito.js";
+import { renderizarCarritoEnNavbar } from "./components/navbar/navbar.js";
+import { initWishlist } from "./pages/wishlist/wishlist.js";
+
 // Función para cargar CSS específico de una página
 function cargarEstilos(id, url) {
   if (document.getElementById(id)) return; // Si ya existe, no lo cargues de nuevo
@@ -88,127 +93,6 @@ async function cargarPagina(pagina, module = true) {
   }
 }
 
-// export function loadPage(page, id) {
-//   if (page === "product") {
-//     fetch("./pages/product/product.html")
-//       .then((response) => response.text())
-//       .then((html) => {
-//         document.getElementById("main-content").innerHTML = html;
-//         loadProductDetails(id); // Cargar los detalles del producto
-//       })
-//       .catch((error) => console.error("Error al cargar la página:", error));
-//   }
-// }
-//
-// export function loadProductDetails(id) {
-//   // Obtener datos del producto usando el ID
-//   fetch("./js/crudJSON.js")
-//     .then((response) => response.json())
-//     .then((data) => {
-//       const producto = data.find((item) => item.id === id);
-//       if (producto) {
-//         document.getElementById("product-container").innerHTML =
-//           `<div class="single-product">
-//     <div class="row">
-//       <div class="col-6">
-//         <div class="product-image">
-//           <div class="product-image-main">
-//             <img src="" alt="" id="product-main-image" />
-//           </div>
-//         </div>
-//       </div>
-//       <div class="col-6">
-//         <div class="breadcrumb">
-//           <span><a data-link="inicio">Inicio</a></span>
-//           <span><a data-link="catalogo">Productos</a></span>
-//           <span class="active">Perfume</span>
-//         </div>
-//
-//         <div class="product">
-//           <div class="product-title">
-//             <h2></h2>
-//           </div>
-//           <div class="product-price">
-//             <span class="sale-price">$0.00</span>
-//           </div>
-//
-//           <div class="product-details">
-//             <h3>Descripcion</h3>
-//             <p></p>
-//           </div>
-//           <div class="product-color">
-//             <h4></h4>
-//             <div class="color-layout">
-//               <input
-//                 type="radio"
-//                 name="color"
-//                 value="black"
-//                 class="color-input"
-//               />
-//               <label for="black" class="black"></label>
-//               <input
-//                 type="radio"
-//                 name="color"
-//                 value="red"
-//                 class="color-input"
-//               />
-//               <label for="red" class="red"></label>
-//
-//               <input
-//                 type="radio"
-//                 name="color"
-//                 value="blue"
-//                 class="color-input"
-//               />
-//               <label for="blue" class="blue"></label>
-//             </div>
-//           </div>
-//           <span class="divider"></span>
-//
-//           <div class="product-btn-group">
-//             <div class="button buy-now"><i class="bx bxs-zap"></i> Comprar</div>
-//             <div class="button add-cart">
-//               <i class="bx bxs-cart"></i>
-//             </div>
-//             <div class="button heart">
-//               <i class="bx bxs-heart"></i>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   </div>`;
-//       } else {
-//         console.error("Producto no encontrado");
-//       }
-//     })
-//     .catch((error) =>
-//       console.error("Error al cargar los datos del producto:", error),
-//     );
-// }
-//
-// // Inicialización del SPA, escuchando los cambios en el hash
-// window.addEventListener("hashchange", handleRouteChange);
-//
-// // Función para manejar los cambios en el hash y cargar la página correspondiente
-// function handleRouteChange() {
-//   const hash = window.location.hash; // Obtener el hash de la URL
-//   const [page, params] = hash.slice(1).split("?");
-//   const paramsObj = new URLSearchParams(params);
-//   const id = paramsObj.get("id"); // Obtener el id del producto
-//
-//   if (page && id) {
-//     loadPage(page, id); // Cargar la página correspondiente
-//   }
-// }
-//
-// // Ejecutar cuando se carga la página inicialmente
-// document.addEventListener("DOMContentLoaded", () => {
-//   if (window.location.hash) {
-//     handleRouteChange(); // Cargar la página según el hash actual
-//   }
-// });
-
 // Inicializa la página principal
 function iniciarEnrutador() {
   const paginaInicial = window.location.hash.substring(1) || "inicio";
@@ -226,6 +110,115 @@ function iniciarEnrutador() {
   }
   cargarPagina(paginaInicial, flagModule);
 }
+
+// Función asíncrona para obtener productos de una API
+async function fetchProducts(apiEndpoint) {
+  try {
+    // Llamada a la API
+    const response = await fetch(apiEndpoint);
+
+    // Verifica si la respuesta es exitosa
+    if (!response.ok) {
+      throw new Error(
+        `Error en la solicitud: ${response.status} - ${response.statusText}`,
+      );
+    }
+
+    // Convierte la respuesta a JSON
+    const products = await response.json();
+
+    // Imprime o retorna los productos
+    console.log("Productos obtenidos:", products);
+    return products;
+  } catch (error) {
+    // Manejo de errores
+    console.error("Error al obtener los productos:", error);
+  }
+}
+
+// Ejemplo de uso
+const apiEndpoint = "http://localhost:8080/api/v1/product"; // Reemplaza con tu API real
+fetchProducts(apiEndpoint);
+
+function renderizarCarritoPagina() {
+  const carrito = obtenerCarrito();
+  const lista = document.getElementById("carrito-list");
+  const total = document.getElementById("carrito-total-precio");
+
+  // Limpiar contenido actual
+  lista.innerHTML = "";
+
+  let totalPrecio = 0;
+
+  // Renderizar productos
+  carrito.forEach((producto) => {
+    const item = document.createElement("li");
+    item.innerHTML = `
+      <div class="carrito-item">
+        <img src="./assets/imgs/${producto.img}" alt="${producto.title}" width="50" />
+        <span>${producto.title}</span>
+        <span>${producto.price} x ${producto.cantidad}</span>
+        <button data-id="${producto.id}" class="btn-remove">Eliminar</button>
+      </div>
+    `;
+    lista.appendChild(item);
+    totalPrecio +=
+      parseFloat(producto.price.replace("$", "")) * producto.cantidad;
+  });
+
+  // Actualizar precio total
+  total.innerText = `$${totalPrecio.toFixed(2)}`;
+
+  // Escuchar clics en botones de eliminar
+  lista.addEventListener("click", (event) => {
+    if (event.target.classList.contains("btn-remove")) {
+      eliminarDelCarrito(event.target.dataset.id);
+      renderizarCarritoPagina();
+      renderizarCarritoEnNavbar();
+    }
+  });
+}
+
+function loadPage(page) {
+  const app = document.getElementById("main-content");
+
+  if (page === "wishlist") {
+    fetch("./pages/wishlist/wishlist.html")
+      .then((response) => response.text())
+      .then((html) => {
+        app.innerHTML = html; // Cargar el HTML
+        initWishlist(); // Inicializar la lógica de la wishlist
+      })
+      .catch((error) => console.error("Error al cargar la página:", error));
+  }
+
+  if (page === "catalogo") {
+    fetch("./pages/catalogo/catalogo.html")
+      .then((response) => response.text())
+      .then((html) => {
+        app.innerHTML = html; // Cargar el HTML del catálogo
+        initCatalogo(); // Inicializar la lógica del catálogo
+      })
+      .catch((error) => console.error("Error al cargar el catálogo:", error));
+  }
+}
+
+// Escuchar cambios en el hash de la URL
+window.addEventListener("hashchange", () => {
+  const page = window.location.hash.slice(1);
+  loadPage(page);
+});
+
+// Cargar la página inicial
+document.addEventListener("DOMContentLoaded", () => {
+  const page = window.location.hash.slice(1) || "catalogo"; // Página inicial
+  loadPage(page);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  cargarCarritoDesdeLocalStorage();
+  renderizarCarritoEnNavbar();
+});
 
 // Maneja clics en elementos con data-link para navegación
 document.addEventListener("click", (event) => {

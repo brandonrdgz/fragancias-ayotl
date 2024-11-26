@@ -1,164 +1,295 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-10 col-11 mx-auto">
-      <div class="row mt-5 gx-3">
-        <!-- left side div -->
-        <div
-          class="col-md-12 col-lg-8 col-11 mx-auto main_cart mb-lg-0 mb-5 shadow"
-        >
-          <div class="card p-4">
-            <h2 class="py-4 font-weight-bold">Cart (2 items)</h2>
+<section class="h-100 h-custom" style="background-color: #eee">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card">
+          <div class="card-body p-4">
             <div class="row">
-              <!-- cart images div -->
-              <div
-                class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img"
-              >
-                <img src="images/img2.png" class="img-fluid" alt="cart img" />
-              </div>
-              <!-- cart product details -->
-              <div class="col-md-7 col-11 mx-auto px-4 mt-2">
-                <div class="row">
-                  <!-- product name  -->
-                  <div class="col-6 card-title">
-                    <h1 class="mb-4 product_name">Blue Zara Shirt</h1>
-                    <p class="mb-2">SHIRT - BLUE</p>
-                    <p class="mb-2">COLOR: BLUE</p>
-                    <p class="mb-3">SIZE: M</p>
+              <div class="col-lg-7">
+                <h5 class="mb-3">
+                  <a href="catalogo" class="text-body"
+                    ><i class="fas fa-long-arrow-alt-left me-2"></i>Continuar
+                    comprando</a
+                  >
+                </h5>
+                <hr />
+
+                <div
+                  class="d-flex justify-content-between align-items-center mb-4"
+                >
+                  <div>
+                    <p class="mb-1">Carrito</p>
+                    <p class="mb-0">Tienes 0 articulos en tu carrito</p>
                   </div>
-                  <!-- quantity inc dec -->
-                  <div class="col-6">
-                    <ul class="pagination justify-content-end set_quantity">
-                      <li class="page-item">
-                        <button
-                          class="page-link"
-                          onclick="decreaseNumber('textbox','itemval')"
-                        >
-                          <i class="fas fa-minus"></i>
-                        </button>
-                      </li>
-                      <li class="page-item">
+                  <div>
+                    <p class="mb-0">
+                      <span class="text-muted">Ordenar por:</span>
+                      <a href="#!" class="text-body"
+                        >precio <i class="fas fa-angle-down mt-1"></i
+                      ></a>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <div class="d-flex flex-row align-items-center">
+                        <div>
+                          <img src="" />
+                        </div>
+                        <div class="ms-3">
+                          <h5></h5>
+                          <p class="small mb-0"></p>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-row align-items-center">
+                        <div style="width: 50px">
+                          <h5 class="fw-normal mb-0">2</h5>
+                        </div>
+                        <div style="width: 80px">
+                          <h5 class="mb-0">$0</h5>
+                        </div>
+                        <a href="#!" style="color: #cecece"
+                          ><i class="fas fa-trash-alt"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <div class="d-flex flex-row align-items-center">
+                        <div>
+                          <img
+                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img2.webp"
+                            class="img-fluid rounded-3"
+                            alt="Shopping item"
+                            style="width: 65px"
+                          />
+                        </div>
+                        <div class="ms-3">
+                          <h5>Samsung galaxy Note 10</h5>
+                          <p class="small mb-0">256GB, Navy Blue</p>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-row align-items-center">
+                        <div style="width: 50px">
+                          <h5 class="fw-normal mb-0">2</h5>
+                        </div>
+                        <div style="width: 80px">
+                          <h5 class="mb-0">$900</h5>
+                        </div>
+                        <a href="#!" style="color: #cecece"
+                          ><i class="fas fa-trash-alt"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <div class="d-flex flex-row align-items-center">
+                        <div>
+                          <img
+                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img3.webp"
+                            class="img-fluid rounded-3"
+                            alt="Shopping item"
+                            style="width: 65px"
+                          />
+                        </div>
+                        <div class="ms-3">
+                          <h5>Canon EOS M50</h5>
+                          <p class="small mb-0">Onyx Black</p>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-row align-items-center">
+                        <div style="width: 50px">
+                          <h5 class="fw-normal mb-0">1</h5>
+                        </div>
+                        <div style="width: 80px">
+                          <h5 class="mb-0">$1199</h5>
+                        </div>
+                        <a href="#!" style="color: #cecece"
+                          ><i class="fas fa-trash-alt"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card mb-3 mb-lg-0">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <div class="d-flex flex-row align-items-center">
+                        <div>
+                          <img
+                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img4.webp"
+                            class="img-fluid rounded-3"
+                            alt="Shopping item"
+                            style="width: 65px"
+                          />
+                        </div>
+                        <div class="ms-3">
+                          <h5>MacBook Pro</h5>
+                          <p class="small mb-0">1TB, Graphite</p>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-row align-items-center">
+                        <div style="width: 50px">
+                          <h5 class="fw-normal mb-0">1</h5>
+                        </div>
+                        <div style="width: 80px">
+                          <h5 class="mb-0">$1799</h5>
+                        </div>
+                        <a href="#!" style="color: #cecece"
+                          ><i class="fas fa-trash-alt"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-5">
+                <div class="card bg-primary text-white rounded-3">
+                  <div class="card-body">
+                    <div
+                      class="d-flex justify-content-between align-items-center mb-4"
+                    >
+                      <h5 class="mb-0">Detalles de pago</h5>
+                    </div>
+
+                    <p class="small mb-2">Banco</p>
+                    <a href="#!" type="submit" class="text-white"
+                      ><i class="fab fa-cc-mastercard fa-2x me-2"></i
+                    ></a>
+                    <a href="#!" type="submit" class="text-white"
+                      ><i class="fab fa-cc-visa fa-2x me-2"></i
+                    ></a>
+                    <a href="#!" type="submit" class="text-white"
+                      ><i class="fab fa-cc-amex fa-2x me-2"></i
+                    ></a>
+                    <a href="#!" type="submit" class="text-white"
+                      ><i class="fab fa-cc-paypal fa-2x"></i
+                    ></a>
+
+                    <form class="mt-4">
+                      <div
+                        data-mdb-input-init
+                        class="form-outline form-white mb-4"
+                      >
                         <input
                           type="text"
-                          name=""
-                          class="page-link"
-                          value="0"
-                          id="textbox"
+                          id="typeName"
+                          class="form-control form-control-lg"
+                          siez="17"
+                          placeholder="Nombre"
                         />
-                      </li>
-                      <li class="page-item">
-                        <button
-                          class="page-link"
-                          onclick="increaseNumber('textbox','itemval')"
+                        <label class="form-label" for="typeName"
+                          >Nombre en la tarjeta</label
                         >
-                          <i class="fas fa-plus"></i>
-                        </button>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- //remover move and price -->
-                <div class="row">
-                  <div class="col-8 d-flex justify-content-between remove_wish">
-                    <p><i class="fas fa-trash-alt"></i> REMOVE ITEM</p>
-                    <p><i class="fas fa-heart"></i>MOVE TO WISH LIST</p>
-                  </div>
-                  <div class="col-4 d-flex justify-content-end price_money">
-                    <h3>$<span id="itemval">0.00 </span></h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr />
-          <!-- 2nd cart product -->
-          <div class="card p-4">
-            <div class="row">
-              <!-- cart images div -->
-              <div
-                class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img"
-              >
-                <img src="images/img3.png" class="img-fluid" alt="cart img" />
-              </div>
-              <!-- cart product details -->
-              <div class="col-md-7 col-11 mx-auto px-4 mt-2">
-                <div class="row">
-                  <!-- product name  -->
-                  <div class="col-6 card-title">
-                    <h1 class="mb-4 product_name">Green Zara Shirt</h1>
-                    <p class="mb-2">SHIRT - Green</p>
-                    <p class="mb-2">COLOR: Green</p>
-                    <p class="mb-3">SIZE: M</p>
-                  </div>
-                  <!-- quantity inc dec -->
-                  <div class="col-6">
-                    <ul class="pagination justify-content-end set_quantity">
-                      <li class="page-item">
-                        <button
-                          class="page-link"
-                          onclick="decreaseNumber('textbox1','itemval1')"
-                        >
-                          <i class="fas fa-minus"></i>
-                        </button>
-                      </li>
-                      <li class="page-item">
+                      </div>
+
+                      <div
+                        data-mdb-input-init
+                        class="form-outline form-white mb-4"
+                      >
                         <input
                           type="text"
-                          name=""
-                          class="page-link"
-                          value="0"
-                          id="textbox1"
+                          id="typeText"
+                          class="form-control form-control-lg"
+                          siez="17"
+                          placeholder="1234 5678 9012 3457"
+                          minlength="19"
+                          maxlength="19"
                         />
-                      </li>
-                      <li class="page-item">
-                        <button
-                          class="page-link"
-                          onclick="increaseNumber('textbox1','itemval1')"
+                        <label class="form-label" for="typeText"
+                          >Numero de Tarjeta</label
                         >
-                          <i class="fas fa-plus"></i>
-                        </button>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- //remover move and price -->
-                <div class="row">
-                  <div class="col-8 d-flex justify-content-between remove_wish">
-                    <p><i class="fas fa-trash-alt"></i> REMOVE ITEM</p>
-                    <p><i class="fas fa-heart"></i>MOVE TO WISH LIST</p>
-                  </div>
-                  <div class="col-4 d-flex justify-content-end price_money">
-                    <h3>$<span id="itemval1">0.00 </span></h3>
+                      </div>
+
+                      <div class="row mb-4">
+                        <div class="col-md-6">
+                          <div
+                            data-mdb-input-init
+                            class="form-outline form-white"
+                          >
+                            <input
+                              type="text"
+                              id="typeExp"
+                              class="form-control form-control-lg"
+                              placeholder="MM/AAAA"
+                              size="7"
+                              id="exp"
+                              minlength="7"
+                              maxlength="7"
+                            />
+                            <label class="form-label" for="typeExp"
+                              >Expiracion</label
+                            >
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div
+                            data-mdb-input-init
+                            class="form-outline form-white"
+                          >
+                            <input
+                              type="password"
+                              id="typeText"
+                              class="form-control form-control-lg"
+                              placeholder="&#9679;&#9679;&#9679;"
+                              size="1"
+                              minlength="3"
+                              maxlength="3"
+                            />
+                            <label class="form-label" for="typeText">Cvv</label>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+
+                    <hr class="my-4" />
+
+                    <div class="d-flex justify-content-between">
+                      <p class="mb-2">Subtotal</p>
+                      <p class="mb-2">$0.00</p>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                      <p class="mb-2">Envio</p>
+                      <p class="mb-2">$0.00</p>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-4">
+                      <p class="mb-2">Total</p>
+                      <p class="mb-2">$0.00</p>
+                    </div>
+
+                    <button
+                      type="button"
+                      data-mdb-button-init
+                      data-mdb-ripple-init
+                      class="btn btn-info btn-block btn-lg"
+                    >
+                      <div class="d-flex justify-content-between">
+                        <span>$0.00</span>
+                        <span
+                          >Pagar <i class="fas fa-long-arrow-alt-right ms-2"></i
+                        ></span>
+                      </div>
+                    </button>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <!-- right side div -->
-        <div class="col-md-12 col-lg-4 col-11 mx-auto mt-lg-0 mt-md-5">
-          <div class="right_side p-3 shadow bg-white">
-            <h2 class="product_name mb-5">The Total Amount Of</h2>
-            <div class="price_indiv d-flex justify-content-between">
-              <p>Product amount</p>
-              <p>$<span id="product_total_amt">0.00</span></p>
-            </div>
-            <div class="price_indiv d-flex justify-content-between">
-              <p>Shipping Charge</p>
-              <p>$<span id="shipping_charge">50.0</span></p>
-            </div>
-            <hr />
-            <div
-              class="total-amt d-flex justify-content-between font-weight-bold"
-            >
-              <p>Monto total</p>
-              <p>$<span id="total_cart_amt">0.00</span></p>
-            </div>
-            <button class="btn btn-primary text-uppercase">Comprar Ahora</button>
-          </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
