@@ -7,7 +7,6 @@ export default async function recuperarRutas(HTMLText) {
       }
       
       const htmlFooter = await respuesta.text();
-      // console.log (htmlFooter);
       
       return htmlFooter;
       
