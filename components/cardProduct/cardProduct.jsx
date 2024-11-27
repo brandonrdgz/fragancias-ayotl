@@ -1,34 +1,24 @@
-return ({TITLE,PRECIO,IMAGE}) => {
+return (
+  { 
+    ID,
+    TITLE,
+    TAMAÑO,
+    IMG,
+    PRECIO,
+    MONEDA
+  }
+) => {
   return (
     <>
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img
-            src="${IMAGE}"
-            class="card-img-top"
-            alt="${TITLE}"
-          />
-          <div class="card-body text-center">
-            <h5 class="card-title">
-              ${TITLE}
-            </h5>
-            <p class="card-text">${PRECIO}</p>
-            <a href="#" class="btn btn-primary">
-              Comprar ahora
-            </a>
+      <div class="product-box" data-id="${ID}" data-link="product">
+        <img src="${IMG}" class="product-img" alt="${TITLE}" />
+          <h5 class="product-title">${TITLE + " " + TAMAÑO}</h5>
+          <span class="price">${"$" + PRECIO + MONEDA}</span>
+          <div class="product-actions">
+            <i class="bi bi-bag-fill add-cart"></i>
+            <i class="bi bi-heart add-wishlist"></i>
           </div>
-        </div>
       </div>
     </>
   );
 }
-/* <div class="col-md-4 mb-4">
-<div class="card">
-   <img src="${ IMG_FOLDER + element.img}" class="card-img-top" alt="${element.nombre}">
-   <div class="card-body text-center">
-      <h5 class="card-title">${element.nombre + " " + element.caracteristicas.tamaño}</h5>
-      <p class="card-text">${element.precio + element.moneda}</p>
-      <a href="#" class="btn btn-primary">Comprar ahora</a>
-   </div>
-</div>
-</div> */

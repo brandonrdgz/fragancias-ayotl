@@ -1,29 +1,43 @@
 return async ({ cardProduct }) => {
-  const IMG_FOLDER = "./assets/imgs/perfumes/";
-  let obtenerProductos = (await import ("/js/utils/crudJSON.js"))['obtenerProductos'];
-  
+  const IMG_FOLDER = "/assets/imgs/perfumes/";
+  let obtenerProductos = (await import("/js/utils/crudJSON.js"))['obtenerProductos'];
+
   const productos = await obtenerProductos("/data/fragancias.json");
-  
-  let PERFUMES = "";
+
+  let perfumes = "";
   if (productos) {
     const divPerfumesContainer = document.querySelector(
-      "#AQUI_VAN_LOS_PERFUMES"
+      "#perfumes"
     );
-    productos.reduce((acc, val) => {
-      const { precio, nombre, img } = val;
-      const TITLE = nombre;
-      const PRECIO = precio;
-      const IMAGE = IMG_FOLDER + img;
-      PERFUMES += cardProduct({ TITLE, PRECIO, IMAGE });
+    // caracteristicas.tamaño
+    perfumes = productos.reduce((acc, val) => {
+      
+      const {precio, nombre, img, moneda, caracteristicas, id } = val;
+      const ID= id;
+      const TITLE= nombre;
+      const TAMAÑO= caracteristicas.tamaño;
+      const IMG= IMG_FOLDER + img;
+      const PRECIO= precio;
+      const MONEDA= moneda;
+      return acc+= cardProduct(
+        {
+
+          ID,
+          TITLE,
+          TAMAÑO,
+          IMG,
+          PRECIO,
+          MONEDA
+        }
+      );
     }, "");
-  } 
+  }
   return (
     <>
-      <section class="py-5">
-        <div class="container">
-          <h2 class="text-center mb-4">Nuestros Productos</h2>
-          <div class="row" id="AQUI_VAN_LOS_PERFUMES"></div>
-          ${PERFUMES}
+      <section class="shop" id="catalog-container">
+        <h2 class="section-title">Perfumes Ayotl</h2>
+        <div class="shop-content" id="perfumes">
+          ${perfumes}
         </div>
       </section>
     </>
