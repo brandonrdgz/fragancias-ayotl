@@ -1,7 +1,6 @@
-export function handlePopstate(e, APP) {
-  const pagina = e.state ? e.state.pagina : "inicio";
+import { cargarPagina } from "../pages/cargarPagina.js";
 
-  // let flagIsModule = getFlagIsModule(pagina, rutas);
-
+export function handlePopState(e, APP) {
+  const pagina = e.state ? e.state.pagina : "p404";
   cargarPagina(pagina, APP);
 }

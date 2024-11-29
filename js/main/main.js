@@ -1,8 +1,9 @@
 
-import { loadFunctionComponents } from "../components/loadFunctionsComponents.js";
+import { loadFunctionComponentsArray } from "../components/loadFunctionComponentsArray.js";
 import { addComponentsToApp } from "./addComponentsToApp.js";
 import { iniciarEnrutador } from "../router/iniciarEnrutador.js";
 import { handleClicksToAnchorElements } from "../router/handleClicksToAnchorElements.js";
+import { handlePopState} from "../router/handlePopState.js";
 
 export async function main(app) {
   const { APP, ...comps } = app;
@@ -33,7 +34,7 @@ export async function main(app) {
 
   // Cargar componentes antes y después de APP
   const loadAndAddComponents = async (paramSubset, Nodo, isBefore = false) => {
-    const { functionComponents, paramsForFunctions } = await loadFunctionComponents(paramSubset);
+    const { functionComponents, paramsForFunctions } = await loadFunctionComponentsArray(paramSubset);
     await addComponentsToApp(Nodo, functionComponents, paramsForFunctions, false, isBefore);
   };
 
@@ -42,5 +43,5 @@ export async function main(app) {
 
   document.addEventListener("click", (e) => handleClicksToAnchorElements(e, APP));
 
-  window.addEventListener("popstate", (e) => handlePopstate(e, rutasNoModule, APP));
+  window.addEventListener("popstate", (e) => handlePopState(e, APP));
 }
