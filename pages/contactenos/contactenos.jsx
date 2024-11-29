@@ -1,10 +1,6 @@
 
 return async ({ }) => {
 
-  let cargarDepsPage = (await import ("/js/pages/cargarDepsPage.js"))['cargarDepsPage'];
-
-  cargarDepsPage("contactenos");
- 
   return (
     <>
       <div class="container py-5">

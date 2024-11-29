@@ -14,7 +14,7 @@ return ({footerElement}) => {
 
           <ul class="nav col-md-4 justify-content-center">
             ${footerElement({TITLE: "Perfumes", LINK: "catalogo"})}
-            ${footerElement({TITLE: "Promociones", LINK: "inicio"})}
+            ${footerElement({TITLE: "Promociones", LINK: "promociones"})}
             ${footerElement({TITLE: "FAQs", LINK: "contactenos"})}
             ${footerElement({TITLE: "NewItemForm", LINK: "newitemform"})}
             ${footerElement({TITLE: "Nosotros", LINK: "acerca"})}
