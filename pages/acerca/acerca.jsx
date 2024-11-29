@@ -14,7 +14,7 @@ a crear soluciones que generen un impacto positivo.
   let tereText = 
   `
 Teresa Ortiz es una politóloga y administradora pública, apasionada
-por el desarrollo sostenible y la tecnología. Desde joven, siempre
+por el desarrollo sostenible y la tecnología. Siempre
 estuvo interesada en la política y cómo esta afectaba el medio
 ambiente y la sociedad. Después de completar sus estudios
 universitarios, Teresa comenzó a trabajar en organizaciones no
@@ -51,6 +51,46 @@ del conocimiento de nuestra marca en la web ayudando en la
 estructuración de la página y ayudando a miembros del equipo en la
 estructuración de código.
 `
+  let luisText =
+    `
+Administrador de empresas, con especialidad en Project Management y
+aficionado de las fragancias decidió impartir junto con los demás
+miembros del equipo este proyecto que ayuda a conseguir la apreciación
+de las materias primas mexicanas capturando su esencia en varias de
+nuestras fragancias, el posicionamiento en el mercado nacional e
+internacional con sus conocimientos y creatividad aportando ideas al
+proyecto.
+`
+  let oscarText =
+    `
+Hola, me llamo Oscar y soy del sur de la Ciudad de México. Me apasiona
+la naturaleza, el senderismo y la comida mexicana. Estudié Ecología en
+la UNAM, sin embargo, la vida me condujo al mundo de la programación.
+Aprendiendo tecnología me di cuenta de lo relevante que es aprender
+cosas que te facilitan la vida. Eso me motivo a comenzar un Bootcamp
+en Generation México donde me estoy formando profesionalmente como
+Desarrollador Java Full Stack. Actualmente estoy desarollando partes
+de un proyecto titulado "Ayotl" que es una e-commerce dedicada a la
+venta de perfumes y fragancias sustentables.
+`
+  let neriText =
+    `
+Administrador de proyectos y aficionado de las fragancias decidido a
+impartir junto con los demás miembros del equipo este proyecto que
+ayuda a conseguir la apreciación de las materias primas mexicanas
+capturando su esencia en varias de nuestras fragancias, el
+posicionamiento en el mercado nacional con sus conocimientos y
+creatividad aportando ideas al proyecto.
+`
+  let arturoText =
+    `
+Como programador Fullstack, me especializo en el desarrollo de
+soluciones web completas, asegurando tanto el diseño visual como la
+funcionalidad técnica en cada proyecto. Me apasiona crear experiencias
+de usuario intuitivas y optimizar el rendimiento en el backend para
+lograr sitios eficientes y atractivos.
+`
+
 const resolve = () => {
   const hiddenElements = document.querySelectorAll(".hidden");
   const observer = new IntersectionObserver((entries) => {
@@ -124,10 +164,32 @@ const resolve = () => {
             ${cardAcerca({ TITLE: "Teresa Ortiz", TEXT: tereText })}
           </div>
         </div>
+
         <div class="container p-5 text-center hidden">
           <div class="d-flex align-items-center row">
-            ${cardAcercaImg({ IMG: "../../assets/imgs/team-imgs/carlos.jpg" })}
             ${cardAcerca({ TITLE: "Carlos Peña", TEXT: carlosText })}
+            ${cardAcercaImg({ IMG: "../../assets/imgs/team-imgs/carlos.jpg" })}
+          </div>
+        </div>
+
+        <div class="container p-5 text-center hidden">
+          <div class="d-flex align-items-center row">
+            ${cardAcercaImg({ IMG: "../../assets/imgs/team-imgs/luis.JPG" })}
+            ${cardAcerca({ TITLE: "Luis Angel Padilla", TEXT: luisText })}
+          </div>
+        </div>
+
+        <div class="container p-5 text-center hidden">
+          <div class="d-flex align-items-center row">
+            ${cardAcerca({ TITLE: "Oscar Ortega", TEXT: oscarText })}
+            ${cardAcercaImg({ IMG: "../../assets/imgs/team-imgs/oscar.jpg" })}
+          </div>
+        </div>
+
+        <div class="container p-5 text-center hidden">
+          <div class="d-flex align-items-center row">
+            ${cardAcercaImg({ IMG: "../../assets/imgs/team-imgs/neri.jpg" })}
+            ${cardAcerca({ TITLE: "Neri Gutiérrez", TEXT: neriText })}
           </div>
         </div>
       </div>
