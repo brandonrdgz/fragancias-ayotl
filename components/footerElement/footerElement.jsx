@@ -1,13 +1,9 @@
-return ({TITLE, LINK}) => {
+return ({ LINK = "",HTML }) => {
   return (
     <>
-      <li class="nav-item">
-        <a
-          href=""
-          data-link="${LINK}"
-          class="link-dark px-2 link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
-        >
-          ${TITLE}
+      <li>
+        <a href="#" data-link="${LINK}">
+          ${HTML}
         </a>
       </li>
     </>
