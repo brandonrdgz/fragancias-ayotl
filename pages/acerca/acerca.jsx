@@ -192,6 +192,13 @@ const resolve = () => {
             ${cardAcerca({ TITLE: "Neri Gutiérrez", TEXT: neriText })}
           </div>
         </div>
+
+        <div class="container p-5 text-center hidden">
+          <div class="d-flex align-items-center row">
+            ${cardAcerca({ TITLE: "Arturo Peralta", TEXT: arturoText })}
+            ${cardAcercaImg({ IMG: "../../assets/imgs/team-imgs/arturo.jpg" })}
+          </div>
+        </div>
       </div>
     </>
   )
