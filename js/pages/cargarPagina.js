@@ -1,5 +1,6 @@
-import { limpiarRecursosPagina } from "../router/limpiarRecursosPagina.js";
+import { cleanPreviousComps } from "../components/cleanPreviousComps.js";
 import { loadFunctionPage } from "../components/loadFunctionPage.js";
+import { limpiarRecursosPagina } from "./limpiarRecursosPagina.js";
 import { addComponentsToApp } from "../main/addComponentsToApp.js";
 import { cargarEstilos } from "./cargarEstilos.js";
 import { cargarScript } from "./cargarScript.js";
@@ -17,7 +18,6 @@ export async function cargarPagina(pagina , APP) {
   let cssPage = "";
   try {
     
-    limpiarRecursosPagina();
     //Encontrar dependencias del jsx de pagina
     const paginaModulo = await import(`/pages/${pagina}/${pagina}.js`);
     
@@ -35,7 +35,9 @@ export async function cargarPagina(pagina , APP) {
   }
   finally
   {
+    limpiarRecursosPagina();
     cargarEstilos("estilos-pagina", cssPage);
+    cleanPreviousComps();
     await addComponentsToApp(APP, [functionComponents], [paramsForFunctions], true);
   }
 }

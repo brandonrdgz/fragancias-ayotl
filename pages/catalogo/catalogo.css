@@ -16,52 +16,6 @@ section {
    padding: 0 200px;
  }
  
- .product-box {
-   display: flex;
-   flex-direction: column; /* Alinea contenido en columna */
-   justify-content: space-between; /* Espacia elementos principales */
-   padding: 10px;
-   border-radius: 10px;
-   position: relative;
-   transition: 0.6s;
-   overflow: hidden; /* Evita que los elementos sobresalgan */
- }
- 
- .product-box:hover {
-   border: 1px solid #06070e;
-   box-shadow: 6px 9px 18px -3px rgba(0, 0, 0, 0.71);
-   -webkit-box-shadow: 6px 9px 18px -3px rgba(0, 0, 0, 0.71);
-   -moz-box-shadow: 6px 9px 18px -3px rgba(0, 0, 0, 0.71);
-   transition: 0.6s;
- }
- 
- .product-img {
-   width: 100%;
-   height: 257px;
-   margin-bottom: 0.5rem;
-   border-radius: 10px;
- }
- 
- .product-title {
-   font-size: 1rem;
-   text-transform: uppercase;
-   margin-bottom: 1rem;
-   text-align: center;
- }
- 
- .price {
-   font-size: 1rem;
-   font-weight: 500;
-   margin-bottom: 20px;
-   font-size: 1.1rem;
-   color: #333;
- }
- 
- .product-actions {
-   position: relative;
-   height: 50px; /* Altura fija para posicionar los íconos */
- }
- 
  .add-cart,
  .add-wishlist {
    position: absolute;
@@ -86,9 +40,5 @@ section {
  
  .add-wishlist {
    left: 10px; /* Esquina inferior izquierda */
- }
- 
- .product-box:hover .price {
-   margin-bottom: 30px; /* Ajusta dinámicamente para mantener separación */
  }
  

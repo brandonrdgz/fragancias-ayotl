@@ -1,10 +1,11 @@
 import { createNodesFromHTML } from "../html/createNodesFromHTML.js";
-import { countParamsArrays } from "../components/countParamsArrays.js";
-import { executeDependencies } from "../components/executeDependencies.js";
+import { cargarEstilos } from "../pages/cargarEstilos.js";
 import { objectIsEmpty } from "../utils/objectIsEmpty.js";
+
 export async function addComponentsToApp(APP, functionComponents = [], componentsParams = [], isPage = false, isBefore = false) {
   if (APP == false && !(APP instanceof Element))
     throw new Error("Parametro APP no puede ser falsy");
+
   for (let i = 0; i < functionComponents.length; i++) {
     let funcion = functionComponents[i];
     let parametros = componentsParams[i];
@@ -12,17 +13,16 @@ export async function addComponentsToApp(APP, functionComponents = [], component
     for (let iBeta = 0; iBeta < parametros.length; iBeta++) {
       const parametro = parametros[iBeta];
       const parametroName = parametro['functionComponentName']
+      if (parametroName !== 'navbarElement' && parametroName !== 'footerElement') {
+        cargarEstilos(`component-${parametroName}`, `/components/${parametroName}/${parametroName}.css`);
+      } 
       finalArgument = (objectIsEmpty(parametro))
       ?
       {[parametroName]: parametro[parametroName]}
       :
       { ...finalArgument, [parametroName]: parametro[parametroName]}
     }
-    // let cantidadDeArrays = countParamsArrays(parametro, 0);
     
-    // htmlString = (cantidadDeArrays > 0) ?
-    //   await executeDependencies(cantidadDeArrays, funcion, parametro)
-    //   :
     let htmlString = await funcion(finalArgument);
     
     if(isPage)
