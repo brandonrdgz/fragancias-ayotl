@@ -15,7 +15,7 @@ body {
   -webkit-font-smoothing: antialiased; /* Mejora el renderizado de fuentes */
   scroll-behavior: smooth; /* Navegación suave en anclas */
   background-color: #f8f1f4;
-  padding-top: 80px;
+  margin-top: 60px;
 }
 
 .font-parrafros {
@@ -34,7 +34,7 @@ body {
   background-image: url("./assets/imgs/hoja1.png"),
     url("./assets/imgs/hoja5.png"), url("./assets/imgs/hoja2.png"),
     url("./assets/imgs/hoja6.png");
-  background-size: 11%, 11%, 20%, 20%;
+  background-size: 11%, 11%, 15%, 20%;
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
   background-position:
     bottom right,
@@ -43,6 +43,6 @@ body {
     top right;
 
   @media (max-width: 768px) {
-    background-size: 25%, 30%, 30%, 30%;
+    background-size: 25%, 30%, 20%, 30%;
   }
 }
