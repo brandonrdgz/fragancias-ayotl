@@ -1,0 +1,133 @@
+﻿.privacidad {
+  padding: 100px;
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: beige;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(30, 49, 31, 0);
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.close:hover {
+  color: white;
+}
+
+.font-titulos {
+  font-family: "Italiana", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.li-p {
+  font-weight: bold; /* Texto en negrita */
+  list-style-position: inside; /* Mueve el número/marcador dentro del contenedor del texto */
+  text-align: justify; /* Justifica el texto */
+}
+.li-p {
+  transition: background-color 0.3s ease; /* Animación suave */
+}
+
+.li-p:hover {
+  background-color: gainsboro; /* Cambiar el color de fondo al pasar el cursor */
+  cursor: pointer; /* Cambiar el cursor a una mano */
+}
+
+.li-p:active {
+  background-color: #fff; /* Cambiar el fondo al hacer clic */
+}
+
+.li-p {
+  font-weight: bold; /* Texto en negrita */
+  list-style-position: inside; /* Mueve el número/marcador dentro del contenedor del texto */
+}
+
+.ul-p {
+  list-style-type: square; /* Cambiar los puntos a cuadrados */
+  padding-left: 20px; /* Espaciado desde el margen izquierdo */
+  margin: 10px 0; /* Margen vertical */
+  text-align: justify; /* Justifica el texto */
+}
+
+.ul-p {
+  border: 1px solid #ddd; /* Borde alrededor de la lista */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px; /* Espaciado interno */
+  margin: 20px 0; /* Margen externo */
+  list-style-type: none; /* Ocultar los puntos predeterminados */
+}
+
+.ul-p .li-p {
+  padding: 10px;
+  margin-bottom: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.ul-p .li-p:hover {
+  background-color: #e0f7fa; /* Fondo azul claro al pasar el cursor */
+}
+.ul-p.horizontal {
+  list-style-type: none; /* Sin puntos */
+  padding: 0;
+  margin: 0;
+  display: flex; /* Mostrar los ítems en línea */
+  gap: 15px; /* Espacio entre ítems */
+}
+
+.ul-p.horizontal .li-p {
+  background-color: #0077cc; /* Fondo azul */
+  color: white; /* Texto blanco */
+  padding: 10px 15px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer;
+}
+
+.p-priv {
+  font-size: 16px; /* Tamaño de fuente */
+  line-height: 1.6; /* Altura de línea para mejor legibilidad */
+  color: #333; /* Color del texto */
+  margin: 10px 0; /* Espaciado vertical */
+  text-align: justify; /* Justifica el texto */
+}
+.p-priv {
+  text-align: center; /* Alinear el texto al centro */
+  color: #555; /* Texto gris */
+
+  padding: 15px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  text-align: justify; /* Justifica el texto */
+}
+
+.p-priv {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.p-priv:first-letter {
+  font-size: 1em; /* Agrandar la primera letra */
+  font-weight: bold; /* Hacerla negrita */
+  color: #2a473b; /* Cambiar el color */
+}
