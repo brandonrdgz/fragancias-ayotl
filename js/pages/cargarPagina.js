@@ -30,7 +30,7 @@ export async function cargarPagina(pagina , APP) {
     
   } catch (error) {
     ({ functionComponents, paramsForFunctions } = await loadFunctionPage(p404));
-    cssPage = `fragancias-ayotl/pages/p404/p404.css`;
+    cssPage = `/pages/p404/p404.css`;
   }
   finally
   {
