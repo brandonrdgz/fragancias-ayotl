@@ -1,5 +1,5 @@
 return async ({ cardAcerca, cardAcercaImg}) => {
-  let executeAfter = (await import ("../../js/utils/executeAfter.js"))['executeAfter'];
+  let executeAfter = (await import ("./js/utils/executeAfter.js"))['executeAfter'];
 
   let taniaText = 
   `
@@ -144,7 +144,7 @@ const resolve = () => {
         <div class="container p-5 text-center hidden">
           <div class="d-flex align-items-center row">
             ${cardAcerca({ TITLE: "Nuestro Origen", TEXT: nuestroOrigen })}
-            ${cardAcercaImg({ IMG: "../../assets/imgs/image_8.png" })}
+            ${cardAcercaImg({ IMG: "./assets/imgs/image_8.png" })}
           </div>
         </div>
         <div class="container text-start hidden">
@@ -154,13 +154,13 @@ const resolve = () => {
         <div class="container p-5 text-center hidden">
           <div class="d-flex align-items-center row">
             ${cardAcerca({ TITLE: "Tania Falcón", TEXT: taniaText })}
-            ${cardAcercaImg({ IMG: "../../assets/imgs/team-imgs/tania.jpg" })}
+            ${cardAcercaImg({ IMG: "./assets/imgs/team-imgs/tania.jpg" })}
           </div>
         </div>
 
         <div class="container p-5 text-center hidden">
           <div class="d-flex align-items-center row">
-            ${cardAcercaImg({ IMG: "../../assets/imgs/team-imgs/tere.jpg" })}
+            ${cardAcercaImg({ IMG: "./assets/imgs/team-imgs/tere.jpg" })}
             ${cardAcerca({ TITLE: "Teresa Ortiz", TEXT: tereText })}
           </div>
         </div>
@@ -168,13 +168,13 @@ const resolve = () => {
         <div class="container p-5 text-center hidden">
           <div class="d-flex align-items-center row">
             ${cardAcerca({ TITLE: "Carlos Peña", TEXT: carlosText })}
-            ${cardAcercaImg({ IMG: "../../assets/imgs/team-imgs/carlos.jpg" })}
+            ${cardAcercaImg({ IMG: "./assets/imgs/team-imgs/carlos.jpg" })}
           </div>
         </div>
 
         <div class="container p-5 text-center hidden">
           <div class="d-flex align-items-center row">
-            ${cardAcercaImg({ IMG: "../../assets/imgs/team-imgs/luis.JPG" })}
+            ${cardAcercaImg({ IMG: "./assets/imgs/team-imgs/luis.JPG" })}
             ${cardAcerca({ TITLE: "Luis Angel Padilla", TEXT: luisText })}
           </div>
         </div>
@@ -182,13 +182,13 @@ const resolve = () => {
         <div class="container p-5 text-center hidden">
           <div class="d-flex align-items-center row">
             ${cardAcerca({ TITLE: "Oscar Ortega", TEXT: oscarText })}
-            ${cardAcercaImg({ IMG: "../../assets/imgs/team-imgs/oscar.jpg" })}
+            ${cardAcercaImg({ IMG: "./assets/imgs/team-imgs/oscar.jpg" })}
           </div>
         </div>
 
         <div class="container p-5 text-center hidden">
           <div class="d-flex align-items-center row">
-            ${cardAcercaImg({ IMG: "../../assets/imgs/team-imgs/neri.jpg" })}
+            ${cardAcercaImg({ IMG: "./assets/imgs/team-imgs/neri.jpg" })}
             ${cardAcerca({ TITLE: "Neri Gutiérrez", TEXT: neriText })}
           </div>
         </div>
@@ -196,7 +196,7 @@ const resolve = () => {
         <div class="container p-5 text-center hidden">
           <div class="d-flex align-items-center row">
             ${cardAcerca({ TITLE: "Arturo Peralta", TEXT: arturoText })}
-            ${cardAcercaImg({ IMG: "../../assets/imgs/team-imgs/arturo.jpg" })}
+            ${cardAcercaImg({ IMG: "./assets/imgs/team-imgs/arturo.jpg" })}
           </div>
         </div>
       </div>
