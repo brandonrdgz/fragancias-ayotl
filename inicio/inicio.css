@@ -1,0 +1,149 @@
+.ayotl-size {
+   font-size: calc(1.5rem + 4vw + 1.2vh) !important;
+   max-height: calc(2rem + 10vw) !important;
+}
+
+.ayotl-sub-size {
+   font-size: 1.8em !important;
+}
+
+.main-hero {
+   background: linear-gradient(135deg, #ffe9f0, #f4ebf2, #d4a2ba);
+   background-size: 110% 100%;
+   /* animation: gradientAnimation 15s ease infinite; */
+   padding-top: 5vh;
+   display: flex;
+   justify-content: flex-start;
+   flex-direction: column;
+   text-align: center;
+}
+
+.marca-text-container {
+   >* {
+      margin: 0 !important;
+   }
+
+   p {
+      line-height: 1.2;
+   }
+}
+
+.description-container {
+   align-self: center;
+   text-align: center;
+   margin-top: 2.5vh;
+   width: clamp(30vw, 50%, 70vw);
+   /* Se adapta al tamaño de la pantalla */
+   font-size: clamp(1rem, 2vw, 1.3rem);
+
+   >* {
+      margin: 0 !important;
+   }
+}
+
+.searchbar-container {
+   margin: 0 auto;
+   width: clamp(10rem, 20%, 30rem);
+   /* Más flexible */
+   margin-top: 2vh;
+}
+
+
+.container-main-button {
+   margin-top: 40px;
+
+   .button-catalog {
+      background-color: #4b3b43;
+      /* Color destacado */
+      color: #FFFFFF;
+      /* Texto blanco */
+      border: none;
+      border-radius: 20px;
+      /* Bordes redondeados */
+      padding: 7px 14px;
+      /* Espaciado interno */
+      font-size: 1.18rem;
+      /* Tamaño del texto */
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+      /* Sombra suave */
+      transition: transform 0.2s, background-color 0.3s ease-in-out, box-shadow 0.2s;
+      /* Animación */
+   }
+}
+
+.button-catalog:hover {
+   background-color: #206775;
+   /* Color más oscuro al pasar el mouse */
+   box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+   /* Sombra más pronunciada */
+   transform: translateY(-2px);
+   /* Efecto de elevación */
+}
+
+.button-catalog:active {
+   background-color: #134044;
+   /* Color más intenso al hacer clic */
+   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+   /* Sombra más ligera */
+   transform: translateY(1px);
+   /* Efecto de presión */
+}
+
+.container-product {
+   margin-top: 15vh;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   row-gap: 4vh;
+   padding-bottom: 100px;
+   
+   @media (max-width: 1000px) {
+      grid-template-columns: 1fr;
+   }
+}
+
+
+/* Media Queries para más responsividad */
+@media (max-width: 768px) {
+   .ayotl-size {
+      font-size: calc(1rem + 2.5vw) !important;
+   }
+
+   .ayotl-sub-size {
+      font-size: calc(1.2rem + 0.3vw) !important;
+   }
+
+   .main-hero {
+      padding-top: 5vh;
+   }
+
+   .description-container {
+      width: 80%;
+      font-size: clamp(1rem, 3vw, 1.2rem);
+   }
+
+   .searchbar-container {
+      width: 90%;
+   }
+}
+
+@media (max-width: 480px) {
+   .ayotl-size {
+      font-size: calc(0.9rem + 8vw) !important;
+   }
+
+   .ayotl-sub-size {
+      font-size: calc(1rem + 1vw) !important;
+   }
+
+   .main-hero {
+      padding-top: 6vh;
+   }
+
+   .description-container {
+      width: 95%;
+      font-size: 1.3rem;
+   }
+}

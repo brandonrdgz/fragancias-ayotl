@@ -1,0 +1,15 @@
+
+.product-element {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+  /* text-align: center;6 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* padding: 100px; */
+  width: 21rem;
+  height: 500px;
+  background-color: #d4a2ba;
+  border: 2px solid black;
+
+}
