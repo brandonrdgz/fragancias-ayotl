@@ -1,5 +1,5 @@
 return async ({ navbarElement }) => {
-  let executeAfter = (await import("../../utils/executeAfter.js"))['executeAfter'];
+  let executeAfter = (await import("../../js/utils/executeAfter.js"))['executeAfter'];
 
   function init() {
     let menu = document.querySelector("#menu-icon");
