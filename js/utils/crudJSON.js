@@ -19,9 +19,7 @@ export async function obtenerProductos(URL) {
    try {
       // Hacer la llamada al endpoint usando fetch
       // const headers = getAuthHeaders();
-      const response = await fetch('https://brandonrdgz.github.io/fragancias-ayotl/data/fragancias.json', {
-         method: 'GET',
-      });
+      const response = await fetch('https://brandonrdgz.github.io/fragancias-ayotl/data/fragancias.json');
     // Reemplaza la URL con tu endpoint
 
       // Verificar si la respuesta fue exitosa
