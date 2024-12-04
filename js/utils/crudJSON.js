@@ -19,7 +19,7 @@ export async function obtenerProductos(URL) {
    try {
       // Hacer la llamada al endpoint usando fetch
       // const headers = getAuthHeaders();
-      const response = await fetch('./data/fragancias.json');
+      const response = await fetch('https://brandonrdgz.github.io/fragancias-ayotl/data/fragancias.json');
     // Reemplaza la URL con tu endpoint
 
       // Verificar si la respuesta fue exitosa
@@ -28,7 +28,7 @@ export async function obtenerProductos(URL) {
          throw new Error(`Error en la solicitud: ${response.status}`);
       }
       // Convertir la respuesta en JSON
-      const data = await response.json();
+      const data = await response.productos.json();
       
       // Convertir data en una array de objectos
       const productos = data.map(producto => ({
