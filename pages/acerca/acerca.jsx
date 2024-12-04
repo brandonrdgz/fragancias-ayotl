@@ -1,5 +1,5 @@
 return async ({ cardAcerca, cardAcercaImg}) => {
-  let executeAfter = (await import ("../../utils/executeAfter.js"))['executeAfter'];
+  let executeAfter = (await import ("../../js/utils/executeAfter.js"))['executeAfter'];
 
   let taniaText = 
   `
