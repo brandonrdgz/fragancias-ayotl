@@ -14,7 +14,7 @@ export async function addComponentsToApp(APP, functionComponents = [], component
       const parametro = parametros[iBeta];
       const parametroName = parametro['functionComponentName']
       if (parametroName !== 'navbarElement' && parametroName !== 'footerElement') {
-        cargarEstilos(`component-${parametroName}`, `/components/${parametroName}/${parametroName}.css`);
+        cargarEstilos(`component-${parametroName}`, `./components/${parametroName}/${parametroName}.css`);
       } 
       finalArgument = (objectIsEmpty(parametro))
       ?

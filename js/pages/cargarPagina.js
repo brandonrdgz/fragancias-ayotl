@@ -24,13 +24,13 @@ export async function cargarPagina(pagina , APP) {
     const functionPage = await paginaModulo[pagina];
     ({ functionComponents, paramsForFunctions } = await loadFunctionPage(functionPage));
 
-    cssPage = `../../pages/${pagina}/${pagina}.css`;
+    cssPage = `./pages/${pagina}/${pagina}.css`;
     
-    cargarScript("script-pagina", `../../pages/${pagina}/deps.js`);
+    cargarScript("script-pagina", `./pages/${pagina}/deps.js`);
     
   } catch (error) {
     ({ functionComponents, paramsForFunctions } = await loadFunctionPage(p404));
-    cssPage = `/pages/p404/p404.css`;
+    cssPage = `./pages/p404/p404.css`;
   }
   finally
   {
