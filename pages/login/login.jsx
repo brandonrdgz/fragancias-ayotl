@@ -1,5 +1,5 @@
 return async () => {
-  let executeAfter = (await import("/fragancias-ayotl/js/utils/executeAfter.js"))['executeAfter'];
+  let executeAfter = (await import("../../js/utils/executeAfter.js"))['executeAfter'];
 
   function init() {
     /*=============== SHOW HIDE PASSWORD LOGIN ===============*/

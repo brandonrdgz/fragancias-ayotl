@@ -1,6 +1,6 @@
 return async ({ cardProduct }) => {
-  const IMG_FOLDER = "/fragancias-ayotl/assets/imgs/perfumes/";
-  let obtenerProductos = (await import("/fragancias-ayotl/js/utils/crudJSON.js"))[
+  const IMG_FOLDER = "./assets/imgs/perfumes/";
+  let obtenerProductos = (await import("../../js/utils/crudJSON.js"))[
     "obtenerProductos"
   ];
 

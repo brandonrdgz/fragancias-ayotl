@@ -2,7 +2,7 @@ export async function cargarJSXPagina(pagina)
 {
   try {
     // Carga el contenido HTML de la página
-    const respuesta = await fetch(`/pages/${pagina}/${pagina}.jsx`);
+    const respuesta = await fetch(`./pages/${pagina}/${pagina}.jsx`);
     if (!respuesta.ok) {
       throw new Error("No se pudo obtener el jsx");
     }

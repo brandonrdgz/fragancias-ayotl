@@ -1,5 +1,5 @@
 export async function catalogo()
 {
-   let cardProduct  = await import ("/fragancias-ayotl/components/cardProduct/cardProduct.js");
+   let cardProduct  = await import ("../../js/components/cardProduct/cardProduct.js");
    return [cardProduct];
 }

@@ -1,7 +1,7 @@
 export async function acerca() {
-  let cardAcerca = await import("/fragancias-ayotl/components/cardAcerca/cardAcerca.js");
+  let cardAcerca = await import("../../js/components/cardAcerca/cardAcerca.js");
   let cardAcercaImg = await import(
-    "/fragancias-ayotl/components/cardAcercaImg/cardAcercaImg.js"
+    "../../js/components/cardAcercaImg/cardAcercaImg.js"
   );
   return [cardAcerca, cardAcercaImg];
 }
