@@ -15,21 +15,20 @@ console.log(productos);*/
 //    };
 // }
 
-export async function obtenerProductos() {
+export async function obtenerProductos(URL) {
    try {
       // Hacer la llamada al endpoint usando fetch
       // const headers = getAuthHeaders();
-      // const response = await fetch('http://127.0.0.1:8080/api/products', {
-      //    method: 'GET',
-      //    headers: headers,
-      // });
+      const response = await fetch('https://brandonrdgz.github.io/fragancias-ayotl/data/fragancias.json', {
+         method: 'GET',
+      });
     // Reemplaza la URL con tu endpoint
 
       // Verificar si la respuesta fue exitosa
+      
       if (!response.ok) {
          throw new Error(`Error en la solicitud: ${response.status}`);
       }
-
       // Convertir la respuesta en JSON
       const data = await response.json();
       
