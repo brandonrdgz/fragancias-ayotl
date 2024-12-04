@@ -1,5 +1,5 @@
 return async ({ cardAcerca, cardAcercaImg}) => {
-  let executeAfter = (await import ("/js/utils/executeAfter.js"))['executeAfter'];
+  let executeAfter = (await import ("/fragancias-ayotl/js/utils/executeAfter.js"))['executeAfter'];
 
   let taniaText = 
   `
@@ -119,7 +119,7 @@ const resolve = () => {
               class="col-12 col-md-6 d-flex justify-content-center align-items-center order-last order-md-first"
             >
               <img
-                src="/assets/imgs/image_7.png"
+                src="/fragancias-ayotl/assets/imgs/image_7.png"
                 class="img-fluid hidden"
                 alt="perfume"
               />

@@ -2,7 +2,7 @@ return async ({ productoUnico }) => {
   const params = new URLSearchParams(window.location.search);
   const productId = params.get("id");
 
-  let getProducto = (await import("/js/utils/crudJSON.js"))[
+  let getProducto = (await import("/fragancias-ayotl/js/utils/crudJSON.js"))[
     "getProducto"
   ];
 

@@ -4,7 +4,7 @@ import { limpiarRecursosPagina } from "./limpiarRecursosPagina.js";
 import { addComponentsToApp } from "../main/addComponentsToApp.js";
 import { cargarEstilos } from "./cargarEstilos.js";
 import { cargarScript } from "./cargarScript.js";
-import { p404 } from "/pages/p404/p404.js"
+import { p404 } from "/fragancias-ayotl/pages/p404/p404.js"
 
 export async function cargarPagina(pagina , APP) {
   if (!APP || !(APP instanceof Element)) {

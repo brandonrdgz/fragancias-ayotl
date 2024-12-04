@@ -69,7 +69,7 @@ export function addProducto(productList, product) {
 export async function getProducto(productId) {
    try {
       // Hacer la llamada al endpoint usando fetch
-      const response = await fetch("http://" + constantes.IP_SERVER + "/api/products/" + productId); 
+      const response = await fetch("http://" + constantes.IP_SERVER + "/fragancias-ayotl/api/products/" + productId); 
 
       // Verificar si la respuesta fue exitosa
       if (!response.ok) {
