@@ -4,7 +4,7 @@ import { limpiarRecursosPagina } from "./limpiarRecursosPagina.js";
 import { addComponentsToApp } from "../main/addComponentsToApp.js";
 import { cargarEstilos } from "./cargarEstilos.js";
 import { cargarScript } from "./cargarScript.js";
-import { p404 } from "./pages/p404/p404.js"
+import { p404 } from "../../pages/p404/p404.js"
 
 export async function cargarPagina(pagina , APP) {
   if (!APP || !(APP instanceof Element)) {
@@ -19,18 +19,18 @@ export async function cargarPagina(pagina , APP) {
   try {
     
     //Encontrar dependencias del jsx de pagina
-    const paginaModulo = await import(`./pages/${pagina}/${pagina}.js`);
+    const paginaModulo = await import(`../../pages/${pagina}/${pagina}.js`);
     
     const functionPage = await paginaModulo[pagina];
     ({ functionComponents, paramsForFunctions } = await loadFunctionPage(functionPage));
 
-    cssPage = `./pages/${pagina}/${pagina}.css`;
+    cssPage = `../../pages/${pagina}/${pagina}.css`;
     
-    cargarScript("script-pagina", `./pages/${pagina}/deps.js`);
+    cargarScript("script-pagina", `../../pages/${pagina}/deps.js`);
     
   } catch (error) {
     ({ functionComponents, paramsForFunctions } = await loadFunctionPage(p404));
-    cssPage = `./pages/p404/p404.css`;
+    cssPage = `../../pages/p404/p404.css`;
   }
   finally
   {
