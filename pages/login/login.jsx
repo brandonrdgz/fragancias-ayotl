@@ -213,7 +213,7 @@ return async () => {
 
             <image
               class="login__img"
-              href="../../assets/imgs/perfumes/imagen1floral.jpeg"
+              href="./assets/imgs/perfumes/imagen1floral.jpeg"
             />
           </g>
         </svg>
