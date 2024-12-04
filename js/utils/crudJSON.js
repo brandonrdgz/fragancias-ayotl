@@ -28,10 +28,10 @@ export async function obtenerProductos(URL) {
          throw new Error(`Error en la solicitud: ${response.status}`);
       }
       // Convertir la respuesta en JSON
-      const data = await response.productos.json();
+      const data = await response.json();
       
       // Convertir data en una array de objectos
-      const productos = data.map(producto => ({
+      const productos = data.productos.map(producto => ({
          id:producto.id,
          name:producto.name,
          description:producto.description,
