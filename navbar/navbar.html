@@ -1,0 +1,46 @@
+<header>
+  <a class="logo"
+    ><img src="../../assets/imgs/logo.svg" data-link="inicio"
+  /></a>
+  <ul class="navlist">
+    <li class="font-parrafos"><a data-link="acerca">Nosotros</a></li>
+    <li class="font-parrafos"><a data-link="catalogo">Tienda</a></li>
+    <li class="font-parrafos"><a data-link="contactenos">Contactanos</a></li>
+    <div class="right-content">
+      <ul>
+        <li class="search-container">
+          <input type="text" class="search-bar" placeholder="Buscar..." /><i
+            class="bi bi-search nav-search"
+          ></i
+          ><span class="nav-label font-parrafos">Buscar</span>
+        </li>
+        <li data-link="wishlist">
+          <i class="bi bi-heart-fill nav-heart"></i
+          ><span class="nav-label font-parrafos">Wishlist</span>
+        </li>
+        <li>
+          <i class="bi bi-bag-fill nav-cart"></i
+          ><span class="nav-label font-parrafos">Carrito</span>
+        </li>
+        <li data-link="login">
+          <i class="bi bi-person-fill nav-user"></i
+          ><span class="nav-label font-parrafos">Cuenta</span>
+        </li>
+      </ul>
+    </div>
+  </ul>
+
+  <div class="bi bi-list" id="menu-icon"></div>
+  <div class="cart" id="cart-dropdown-menu">
+    <h2 class="cart-title font-titulos">Tu Carrito</h2>
+    <div class="cart-content"></div>
+    <div class="total">
+      <div class="total-title font-parrafos">Total</div>
+      <div class="total-price font-parrafos">$0</div>
+    </div>
+    <button type="button" class="btn-buy font-parrafos" data-link="carrito">
+      Comprar Ahora
+    </button>
+    <i class="bi bi-x" id="close-cart"></i>
+  </div>
+</header>
