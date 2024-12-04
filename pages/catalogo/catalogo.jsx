@@ -19,7 +19,7 @@ return async ({ cardProduct }) => {
       return (acc += cardProduct({
         ID,
         TITLE,
-        IMG,
+        IMG: `./assets/imgs/perfumes/${IMG}`,
         PRECIO,
       }));
     }, "");
