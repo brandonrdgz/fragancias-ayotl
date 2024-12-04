@@ -32,7 +32,7 @@ return async ({ navbarElement }) => {
     <>
       <header>
         <a class="logo"
-        ><img src="../../assets/imgs/logo.svg" data-link="inicio"
+        ><img src="./assets/imgs/logo.svg" data-link="inicio"
           /></a>
         <ul class="navlist">
           <li class="font-parrafos"><a data-link="acerca">Nosotros</a></li>

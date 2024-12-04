@@ -49,7 +49,7 @@ return ({ footerElement }) => {
           <div class="container">
             <div class="col1">
               <a data-link="inicio" class="brand">
-                <img src="../../assets/imgs/logo.svg" />
+                <img src="./assets/imgs/logo.svg" />
               </a>
               <ul class="media-icons">
                 ${footerElement({ HTML: svgFacebook })}
