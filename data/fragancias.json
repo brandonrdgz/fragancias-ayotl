@@ -1,25 +1,15 @@
 {
   "productos": [
-    { 
-      "name": "Eau de Parfum Citrus Burst",
-      "description": "Un perfume vibrante y cítrico, perfecto para el verano. Mezcla notas de limón, naranja y un toque de menta.",
-      "price": 1150,
-      "category": 2,
-      "stock": 180,
-      "imagePath":"imagen1floral.jpeg",
-      "imageMimeType":"imageMimeType"
-    }
-    ,
     {
       "id": "002",
-      "nombre": "Eau de Parfum Citrus Burst",
+      "name": "Eau de Parfum Citrus Burst",
       "marca": "Esencias de Verano",
       "img": "imagen2frutal.jpeg",
-      "categoria": "Perfumes",
+      "category": "Perfumes",
       "descripcion": "Un perfume vibrante y cítrico, perfecto para el verano. Mezcla notas de limón, naranja y un toque de menta.",
-      "precio": 1150,
+      "price": 1150,
       "moneda": "MXN",
-      "cantidad_disponible": 180,
+      "stock": 180,
       "valoraciones": {
         "promedio": 4.7,
         "total_valoraciones": 95
@@ -42,14 +32,14 @@
     },
     {
       "id": "003",
-      "nombre": "Eau de Parfum Spicy Oud",
+      "name": "Eau de Parfum Spicy Oud",
       "marca": "Esencias de Verano",
       "img": "imagen3dulce.jpeg",
-      "categoria": "Perfumes",
+      "category": "Perfumes",
       "descripcion": "Un perfume intenso y exótico, ideal para ocasiones especiales. Combina notas de oud, especias y ámbar.",
-      "precio": 1500,
+      "price": 1500,
       "moneda": "MXN",
-      "cantidad_disponible": 100,
+      "stock": 100,
       "valoraciones": {
         "promedio": 4.8,
         "total_valoraciones": 80
@@ -72,14 +62,14 @@
     },
     {
       "id": "004",
-      "nombre": "Eau de Parfum Woodsy Harmony",
+      "name": "Eau de Parfum Woodsy Harmony",
       "marca": "Esencias de Verano",
       "img": "imagen4citrico.jpeg",
-      "categoria": "Perfumes",
+      "category": "Perfumes",
       "descripcion": "Un perfume cálido y terroso, ideal para el otoño. Combina notas de sándalo, cedro y vetiver.",
-      "precio": 1300,
+      "price": 1300,
       "moneda": "MXN",
-      "cantidad_disponible": 150,
+      "stock": 150,
       "valoraciones": {
         "promedio": 4.6,
         "total_valoraciones": 70
@@ -102,14 +92,14 @@
     },
     {
       "id": "005",
-      "nombre": "Eau de Parfum Berry Delight",
+      "name": "Eau de Parfum Berry Delight",
       "marca": "Esencias de Verano",
       "img": "imagen6floral2.jpg",
-      "categoria": "Perfumes",
+      "category": "Perfumes",
       "descripcion": "Un perfume dulce y afrutado, ideal para la primavera. Mezcla notas de frutos rojos, flor de cerezo y un toque de almendra.",
-      "precio": 1250,
+      "price": 1250,
       "moneda": "MXN",
-      "cantidad_disponible": 220,
+      "stock": 220,
       "valoraciones": {
         "promedio": 4.4,
         "total_valoraciones": 110
@@ -132,14 +122,14 @@
     },
     {
       "id": "006",
-      "nombre": "Eau de Parfum Exotic Garden",
+      "name": "Eau de Parfum Exotic Garden",
       "marca": "Esencias de Verano",
       "img": "perfume1.jpeg",
-      "categoria": "Perfumes",
+      "category": "Perfumes",
       "descripcion": "Un perfume envolvente y tropical, ideal para escapar de la rutina. Combina notas de coco, piña y flor de tiara.",
-      "precio": 1350,
+      "price": 1350,
       "moneda": "MXN",
-      "cantidad_disponible": 130,
+      "stock": 130,
       "valoraciones": {
         "promedio": 4.7,
         "total_valoraciones": 90
@@ -162,14 +152,14 @@
     },
     {
       "id": "007",
-      "nombre": "Eau de Parfum Midnight Rose",
+      "name": "Eau de Parfum Midnight Rose",
       "marca": "Esencias de Verano",
       "img": "perfume2.jpeg",
-      "categoria": "Perfumes",
+      "category": "Perfumes",
       "descripcion": "Un perfume seductor y misterioso, ideal para la noche. Combina notas de rosa negra, patchouli y un toque de musk.",
-      "precio": 1400,
+      "price": 1400,
       "moneda": "MXN",
-      "cantidad_disponible": 90,
+      "stock": 90,
       "valoraciones": {
         "promedio": 4.9,
         "total_valoraciones": 60
@@ -192,14 +182,14 @@
     },
     {
       "id": "008",
-      "nombre": "Eau de Parfum Fresh Mint",
+      "name": "Eau de Parfum Fresh Mint",
       "marca": "Esencias de Verano",
       "img": "perfume3.jpeg",
-      "categoria": "Perfumes",
+      "category": "Perfumes",
       "descripcion": "Un perfume refrescante y ligero, ideal para climas cálidos. Combina notas de menta, eucalipto y limón.",
-      "precio": 1100,
+      "price": 1100,
       "moneda": "MXN",
-      "cantidad_disponible": 200,
+      "stock": 200,
       "valoraciones": {
         "promedio": 4.3,
         "total_valoraciones": 115
@@ -222,14 +212,14 @@
     },
     {
       "id": "009",
-      "nombre": "Eau de Parfum Sweet Vanilla",
+      "name": "Eau de Parfum Sweet Vanilla",
       "marca": "Esencias de Verano",
       "img": "perfume4.jpeg",
-      "categoria": "Perfumes",
+      "category": "Perfumes",
       "descripcion": "Un perfume dulce y envolvente, ideal para los amantes de la vainilla. Combina notas de vainilla, caramelo y un toque de flor de azahar.",
-      "precio": 1250,
+      "price": 1250,
       "moneda": "MXN",
-      "cantidad_disponible": 160,
+      "stock": 160,
       "valoraciones": {
         "promedio": 4.5,
         "total_valoraciones": 100
@@ -253,14 +243,14 @@
 
     {
       "id": "010",
-      "nombre": "Eau de Parfum Rose Elegance",
+      "name": "Eau de Parfum Rose Elegance",
       "marca": "Ayotl",
       "img": "perfume5.jpeg",
-      "categoria": "Perfumes",
+      "category": "Perfumes",
       "descripcion": "Un perfume delicado y romántico con notas de rosa, sándalo y un toque de vainilla.",
-      "precio": 1200,
+      "price": 1200,
       "moneda": "MXN",
-      "cantidad_disponible": 150,
+      "stock": 150,
       "valoraciones": {
         "promedio": 4.7,
         "total_valoraciones": 110
@@ -283,14 +273,14 @@
     },
     {
       "id": "011",
-      "nombre": "Eau de Parfum Noir Intense",
+      "name": "Eau de Parfum Noir Intense",
       "marca": "Ayotl",
       "img": "perfume3.jpeg",
-      "categoria": "Perfumes",
+      "category": "Perfumes",
       "descripcion": "Un perfume intenso y sofisticado para hombres con notas de cuero, madera y un toque especiado.",
-      "precio": 1350,
+      "price": 1350,
       "moneda": "MXN",
-      "cantidad_disponible": 100,
+      "stock": 100,
       "valoraciones": {
         "promedio": 4.8,
         "total_valoraciones": 85
@@ -313,14 +303,14 @@
     },
     {
       "id": "012",
-      "nombre": "Eau de Parfum Amber Wood",
+      "name": "Eau de Parfum Amber Wood",
       "marca": "Ayotl",
       "img": "perfume1.jpeg",
-      "categoria": "Perfumes",
+      "category": "Perfumes",
       "descripcion": "Un perfume cálido y elegante con notas de ámbar, madera de oud y vainilla.",
-      "precio": 1400,
+      "price": 1400,
       "moneda": "MXN",
-      "cantidad_disponible": 90,
+      "stock": 90,
       "valoraciones": {
         "promedio": 4.9,
         "total_valoraciones": 75
@@ -343,14 +333,14 @@
     },
     {
       "id": "013",
-      "nombre": "Eau de Parfum Green Essence",
+      "name": "Eau de Parfum Green Essence",
       "marca": "Ayotl",
       "img": "imagen5frutal2.jpeg",
-      "categoria": "Perfumes",
+      "category": "Perfumes",
       "descripcion": "Un perfume fresco y moderno para hombres con notas de bergamota, vetiver y almizcle.",
-      "precio": 1250,
+      "price": 1250,
       "moneda": "MXN",
-      "cantidad_disponible": 120,
+      "stock": 120,
       "valoraciones": {
         "promedio": 4.6,
         "total_valoraciones": 95
@@ -373,14 +363,14 @@
     },
     {
       "id": "014",
-      "nombre": "Eau de Parfum Ocean Blue",
+      "name": "Eau de Parfum Ocean Blue",
       "marca": "Ayotl",
       "img": "imagen3dulce.jpeg",
-      "categoria": "Perfumes",
+      "category": "Perfumes",
       "descripcion": "Un perfume marino y relajante con notas de sal marina, madera de deriva y lavanda.",
-      "precio": 1300,
+      "price": 1300,
       "moneda": "MXN",
-      "cantidad_disponible": 110,
+      "stock": 110,
       "valoraciones": {
         "promedio": 4.5,
         "total_valoraciones": 100
@@ -403,14 +393,14 @@
     },
     {
       "id": "015",
-      "nombre": "Eau de Parfum Bold Ebony",
+      "name": "Eau de Parfum Bold Ebony",
       "marca": "Ayotl",
       "img": "imagen1floral.jpeg",
-      "categoria": "Perfumes",
+      "category": "Perfumes",
       "descripcion": "Un perfume profundo y elegante, perfecto para ocasiones formales. Combina notas de ébano, ámbar y cuero.",
-      "precio": 1450,
+      "price": 1450,
       "moneda": "MXN",
-      "cantidad_disponible": 85,
+      "stock": 85,
       "valoraciones": {
         "promedio": 4.8,
         "total_valoraciones": 90
@@ -433,14 +423,14 @@
     },
     {
       "id": "016",
-      "nombre": "Set Navideño Ayotl: Fragancia Floral",
+      "name": "Set Navideño Ayotl: Fragancia Floral",
       "marca": "Ayotl",
       "img": "imagen2frutal.jpeg",
-      "categoria": "Perfumes",
+      "category": "Perfumes",
       "descripcion": "Un set exclusivo para esta Navidad que incluye perfume, loción corporal y crema, con una fragancia floral encantadora.",
-      "precio": 1800,
+      "price": 1800,
       "moneda": "MXN",
-      "cantidad_disponible": 75,
+      "stock": 75,
       "valoraciones": {
         "promedio": 4.9,
         "total_valoraciones": 120
@@ -463,14 +453,14 @@
     },
     {
       "id": "017",
-      "nombre": "Set Día de Reyes Ayotl: Edición Limitada",
+      "name": "Set Día de Reyes Ayotl: Edición Limitada",
       "marca": "Ayotl",
       "img": "imagen4citrico.jpeg",
-      "categoria": "Perfumes",
+      "category": "Perfumes",
       "descripcion": "Una colección de lujo para el Día de Reyes, con perfume, loción y crema en una fragancia dulce y afrutada.",
-      "precio": 2000,
+      "price": 2000,
       "moneda": "MXN",
-      "cantidad_disponible": 60,
+      "stock": 60,
       "valoraciones": {
         "promedio": 4.8,
         "total_valoraciones": 95
@@ -493,14 +483,14 @@
     },
     {
       "id": "018",
-      "nombre": "Set Navideño Ayotl para Hombres",
+      "name": "Set Navideño Ayotl para Hombres",
       "marca": "Ayotl",
       "img": "imagen6floral2.jpg",
-      "categoria": "Perfumes",
+      "category": "Perfumes",
       "descripcion": "Un set exclusivo para hombres que combina fragancias amaderadas y especiadas, perfecto para la temporada navideña.",
-      "precio": 2100,
+      "price": 2100,
       "moneda": "MXN",
-      "cantidad_disponible": 50,
+      "stock": 50,
       "valoraciones": {
         "promedio": 4.7,
         "total_valoraciones": 85

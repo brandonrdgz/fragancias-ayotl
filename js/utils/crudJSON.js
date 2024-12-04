@@ -4,25 +4,25 @@ import {constantes} from "../constantes.js";
 const productos = await obtenerToken('http://192.168.10.123:8080/api/login', token);
 console.log(productos);*/
 
-function getAuthHeaders() {
-   const token = localStorage.getItem("authToken");
-   if (!token) {
-      throw new Error("Token de autenticación no disponible. Debes iniciar sesión.");
-   }
-   return {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
-   };
-}
+// function getAuthHeaders() {
+//    const token = localStorage.getItem("authToken");
+//    if (!token) {
+//       throw new Error("Token de autenticación no disponible. Debes iniciar sesión.");
+//    }
+//    return {
+//       Authorization: `Bearer ${token}`,
+//       "Content-Type": "application/json",
+//    };
+// }
 
 export async function obtenerProductos() {
    try {
       // Hacer la llamada al endpoint usando fetch
-      const headers = getAuthHeaders();
-      const response = await fetch('http://127.0.0.1:8080/api/products', {
-         method: 'GET',
-         headers: headers,
-   });
+      // const headers = getAuthHeaders();
+      // const response = await fetch('http://127.0.0.1:8080/api/products', {
+      //    method: 'GET',
+      //    headers: headers,
+      // });
     // Reemplaza la URL con tu endpoint
 
       // Verificar si la respuesta fue exitosa
@@ -39,9 +39,9 @@ export async function obtenerProductos() {
          name:producto.name,
          description:producto.description,
          price:producto.price,
-         categoryId:producto.categoryId,
+         // categoryId:producto.categoryId,
          stock:producto.stock,
-         imageFile:producto.imageFile
+         img:producto.img
    
       }));
 
