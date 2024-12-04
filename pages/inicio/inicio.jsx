@@ -9,7 +9,7 @@ return ({ svgHoja, searchBar, heroElement }) => {
 
   return (
     <>
-      <div class="main-hero" style="min-height: 85vh;">
+      <div class="main-hero" style="min-height: 74vh;">
         <div class="marca-text-container">
           <h1 class="font-titulos text-uppercase ayotl-size">
             AYOTL

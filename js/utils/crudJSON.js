@@ -1,3 +1,4 @@
+import {constantes} from "../constantes.js";
 
 export async function obtenerProductos(URL) {
    try {
@@ -59,17 +60,24 @@ export function addProducto(productList, product) {
    }
 }
 
-export function getProducto(productList, productId) {
-   // Buscar el índice del producto con el id especificado
-   const index = productList.findIndex(p => p.id === productId);
+export async function getProducto(productId) {
+   try {
+      // Hacer la llamada al endpoint usando fetch
+      const response = await fetch(constantes.IP_SERVER + "/api/v1/product/" + productId); 
 
-   if (index !== -1) {
-      // console.log(`Producto con id ${productId} obtenido correctamente.`);
-      return productList.splice(index, 1)[0];
+      // Verificar si la respuesta fue exitosa
+      if (!response.ok) {
+         throw new Error(`Error en la solicitud: ${response.status}`);
+      }
+
+      // Convertir la respuesta JSON a un objecto
+      const product = await response.json();
+      
+      // Retornar la lista de productos para poder usarla en otras partes del código
+      return product;
+   } catch (error) {
+      console.error("Error al obtener productos:", error);
    }
-
-   // En caso de no existir  
-   return undefined;
 }
 
 export function removeProduct(productList, productId) {

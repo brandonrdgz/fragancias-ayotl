@@ -6,7 +6,7 @@ return async ({ productoUnico }) => {
     "getProducto"
   ];
 
-  const producto = await getProducto(productId);
+  let producto = await getProducto(productId);
 
   if (producto) {
     const productContainer = document.getElementById("product-container");

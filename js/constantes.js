@@ -1,1 +1,4 @@
-let rutasQueNoOcupanModulos = ["" , "", "", "" ,""];
+export const constantes = 
+{
+  IP_SERVER : ""
+};

@@ -28,7 +28,6 @@ export async function cargarPagina(pagina , APP) {
     
     cargarScript("script-pagina", `./pages/${pagina}/deps.js`);
     
-    window.history.pushState({ pagina }, "", `#${pagina}`);
   } catch (error) {
     ({ functionComponents, paramsForFunctions } = await loadFunctionPage(p404));
     cssPage = `./pages/p404/p404.css`;

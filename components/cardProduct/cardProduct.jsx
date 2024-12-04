@@ -5,12 +5,12 @@ return (
     TAMAÑO,
     IMG,
     PRECIO,
-    MONEDA
+    MONEDA,
   }
 ) => {
   return (
     <>
-      <div class="product-box" data-id="${ID}" data-link="product">
+      <div class="product-box" data-id="${ID}" data-link="producto?${ID}">
         <img src="${IMG}" class="product-img" alt="${TITLE}" />
           <h5 class="product-title">${TITLE + " " + TAMAÑO}</h5>
           <span class="price">${"$" + PRECIO + MONEDA}</span>
