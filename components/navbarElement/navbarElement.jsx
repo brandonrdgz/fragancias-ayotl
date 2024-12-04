@@ -1,13 +1,19 @@
 return ({ TITLE, ICON, IS_SEARCH = false }) => {
   const search_input = (IS_SEARCH) ?
-   `<input type="text" class="search-bar" placeholder="Buscar..." />`
-   : "";
-   const special_li = (TITLE === "Wishlist") ? 'data-link="wishlist"' : '';
-   const classSearch = (IS_SEARCH) ? 'search-container' : '';
+    `<input type="text" class="search-bar" placeholder="Buscar..." />`
+    : "";
+
+  const classSearch = (IS_SEARCH) ? 'search-container' : '';
+
+  const dataLink = {
+    Wishlist: "data-link=wishlist",
+    Cuenta: "data-link=login",
+  }[TITLE] || "";
+
+
   return (
     <>
-       
-      <li ${special_li} class="${classSearch}">
+      <li ${dataLink} class="${classSearch}">
         ${search_input}
         <i class="${ICON}">
         </i>

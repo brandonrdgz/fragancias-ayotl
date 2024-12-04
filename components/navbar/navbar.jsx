@@ -43,7 +43,7 @@ return async ({ navbarElement }) => {
               ${navbarElement({ TITLE: "Buscar", ICON: "bi bi-search nav-search", IS_SEARCH: true })}
               ${navbarElement({ TITLE: "Wishlist", ICON: "bi bi-heart-fill nav-heart" })}
               ${navbarElement({ TITLE: "Carrito", ICON: "bi bi-bag-fill nav-cart" })}
-              ${navbarElement({ TITLE: "Buscar", ICON: "bi bi-person-fill nav-user" })}
+              ${navbarElement({ TITLE: "Cuenta", ICON: "bi bi-person-fill nav-user" })}
             </ul>
           </div>
         </ul>
