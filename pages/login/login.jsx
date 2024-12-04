@@ -211,9 +211,9 @@ return async () => {
             167.945 179.32C173.46 117.209 284.755 95.1699 342.407 73.6315Z"
             />
 
-            <image
+            <img
               class="login__img"
-              href="./assets/imgs/perfumes/imagen1floral.jpeg"
+              src="./assets/imgs/perfumes/imagen1floral.jpeg"
             />
           </g>
         </svg>
