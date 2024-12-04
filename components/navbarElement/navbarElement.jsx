@@ -1,11 +1,17 @@
-return ({TITLE, SVG}) => {
+return ({ TITLE, ICON, IS_SEARCH = false }) => {
+  const search_input = (IS_SEARCH) ?
+   `<input type="text" class="search-bar" placeholder="Buscar..." />`
+   : "";
+   const special_li = (TITLE === "Wishlist") ? 'data-link="wishlist"' : '';
+   const classSearch = (IS_SEARCH) ? 'search-container' : '';
   return (
     <>
-      <li class="nav-item" id="item">
-        <a class="nav-link active" aria-current="page" href="#">
-          ${SVG}
-          <span class="d-sm-block d-sm-none ms-2">${TITLE}</span>
-        </a>
+       
+      <li ${special_li} class="${classSearch}">
+        ${search_input}
+        <i class="${ICON}">
+        </i>
+        <span class="nav-label font-parrafos">${TITLE}</span>
       </li>
     </>
   );
