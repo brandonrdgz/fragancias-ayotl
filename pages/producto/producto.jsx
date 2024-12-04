@@ -6,6 +6,8 @@ return async ({ productoUnico }) => {
     "getProducto"
   ];
 
+  console.log(getProducto);
+
   let producto = await getProducto(productId);
 
   if (producto) {

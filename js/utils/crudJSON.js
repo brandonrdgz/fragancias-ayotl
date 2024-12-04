@@ -1,9 +1,29 @@
 import {constantes} from "../constantes.js";
 
-export async function obtenerProductos(URL) {
+/*const token = "tu-token-de-autenticacion";
+const productos = await obtenerToken('http://192.168.10.123:8080/api/login', token);
+console.log(productos);*/
+
+function getAuthHeaders() {
+   const token = localStorage.getItem("authToken");
+   if (!token) {
+      throw new Error("Token de autenticación no disponible. Debes iniciar sesión.");
+   }
+   return {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+   };
+}
+
+export async function obtenerProductos() {
    try {
       // Hacer la llamada al endpoint usando fetch
-      const response = await fetch(URL); // Reemplaza la URL con tu endpoint
+      const headers = getAuthHeaders();
+      const response = await fetch('http://127.0.0.1:8080/api/products', {
+         method: 'GET',
+         headers: headers,
+   });
+    // Reemplaza la URL con tu endpoint
 
       // Verificar si la respuesta fue exitosa
       if (!response.ok) {
@@ -14,29 +34,15 @@ export async function obtenerProductos(URL) {
       const data = await response.json();
       
       // Convertir data en una array de objectos
-      const productos = data.productos.map(producto => ({
-         id: producto.id,
-         nombre: producto.nombre,
-         marca: producto.marca,
-         img: producto.img,
-         categoria: producto.categoria,
-         descripcion: producto.descripcion,
-         precio: producto.precio,
-         moneda: producto.moneda,
-         cantidad_disponible: producto.cantidad_disponible,
-         valoraciones: {
-            promedio: producto.valoraciones.promedio,
-            total_valoraciones: producto.valoraciones.total_valoraciones
-         },
-         caracteristicas: {
-            concentracion: producto.caracteristicas.concentracion,
-            duracion: producto.caracteristicas.duracion,
-            tipo_piel: producto.caracteristicas.tipo_piel,
-            tamaño: producto.caracteristicas.tamaño
-         },
-         ingredientes: producto.ingredientes,
-         en_oferta: producto.en_oferta,
-         fecha_lanzamiento: producto.fecha_lanzamiento
+      const productos = data.map(producto => ({
+         id:producto.id,
+         name:producto.name,
+         description:producto.description,
+         price:producto.price,
+         categoryId:producto.categoryId,
+         stock:producto.stock,
+         imageFile:producto.imageFile
+   
       }));
 
       // Retornar la lista de productos para poder usarla en otras partes del código
@@ -63,7 +69,7 @@ export function addProducto(productList, product) {
 export async function getProducto(productId) {
    try {
       // Hacer la llamada al endpoint usando fetch
-      const response = await fetch(constantes.IP_SERVER + "/api/v1/product/" + productId); 
+      const response = await fetch("http://" + constantes.IP_SERVER + "/api/products/" + productId); 
 
       // Verificar si la respuesta fue exitosa
       if (!response.ok) {

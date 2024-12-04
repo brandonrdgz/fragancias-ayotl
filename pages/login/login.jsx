@@ -51,7 +51,139 @@ return async () => {
     buttonAccess.onclick = () => {
       loginAcessRegister.classList.remove("active");
     };
+    
+    
+    const LOGIN_URL = "http://127.0.0.1:8080/api/login";
+    const REGISTER_URL = "http://127.0.0.1:8080/api/users";
+  
+  
+  // Registrar un nuevo usuario en la API
+ /* document.querySelector(".login__register form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+  
+    const firstName = document.getElementById("names").value;
+    const lastName = document.getElementById("surnames").value;
+    const secondLastName = document.getElementById("secondLastName").value;
+    const email = document.getElementById("emailCreate").value;
+    const password = document.getElementById("passwordCreate").value;
+  
+    if (firstName && lastName && email && password && secondLastName) {
+      try {
+        const response = await fetch(REGISTER_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ firstName, lastName, email, password, secondLastName }),
+        });
+        if (response.ok) {
+          alert("Cuenta creada exitosamente!");
+        } else {
+          alert("Hubo un error al crear la cuenta.");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        alert("No se pudo conectar con el servidor.");
+      }
+    } else {
+      alert("Por favor, completa todos los campos.");
+    }
+  });*/
+  
+
+  const loginForm = document.querySelector(".login__access form");
+  const registerForm = document.querySelector(".login__register form");
+
+  // Manejo de inicio de sesión
+  if (loginForm) {
+    loginForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      try {
+        const response = await fetch(LOGIN_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        });
+
+        if (response.ok) {
+          const data = await response.json(); // Suponemos que el backend devuelve el token en data.token
+          const { token, user } = data;
+
+          // Guardar el token en localStorage
+          localStorage.setItem("authToken", token);
+
+          alert(`¡Bienvenido, ${data.firstName}!`);
+        } else {
+          alert("Email o contraseña incorrectos.");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        alert("No se pudo conectar con el servidor.");
+      }
+    });
   }
+
+  // Manejo de registro
+  if (registerForm) {
+    registerForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const firstName = document.getElementById("names").value;
+    const lastName = document.getElementById("surnames").value;
+    const secondLastName = document.getElementById("secondLastName").value;
+    const email = document.getElementById("emailCreate").value;
+    const password = document.getElementById("passwordCreate").value;
+
+      if (firstName && lastName && email && password && secondLastName) {
+        try {
+          const response = await fetch(REGISTER_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({firstName, lastName, email, password, secondLastName }),
+          });
+          if (response.ok) {
+            alert("Cuenta creada exitosamente!");
+          } else {
+            alert("Hubo un error al crear la cuenta.");
+          }
+        } catch (error) {
+          console.error("Error:", error);
+          alert("No se pudo conectar con el servidor.");
+        }
+      } else {
+        alert("Por favor, completa todos los campos.");
+      }
+    });
+  }
+
+  // Verificar inicio de sesión con la API
+  /*document.querySelector(".login__access form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+  
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+  
+    try {
+      const response = await fetch(LOGIN_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+      if (response.ok) {
+        const user = await response.json();
+        alert("¡Bienvenido," + '${user.firstName}' + "!");
+      } else {
+        alert("Email o contraseña incorrectos.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("No se pudo conectar con el servidor.");
+    }
+  });*/
+  }
+
 
   executeAfter(init, 300);
   return (
@@ -199,11 +331,25 @@ return async () => {
                         placeholder=" "
                         class="login__input"
                       />
-                      <label for="surnames" class="login__label">Apellidos</label>
+                      <label for="surnames" class="login__label">Apellido Paterno</label>
+
+                      <i class="ri-id-card-fill login__icon"></i>
+                    </div>
+
+                    <div class="login__box">
+                      <input
+                        type="text"
+                        id="secondLastName"
+                        required
+                        placeholder=" "
+                        class="login__input"
+                      />
+                      <label for="secondLastName" class="login__label">Apellido Materno</label>
 
                       <i class="ri-id-card-fill login__icon"></i>
                     </div>
                   </div>
+
 
                   <div class="login__box">
                     <input

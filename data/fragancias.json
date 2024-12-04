@@ -1,36 +1,15 @@
 {
   "productos": [
-    {
-      "id": "001",
-      "nombre": "Eau de Parfum Citrus Burst",
-      "marca": "Esencias de Verano",
-      "img": "imagen1floral.jpeg",
-      "categoria": "Perfumes",
-      "descripcion": "Un perfume vibrante y cítrico, perfecto para el verano. Mezcla notas de limón, naranja y un toque de menta.",
-      "precio": 1150,
-      "moneda": "MXN",
-      "cantidad_disponible": 180,
-      "valoraciones": {
-        "promedio": 4.7,
-        "total_valoraciones": 95
-      },
-      "caracteristicas": {
-        "concentracion": "Eau de Parfum",
-        "duracion": "Hasta 6 horas",
-        "tipo_piel": "Todo tipo de piel",
-        "tamaño": "50 ml"
-      },
-      "ingredientes": [
-        "Agua",
-        "Alcohol",
-        "Aceite esencial de limón",
-        "Aceite esencial de naranja",
-        "Extracto de menta"
-      ],
-      "en_oferta": true,
-      "fecha_lanzamiento": "2024-10-05"
-    },
-
+    { 
+      "name": "Eau de Parfum Citrus Burst",
+      "description": "Un perfume vibrante y cítrico, perfecto para el verano. Mezcla notas de limón, naranja y un toque de menta.",
+      "price": 1150,
+      "category": 2,
+      "stock": 180,
+      "imagePath":"imagen1floral.jpeg",
+      "imageMimeType":"imageMimeType"
+    }
+    ,
     {
       "id": "002",
       "nombre": "Eau de Parfum Citrus Burst",

@@ -4,27 +4,23 @@ return async ({ cardProduct }) => {
     "obtenerProductos"
   ];
 
-  const productos = await obtenerProductos("/data/fragancias.json");
-
+  const productos = await obtenerProductos("http://127.0.0.1:8080/api/products");
+console.log(productos);
   let perfumes = "";
   if (productos) {
     const divPerfumesContainer = document.querySelector("#perfumes");
     // caracteristicas.tamaño
     perfumes = productos.reduce((acc, val) => {
-      const { precio, nombre, img, moneda, caracteristicas, id } = val;
+      const { price, name, imageFile, id } = val;
       const ID = id;
-      const TITLE = nombre;
-      const TAMAÑO = caracteristicas.tamaño;
-      const IMG = IMG_FOLDER + img;
-      const PRECIO = precio;
-      const MONEDA = moneda;
+      const TITLE = name;
+      const IMG = imageFile;
+      const PRECIO = price;
       return (acc += cardProduct({
         ID,
         TITLE,
-        TAMAÑO,
         IMG,
         PRECIO,
-        MONEDA,
       }));
     }, "");
   }

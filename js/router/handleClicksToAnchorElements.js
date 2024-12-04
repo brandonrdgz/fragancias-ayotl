@@ -12,7 +12,7 @@ export function handleClicksToAnchorElements(event, APP) {
   
   pagina = result[0];
   window.history.pushState({ pagina }, "", `#${pagina}`);
-  if(result.length > 1 )
+  if(result.length > 1 )  
   {
     const url = new URL(window.location.href);
     url.searchParams.set("product", result[1]);
